@@ -1,0 +1,1261 @@
+[
+  {
+    "ippId": "IPP-STU006-INT004-2025",
+    "studentId": "STU006",
+    "internshipId": "INT004",
+    "applicationId": "APP023",
+    "internshipDetails": {
+      "company": "SmartTech Solutions",
+      "role": "IoT Development Intern",
+      "domain": "Electronics",
+      "startDate": "2024-05-05T00:00:00.000Z",
+      "endDate": "2025-11-21T12:57:24.692Z",
+      "duration": "5 months",
+      "location": "Hyderabad",
+      "workMode": "On-site"
+    },
+    "status": "pending_student_submission",
+    "createdAt": "2025-11-21T12:57:24.692Z",
+    "updatedAt": "2025-11-21T12:57:24.692Z",
+    "mentorAccessToken": "7c96d9bf9f526b729944c3a7239a939e9e44b14236aa458cd8532ebb7f2ac392",
+    "mentorAccessTokenExpiry": "2025-11-28T13:14:06.089Z",
+    "companyMentorEvaluation": {
+      "mentorEmail": "sadia@gmail.com",
+      "mentorName": "sadia",
+      "mentorDesignation": "ad",
+      "technicalSkills": {
+        "domainKnowledge": 5,
+        "problemSolving": 5,
+        "codeQuality": 5,
+        "learningAgility": 5,
+        "toolProficiency": 5
+      },
+      "softSkills": {
+        "punctuality": 5,
+        "teamwork": 5,
+        "communication": 5,
+        "leadership": 5,
+        "adaptability": 5,
+        "workEthic": 3
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        "asd"
+      ],
+      "areasForImprovement": [
+        "asd"
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Highly Recommended",
+      "detailedFeedback": "asd",
+      "submittedAt": "2025-11-21T13:31:21.196Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "sadia@gmail.com",
+      "companyVerifiedAt": "2025-11-21T13:31:21.197Z"
+    }
+  },
+  {
+    "ippId": "IPP-STU015-INT014-2025",
+    "studentId": "STU015",
+    "internshipId": "INT014",
+    "applicationId": "APP024",
+    "internshipDetails": {
+      "company": "basic campany",
+      "role": "Junior",
+      "domain": "Civil",
+      "endDate": "2025-11-21T13:32:43.593Z",
+      "duration": "",
+      "location": "Lucknow",
+      "workMode": "On-site"
+    },
+    "status": "pending_student_submission",
+    "createdAt": "2025-11-21T13:32:43.593Z",
+    "updatedAt": "2025-11-21T13:32:43.593Z",
+    "mentorAccessToken": "a6b3b7b5d73dac079eaf3b9af733eff35f861d77c6ead759c7989d52df0eafa8",
+    "mentorAccessTokenExpiry": "2025-11-28T13:33:06.095Z",
+    "companyMentorEvaluation": {
+      "mentorEmail": "sadia@gmail.com",
+      "mentorName": "sadia",
+      "mentorDesignation": "SWE I",
+      "technicalSkills": {
+        "domainKnowledge": 7,
+        "problemSolving": 7,
+        "codeQuality": 7,
+        "learningAgility": 7,
+        "toolProficiency": 7
+      },
+      "softSkills": {
+        "punctuality": 8,
+        "teamwork": 8,
+        "communication": 8,
+        "leadership": 8,
+        "adaptability": 8,
+        "workEthic": 8
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        "sdf"
+      ],
+      "areasForImprovement": [
+        "sfd"
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Highly Recommended",
+      "detailedFeedback": "",
+      "submittedAt": "2025-11-21T13:33:28.990Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "sadia@gmail.com",
+      "companyVerifiedAt": "2025-11-21T13:33:28.990Z"
+    }
+  },
+  {
+    "ippId": "IPP-STU001-INT003-2025",
+    "studentId": "STU001",
+    "internshipId": "INT003",
+    "applicationId": "APP003",
+    "internshipDetails": {
+      "company": "AppCraft Studios",
+      "role": "Mobile App Development Intern",
+      "domain": "Computer Science",
+      "startDate": "2024-05-10T00:00:00.000Z",
+      "endDate": "2025-11-22T09:17:20.915Z",
+      "duration": "4 months",
+      "location": "Pune",
+      "workMode": "On-site"
+    },
+    "status": "verified",
+    "createdAt": "2025-11-22T09:17:20.915Z",
+    "updatedAt": "2025-11-22T09:17:20.915Z",
+    "mentorAccessToken": "6633f084e78b640ba5d0248fc8400e898c2df6bd85b1abf4d700457adc8fe992",
+    "mentorAccessTokenExpiry": "2025-11-29T09:17:48.164Z",
+    "companyMentorEvaluation": {
+      "mentorEmail": "aarav@gmail.com",
+      "mentorName": "Sumit Pensalwar",
+      "mentorDesignation": "",
+      "technicalSkills": {
+        "domainKnowledge": 8,
+        "problemSolving": 8,
+        "codeQuality": 8,
+        "learningAgility": 8,
+        "toolProficiency": 8
+      },
+      "softSkills": {
+        "punctuality": 5,
+        "teamwork": 5,
+        "communication": 5,
+        "leadership": 5,
+        "adaptability": 5,
+        "workEthic": 5
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        "FAst learnwr"
+      ],
+      "areasForImprovement": [
+        "xyz"
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Recommended",
+      "detailedFeedback": "overall good",
+      "submittedAt": "2025-11-22T09:18:24.844Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "aarav@gmail.com",
+      "companyVerifiedAt": "2025-11-22T09:18:24.844Z"
+    },
+    "studentSubmission": {
+      "internshipReport": {
+        "fileUrl": "adsf",
+        "fileName": "Internship Report"
+      },
+      "projectDocumentation": [
+        {
+          "title": "Main Project",
+          "fileUrl": "asd"
+        }
+      ],
+      "certificateUrl": "",
+      "offerLetterUrl": "",
+      "studentReflection": {
+        "keyLearnings": [],
+        "challenges": [],
+        "achievements": [],
+        "futureGoals": ""
+      },
+      "submittedAt": "2025-11-22T09:18:57.516Z"
+    },
+    "summary": {
+      "overallRating": 6.5,
+      "performanceGrade": "C",
+      "employabilityScore": 65,
+      "completedAt": "2025-11-22T09:18:57.518Z"
+    },
+    "certificate": {
+      "certificateId": "CERT-IPP-STU001-INT003-2025",
+      "certificateUrl": "/certificates/CERT-IPP-STU001-INT003-2025.pdf",
+      "qrCode": "data:image/png;base64,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",
+      "generatedAt": "2025-11-22T09:18:57.941Z"
+    }
+  },
+  {
+    "ippId": "IPP-STU1000-INT002-2025",
+    "studentId": "STU1000",
+    "internshipId": "INT002",
+    "applicationId": "APP028",
+    "internshipDetails": {
+      "company": "DataTech Analytics",
+      "role": "Data Science Intern",
+      "domain": "Computer Science",
+      "startDate": "2024-05-15T00:00:00.000Z",
+      "endDate": "2025-11-26T17:41:20.079Z",
+      "duration": "6 months",
+      "location": "Mumbai",
+      "workMode": "Remote"
+    },
+    "status": "verified",
+    "createdAt": "2025-11-26T17:41:20.079Z",
+    "updatedAt": "2025-11-26T17:41:20.079Z",
+    "mentorAccessToken": "e9cec062dced4cd42e184684161073aeb102317230d0a1375215e3c24262d07c",
+    "mentorAccessTokenExpiry": "2025-12-06T04:09:48.882Z",
+    "companyMentorEvaluation": {
+      "mentorEmail": "jon@gmail.com",
+      "mentorName": "jon snow",
+      "mentorDesignation": "",
+      "technicalSkills": {
+        "domainKnowledge": 8,
+        "problemSolving": 8,
+        "codeQuality": 8,
+        "learningAgility": 8,
+        "toolProficiency": 1
+      },
+      "softSkills": {
+        "punctuality": 3,
+        "teamwork": 6,
+        "communication": 6,
+        "leadership": 7,
+        "adaptability": 7,
+        "workEthic": 7
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        "Hardworking",
+        "Mature"
+      ],
+      "areasForImprovement": [
+        "NA"
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Highly Recommended",
+      "detailedFeedback": "",
+      "submittedAt": "2025-11-29T04:10:51.429Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "jon@gmail.com",
+      "companyVerifiedAt": "2025-11-29T04:10:51.429Z"
+    },
+    "studentSubmission": {
+      "internshipReport": {
+        "fileUrl": "https://www.google.com/search?q=c+sharp&oq=c+sharp&gs_lcrp=EgZjaHJvbWUyEQgAEEUYORhDGLEDGIAEGIoFMgwIARAAGEMYgAQYigUyDAgCEAAYQxiABBiKBTIHCAMQABiABDIHCAQQABiABDIMCAUQABhDGIAEGIoFMgwIBhAAGEMYgAQYigUyBwgHEAAYgAQyBwgIEAAYgAQyDAgJEAAYQxiABBiKBdIBCDExNDZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+        "fileName": "Internship Report"
+      },
+      "projectDocumentation": [],
+      "certificateUrl": "",
+      "offerLetterUrl": "",
+      "studentReflection": {
+        "keyLearnings": [
+          "Learned C#,game dev",
+          "lottiefiles animations"
+        ],
+        "challenges": [],
+        "achievements": [
+          "Employee of the month Oct"
+        ],
+        "futureGoals": "Game dev"
+      },
+      "submittedAt": "2025-11-29T04:13:42.654Z"
+    },
+    "summary": {
+      "overallRating": 6.3,
+      "performanceGrade": "C",
+      "employabilityScore": 63,
+      "completedAt": "2025-11-29T04:13:42.655Z"
+    },
+    "certificate": {
+      "certificateId": "CERT-IPP-STU1000-INT002-2025",
+      "certificateUrl": "/certificates/CERT-IPP-STU1000-INT002-2025.pdf",
+      "qrCode": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAklEQVR4AewaftIAAAzjSURBVO3BQY4cSZAgQdVA/f/Lurw44Iex7mBWsYezMBH7hbXW/+hhrTV6WGuNHtZao4e11uhhrTV6WGuNHtZaoy/+hcqfVHFT+ZMqfoLKGxU3laPiJ6h8V8VN5Y2Kicqk4i2VP6li8rDWGj2stUZf/IaKn6AyqXhD5Vbxhsqk4idUHCo/QeWo+ETFTeW7VD6hcqt4o+InqLzxsNYaPay1Rg9rrdEX36DyRsUnVN5SmVRMKg6VW8WhcquYqEwq3lB5q+JQmah8ouKmclRMVG4Vh8pPUHmj4hMPa63Rw1pr9MVfRuWouKm8UTGp+GkqP63iLZWjYqJyqzhUJiq3ijcqbipHxU3lqPhbPKy1Rg9rrdHDWmv0xf8hFYfKT1D5roq3VP4klVvFUTGpeEtlUvGJir/Rw1pr9LDWGn3xDRX/JZU3VCYVk4pJxVsqb1S8pXJU3FSOionKpOKmMqk4VG4qR8WfVvEnPay1Rg9rrdHDWmv0xW9Q+VtU3FSOipvKJ1SOipvKUTGpuKlMVI6Kn6ByVNxU3qi4qRwVN5VPqBwVE5X/0sNaa/Sw1hrZL/xFVI6KicpbFROVNyomKreKQ2VS8ZbKpOJQuVVMVI6Km8qk4lD5CRV/o4e11uhhrTV6WGuNvvgXKkfFWypHxU3lEypHxURlojKpmKjcKo6Km8pRcVM5VD5RcVOZqBwVt4o3Kv40lZ9WMVE5KiYPa63Rw1pr9MW/qDhUJhVvVbyhMlGZVNxUJhUTlaPipnJU3Co+UTFR+S6VW8UnVCYVh8qk4qYyqfiEylHxiYe11uhhrTV6WGuN7Bd+gMqt4lCZVLyl8kbFJ1RuFd+lcqs4VCYVE5VbxRsqk4qfpjKpuKkcFROVW8Whcqs4VCYVk4e11uhhrTX64jeoTCpuKpOKicqk4lCZqNwqPqFyVLyl8omKicpE5ah4q+JQuVVMVN6ouKkcKm+pHBWTipvKUfGJh7XW6GGtNXpYa43sF/6ByhsVN5Wj4qZyVPwElTcqbipHxUTlVnGo/JcqbiqfqDhU3qo4VG4Vb6jcKt5QeationJUTB7WWqOHtdboi2+oeEPlVjFROSpuKkfFpOKtionKGxU3lUnFoTKpmKh8ouKtikNlUvGWylFxU5lUTComKkfFJx7WWqOHtdboYa01sl/4BypvVLyl8omKN1RuFROVT1RMVCYVb6hMKm4qR8VN5ai4qRwVb6kcFTeVScUbKpOKT6hMKiYPa63Rw1pr9MVvqLipHCq3ikPlVvFdKreKo+InVBwqP03lVnFU3FQ+UXGovKVyVNwqDpVJxU3ljYqJylsVk4o3HtZao4e11uhhrTX64jeoTComFTeVScUnVCYVb1S8pTKpOFRuKkfFTeWomKjcKg6VScVE5SdUfKLiULlVfELlqPjEw1pr9LDWGtkvvKQyqbipHBVvqUwq3lD5RMVN5ai4qRwVb6kcFZ9QeaviULlVTFSOipvKpGKi8kbFT1A5Kj7xsNYaPay1Rg9rrdEX/0LlqLipHCq3ionKUfEJlbcq3lC5VRwqt4o3VG4Vb6hMKm4qE5U3VD5RcVP5RMWhcqv4aSpHxeRhrTV6WGuN7BdeUvkJFW+o3CoOlUnFTeWnVRwqt4pD5a2KQ+VWcahMKiYqP6HiUJlU3FTeqLipTComKkfFJx7WWqOHtdboYa01sl/4ByqfqDhUJhU3lUnFGyqTipvKd1XcVCYVh8qt4lCZVExUJhU3laPipnJU3FSOionKWxWHyq3iUHmr4lC5VbzxsNYaPay1RvYLL6ncKg6VScUnVP60ikPlVjFROSomKp+omKh8ouITKreKicpRcVM5Km4qb1S8pXJUfOJhrTV6WGuNHtZaI/uFD6kcFTeVo+KmMqn4aSqTionKd1X8BJWj4hMqt4pD5VYxUfmuipvKpGKiclTcVCYVbzystUYPa63RF/9C5ai4VUwqJhWHylsqb1TcKiYqk4o3VCYqt4o3VD6hcqv4LpVbxURlUnGo3ComKt9VcVM5KiYPa63Rw1pr9LDWGtkv/ACVn1YxUblVHCpvVUxUjoqbylExUflbVNxUjoqJyqTiJ6h8V8VNZVLxxsNaa/Sw1hp98S9UvqviLZWJyhsVb6l8ouKNipvKUfGWyqRiovKGyp+m8kbFWyqHyqTiEw9rrdHDWmv0sNYaffEbKiYqb6kcFROVW8VE5adVHCq3ionKJ1SOirdU3lCZVNxUjoqbykTljYqbykTlqJhU3FQOlVvFGw9rrdHDWmv0xQ+puKlMKt6omKjcKg6VW8Whcqs4VCYVN5VJxaHyVsUbFf8llVvFoXKrOFRuFZ+oeEPlVjFROSomD2ut0cNaa/Sw1hrZL/wDlaPipvInVdxUjoqbylFxU5lUTFSOip+g8l+qOFRuFROVn1ZxqPxpFd/1sNYaPay1RvYL/0DlExWHyq3iULlVHCpvVUxUJhVvqNwqJipHxU1lUjFROSpuKkfFJ1QmFTeVScWh8lbFROVPqpg8rLVGD2ut0cNaa2S/8ANUJhU3lUnFGyq3ijdUflrFROVWcajcKg6VT1RMVN6q+C6VScVbKkfFT1A5KiYPa63Rw1pr9MVvUJlU3FQOlVvFoTJRmVS8pXJU3FSOirdUDpVbxVFxU/lExUTlUJlUTFQmKp+ouKkcKreKN1RuFROVScUbD2ut0cNaa/Sw1hp98S9UJhWHylsqn6g4VD6hMlG5VUwqDpWJyqTipnJU3FSOik+o3ComKpOKicqkYqIyqThU3qr4roe11uhhrTX64jdUvFVxqNwqPqFyVExU3qr4roqbylFxU3lD5VbxiYpDZVJxUzkqbipHxa1iojKp+ITKUfHTHtZao4e11uhhrTWyX3hJ5VYxUflExaFyqzhUbhWfUPmTKm4qR8VE5a2KicobFT9N5VZxqNwqJipHxVsqR8UnHtZao4e11uiLf6FyVExUJhUTlZ+gclTcVI6KW8VE5btUfkLFJyoOlYnKpOKmMqk4Km4qb6jcKt5QmajcKt54WGuNHtZao4e11uiL36AyqbipTFSOipvKJyomFYfKreJQ+S+pfELlrYrvUrlVHCpvVRwqn1C5VbxR8YmHtdboYa01+uI3VNxU3lC5VUwqDpWbylFxU5lUHBU3laPiJ6gcFTeVT6gcFTeVNypuKpOKicpR8V+quKkcFTeV73pYa40e1lqjh7XW6ItvqPiEyhsVN5U3Kt6q+C6Vicqt4lCZVNxUJhWHyk1lUvGJionKpOJ/i8qt4o2HtdboYa01sl/4kMpRcVOZVBwqt4pD5a2KicqkYqIyqThUPlExUfnTKg6VScVE5VYxUTkqbipvVHxC5VbxxsNaa/Sw1ho9rLVG9gsvqUwqJipvVfxJKm9VfJfKpGKicqv4hMpRcVM5Km4qb1S8pfJdFROVW8WhMqmYPKy1Rg9rrZH9wj9QOSr+NJVJxURlUjFROSr+N6m8UXFTeaPipnJUTFRuFROVScWhcqt4Q+VWMVE5Kj7xsNYaPay1Rg9rrdEXv0HlVnGofKJiUjFRuVUcKjeVT6hMKg6VP63iULlVHCq3ijdU3lL5roqfoPIJlaNi8rDWGj2stUZf/IuKQ+WmclT8NJVJxU3lqJiofKLirYqJylHxlspR8adVvKFyqzhUJiqfqPiEyice1lqjh7XW6GGtNfriN1RMVG4VE5Wj4lZxqLxVcajcKo6Km8qkYqJyVHxC5RMqP6HiUJmo3CqOiv+SyqTirYo3HtZao4e11sh+4S+iclTcVN6ouKlMKt5QmVTcVI6Km8pR8ZbKpOINlbcqDpVPVLylclS8pfJGxSce1lqjh7XW6GGtNfriX6j8SRUTlVvFoXKrmFR8QmVSMak4VN5SOSreUjkqbipHxU3lqLipvFExUZlUvKVyVPwElaNi8rDWGj2stUZf/IaKn6AyqZioHBU3laNionKreKPipjKp+ETFGxU3lU9UHCpvVRwqt4pJxScqPlFxqHziYa01elhrjR7WWqMvvkHljYq3VP5GKm+pHBU3lUPlEyoTlbdUjoqJyk3lqHhL5aiYqPy0ik88rLVGD2ut0Rd/mYqJyidUjopPVNxUjoq3Kg6VScVN5ai4qRwV/yWVW8UbKp+o+ITKreKNh7XW6GGtNXpYa42++P9ExaFyq3hD5VbxhspbFUfFTeVQuVUcKreKN1R+QsUbFTeVScWhcqs4VCYVN5WJylExeVhrjR7WWqMvvqHiT1KZqLylMqn4roqJyk3lEyqfUHlD5VYxUZlUHCqTipvKUfFWxZ/0sNYaPay1Rg9rrdEXv0HlT1P5roqJyk3lqLipTCoOlZ9Q8YbKTeWomFTcVI6KScVN5aj4W6i8VfHGw1pr9LDWGtkvrLX+Rw9rrdHDWmv0sNYaPay1Rg9rrdHDWmv0/wBFYbboT8inZwAAAABJRU5ErkJggg==",
+      "generatedAt": "2025-11-29T04:13:42.769Z"
+    }
+  },
+  {
+    "ippId": "IPP-STU001-INT002-2025",
+    "studentId": "STU001",
+    "internshipId": "INT002",
+    "applicationId": "APP010",
+    "internshipDetails": {
+      "company": "DataTech Analytics",
+      "role": "Data Science Intern",
+      "domain": "Computer Science",
+      "startDate": "2024-05-15T00:00:00.000Z",
+      "endDate": "2025-11-27T12:26:57.205Z",
+      "duration": "6 months",
+      "location": "Mumbai",
+      "workMode": "Remote"
+    },
+    "status": "verified",
+    "createdAt": "2025-11-27T12:26:57.205Z",
+    "updatedAt": "2025-11-27T12:26:57.205Z",
+    "mentorAccessToken": "4f5ae3436635e08ef396ff260a477d876766143fbabfeaa16608fe6c12902c18",
+    "mentorAccessTokenExpiry": "2025-12-06T05:01:33.269Z",
+    "companyMentorEvaluation": {
+      "mentorEmail": "rajesh.kumar@college.edu",
+      "mentorName": "Rajesh Kumar",
+      "mentorDesignation": "",
+      "technicalSkills": {
+        "domainKnowledge": 7,
+        "problemSolving": 8,
+        "codeQuality": 7,
+        "learningAgility": 9,
+        "toolProficiency": 4
+      },
+      "softSkills": {
+        "punctuality": 2,
+        "teamwork": 1,
+        "communication": 7,
+        "leadership": 2,
+        "adaptability": 10,
+        "workEthic": 4
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        "multitasking",
+        "motivated"
+      ],
+      "areasForImprovement": [
+        "not punctual"
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Recommended",
+      "detailedFeedback": "",
+      "submittedAt": "2025-11-29T07:09:58.700Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "rajesh.kumar@college.edu",
+      "companyVerifiedAt": "2025-11-29T07:09:58.700Z"
+    },
+    "studentSubmission": {
+      "internshipReport": {
+        "fileUrl": "https://res.cloudinary.com/dftkeoquo/image/upload/v1764407262/campus_buddy/ipp_documents/IPP-STU001-INT002-2025/doc_1764407260972.jpg",
+        "fileName": "Internship Report"
+      },
+      "projectDocumentation": [],
+      "certificateUrl": "",
+      "offerLetterUrl": "",
+      "studentReflection": {
+        "keyLearnings": [
+          "Learned about c++"
+        ],
+        "challenges": [],
+        "achievements": [],
+        "futureGoals": ""
+      },
+      "submittedAt": "2025-11-29T09:08:14.591Z"
+    },
+    "summary": {
+      "overallRating": 5.67,
+      "performanceGrade": "P",
+      "employabilityScore": 57,
+      "completedAt": "2025-11-29T09:08:14.591Z"
+    },
+    "certificate": {
+      "certificateId": "CERT-IPP-STU001-INT002-2025",
+      "certificateUrl": "/certificates/CERT-IPP-STU001-INT002-2025.pdf",
+      "qrCode": "data:image/png;base64,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",
+      "generatedAt": "2025-11-29T09:08:14.712Z"
+    }
+  },
+  {
+    "ippId": "IPP-STU002-INT005-2025",
+    "studentId": "STU002",
+    "internshipId": "INT005",
+    "applicationId": "APP006",
+    "internshipDetails": {
+      "company": "CloudTech Systems",
+      "role": "Backend Development Intern",
+      "domain": "Computer Science",
+      "startDate": "2024-04-30T00:00:00.000Z",
+      "endDate": "2025-11-27T12:28:06.369Z",
+      "duration": "6 months",
+      "location": "Delhi",
+      "workMode": "Hybrid"
+    },
+    "status": "pending_mentor_eval",
+    "createdAt": "2025-11-27T12:28:06.369Z",
+    "updatedAt": "2025-11-27T12:28:06.369Z"
+  },
+  {
+    "ippId": "IPP-user_363MpoZosvEbXPWcP37Wa8RCLAV-INT001-2025",
+    "studentId": "user_363MpoZosvEbXPWcP37Wa8RCLAV",
+    "internshipId": "INT001",
+    "applicationId": "APP029",
+    "internshipDetails": {
+      "company": "TechCorp Solutions",
+      "role": "Frontend Development Intern",
+      "domain": "Computer Science",
+      "startDate": "2024-05-01T00:00:00.000Z",
+      "endDate": "2025-11-27T12:32:12.608Z",
+      "duration": "3 months",
+      "location": "Bangalore",
+      "workMode": "Hybrid"
+    },
+    "status": "verified",
+    "createdAt": "2025-11-27T12:32:12.608Z",
+    "updatedAt": "2025-11-27T12:32:12.608Z",
+    "mentorAccessToken": "76952bfecd2785bd266942322a7d8c87180441843a3f2677b96a8a062b956481",
+    "mentorAccessTokenExpiry": "2025-12-04T12:32:58.164Z",
+    "companyMentorEvaluation": {
+      "mentorEmail": "Sadia@gmail.com",
+      "mentorName": "Sadia",
+      "mentorDesignation": "sw",
+      "technicalSkills": {
+        "domainKnowledge": 5,
+        "problemSolving": 4,
+        "codeQuality": 4,
+        "learningAgility": 4,
+        "toolProficiency": 4
+      },
+      "softSkills": {
+        "punctuality": 4,
+        "teamwork": 4,
+        "communication": 4,
+        "leadership": 4,
+        "adaptability": 4,
+        "workEthic": 4
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        ""
+      ],
+      "areasForImprovement": [
+        ""
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Recommended with Reservations",
+      "detailedFeedback": "",
+      "submittedAt": "2025-11-27T12:33:23.892Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "Sadia@gmail.com",
+      "companyVerifiedAt": "2025-11-27T12:33:23.892Z"
+    },
+    "studentSubmission": {
+      "internshipReport": {
+        "fileUrl": "https:das",
+        "fileName": "Internship Report"
+      },
+      "projectDocumentation": [
+        {
+          "title": "Main Project",
+          "fileUrl": "https:das"
+        }
+      ],
+      "certificateUrl": "https:das",
+      "offerLetterUrl": "https:das",
+      "studentReflection": {
+        "keyLearnings": [],
+        "challenges": [],
+        "achievements": [],
+        "futureGoals": ""
+      },
+      "submittedAt": "2025-11-27T12:35:22.333Z"
+    },
+    "summary": {
+      "overallRating": 4.1,
+      "performanceGrade": "F",
+      "employabilityScore": 41,
+      "completedAt": "2025-11-27T12:35:22.334Z"
+    },
+    "certificate": {
+      "certificateId": "CERT-IPP-user_363MpoZosvEbXPWcP37Wa8RCLAV-INT001-2025",
+      "certificateUrl": "/certificates/CERT-IPP-user_363MpoZosvEbXPWcP37Wa8RCLAV-INT001-2025.pdf",
+      "qrCode": "data:image/png;base64,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",
+      "generatedAt": "2025-11-27T12:35:22.576Z"
+    }
+  },
+  {
+    "ippId": "IPP-STU001-INT004-2025",
+    "studentId": "STU001",
+    "internshipId": "INT004",
+    "applicationId": "APP032",
+    "internshipDetails": {
+      "company": "SmartTech Solutions",
+      "role": "IoT Development Intern",
+      "domain": "Electronics",
+      "startDate": "2024-05-05T00:00:00.000Z",
+      "endDate": "2025-11-29T03:51:33.140Z",
+      "duration": "5 months",
+      "location": "Hyderabad",
+      "workMode": "On-site"
+    },
+    "status": "pending_mentor_eval",
+    "createdAt": "2025-11-29T03:51:33.140Z",
+    "updatedAt": "2025-11-29T03:51:33.140Z"
+  },
+  {
+    "ippId": "IPP-STU1000-INT009-2025",
+    "studentId": "STU1000",
+    "internshipId": "INT009",
+    "applicationId": "APP033",
+    "internshipDetails": {
+      "company": "SmartTech Solutions",
+      "role": "Hardware Engineering Intern",
+      "domain": "Electronics",
+      "startDate": "2025-01-20T00:00:00.000Z",
+      "endDate": "2025-11-29T17:42:39.212Z",
+      "duration": "6 months",
+      "location": "Hyderabad",
+      "workMode": "On-site"
+    },
+    "status": "verified",
+    "createdAt": "2025-11-29T17:42:39.212Z",
+    "updatedAt": "2025-11-29T17:42:39.212Z",
+    "mentorAccessToken": "09f4cba1b4da22084778dff6ecc509d213cfb570b13a84c64204dbb2a5dcd6ab",
+    "mentorAccessTokenExpiry": "2025-12-06T17:43:07.951Z",
+    "companyMentorEvaluation": {
+      "mentorEmail": "amit.verma@college.edu",
+      "mentorName": "amit verma",
+      "mentorDesignation": "",
+      "technicalSkills": {
+        "domainKnowledge": 6,
+        "problemSolving": 6,
+        "codeQuality": 6,
+        "learningAgility": 8,
+        "toolProficiency": 7
+      },
+      "softSkills": {
+        "punctuality": 4,
+        "teamwork": 6,
+        "communication": 6,
+        "leadership": 6,
+        "adaptability": 6,
+        "workEthic": 6
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        "fast learner"
+      ],
+      "areasForImprovement": [
+        "NA"
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Recommended",
+      "detailedFeedback": "",
+      "submittedAt": "2025-11-29T17:43:48.547Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "amit.verma@college.edu",
+      "companyVerifiedAt": "2025-11-29T17:43:48.547Z"
+    },
+    "studentSubmission": {
+      "internshipReport": {
+        "fileUrl": "https://chatgpt.com/c/692aba56-c618-8324-b80d-7b73cab5d414",
+        "fileName": "Internship Report"
+      },
+      "projectDocumentation": [],
+      "certificateUrl": "",
+      "offerLetterUrl": "",
+      "studentReflection": {
+        "keyLearnings": [
+          "learn c#"
+        ],
+        "challenges": [],
+        "achievements": [],
+        "futureGoals": ""
+      },
+      "submittedAt": "2025-11-29T17:44:28.260Z"
+    },
+    "summary": {
+      "overallRating": 6.13,
+      "performanceGrade": "C",
+      "employabilityScore": 61,
+      "completedAt": "2025-11-29T17:44:28.261Z"
+    },
+    "certificate": {
+      "certificateId": "CERT-IPP-STU1000-INT009-2025",
+      "certificateUrl": "/certificates/CERT-IPP-STU1000-INT009-2025.pdf",
+      "qrCode": "data:image/png;base64,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",
+      "generatedAt": "2025-11-29T17:44:28.396Z"
+    }
+  },
+  {
+    "ippId": "IPP-STU1000-INT003-2025",
+    "studentId": "STU1000",
+    "internshipId": "INT003",
+    "applicationId": "APP034",
+    "internshipDetails": {
+      "company": "AppCraft Studios",
+      "role": "Mobile App Development Intern",
+      "domain": "Computer Science",
+      "startDate": "2024-05-10T00:00:00.000Z",
+      "endDate": "2025-12-07T19:15:56.633Z",
+      "duration": "4 months",
+      "location": "Pune",
+      "workMode": "On-site"
+    },
+    "status": "verified",
+    "createdAt": "2025-12-07T19:15:56.633Z",
+    "updatedAt": "2025-12-07T19:15:56.633Z",
+    "mentorAccessToken": "4c1adb1e38fef1d7407f2c2669910c795750b22106b5e34190e30503433ccb0b",
+    "mentorAccessTokenExpiry": "2025-12-14T19:16:41.069Z",
+    "companyMentorEvaluation": {
+      "mentorEmail": "monitoring@college.edu",
+      "mentorName": "monitoring",
+      "mentorDesignation": "swe1",
+      "technicalSkills": {
+        "domainKnowledge": 8,
+        "problemSolving": 8,
+        "codeQuality": 8,
+        "learningAgility": 8,
+        "toolProficiency": 8
+      },
+      "softSkills": {
+        "punctuality": 8,
+        "teamwork": 4,
+        "communication": 8,
+        "leadership": 9,
+        "adaptability": 9,
+        "workEthic": 9
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        "Fsatasv"
+      ],
+      "areasForImprovement": [
+        "Nan"
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Highly Recommended",
+      "detailedFeedback": "",
+      "submittedAt": "2025-12-07T19:17:42.974Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "monitoring@college.edu",
+      "companyVerifiedAt": "2025-12-07T19:17:42.974Z"
+    },
+    "studentSubmission": {
+      "internshipReport": {
+        "fileUrl": "https://res.cloudinary.com/dftkeoquo/image/upload/v1765135117/campus_buddy/ipp_documents/IPP-STU1000-INT003-2025/doc_1765135107943.jpg",
+        "fileName": "Internship Report"
+      },
+      "projectDocumentation": [],
+      "certificateUrl": "",
+      "offerLetterUrl": "",
+      "studentReflection": {
+        "keyLearnings": [
+          "c++"
+        ],
+        "challenges": [
+          "temp"
+        ],
+        "achievements": [
+          "SIH"
+        ],
+        "futureGoals": "swe"
+      },
+      "submittedAt": "2025-12-07T19:19:18.613Z"
+    },
+    "summary": {
+      "overallRating": 7.92,
+      "performanceGrade": "B+",
+      "employabilityScore": 79,
+      "completedAt": "2025-12-07T19:19:18.613Z"
+    },
+    "certificate": {
+      "certificateId": "CERT-IPP-STU1000-INT003-2025",
+      "certificateUrl": "/certificates/CERT-IPP-STU1000-INT003-2025.pdf",
+      "qrCode": "data:image/png;base64,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",
+      "generatedAt": "2025-12-07T19:19:18.665Z"
+    }
+  },
+  {
+    "ippId": "IPP-STU1000-INT007-2025",
+    "studentId": "STU1000",
+    "internshipId": "INT007",
+    "applicationId": "APP035",
+    "internshipDetails": {
+      "company": "TechCorp Solutions",
+      "role": "Full Stack Development Intern",
+      "domain": "Computer Science",
+      "startDate": "2025-01-15T00:00:00.000Z",
+      "endDate": "2025-12-08T04:38:04.336Z",
+      "duration": "6 months",
+      "location": "Bangalore",
+      "workMode": "Hybrid"
+    },
+    "status": "verified",
+    "createdAt": "2025-12-08T04:38:04.336Z",
+    "updatedAt": "2025-12-08T04:38:04.336Z",
+    "mentorAccessToken": "3f389ffa87779530cc768067ff5dddb095ad950ba1837cb13bffacd2c1ea2d13",
+    "mentorAccessTokenExpiry": "2025-12-15T04:38:36.227Z",
+    "companyMentorEvaluation": {
+      "mentorEmail": "supervi@gmail.com",
+      "mentorName": "Supervisor",
+      "mentorDesignation": "Fullstack",
+      "technicalSkills": {
+        "domainKnowledge": 9,
+        "problemSolving": 9,
+        "codeQuality": 9,
+        "learningAgility": 9,
+        "toolProficiency": 9
+      },
+      "softSkills": {
+        "punctuality": 7,
+        "teamwork": 7,
+        "communication": 7,
+        "leadership": 7,
+        "adaptability": 7,
+        "workEthic": 7
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        "Very good at middleware"
+      ],
+      "areasForImprovement": [
+        "documentation"
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Recommended",
+      "detailedFeedback": "",
+      "submittedAt": "2025-12-08T04:40:31.661Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "supervi@gmail.com",
+      "companyVerifiedAt": "2025-12-08T04:40:31.661Z"
+    },
+    "studentSubmission": {
+      "internshipReport": {
+        "fileUrl": "https://res.cloudinary.com/dftkeoquo/image/upload/v1765168889/campus_buddy/ipp_documents/IPP-STU1000-INT007-2025/doc_1765168860186.jpg",
+        "fileName": "Internship Report"
+      },
+      "projectDocumentation": [],
+      "certificateUrl": "",
+      "offerLetterUrl": "",
+      "studentReflection": {
+        "keyLearnings": [
+          "C#",
+          "Java",
+          "Oracle Mysql",
+          "JDBC"
+        ],
+        "challenges": [],
+        "achievements": [],
+        "futureGoals": ""
+      },
+      "submittedAt": "2025-12-08T04:41:46.816Z"
+    },
+    "summary": {
+      "overallRating": 8,
+      "performanceGrade": "A",
+      "employabilityScore": 80,
+      "completedAt": "2025-12-08T04:41:46.816Z"
+    },
+    "certificate": {
+      "certificateId": "CERT-IPP-STU1000-INT007-2025",
+      "certificateUrl": "/certificates/CERT-IPP-STU1000-INT007-2025.pdf",
+      "qrCode": "data:image/png;base64,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",
+      "generatedAt": "2025-12-08T04:41:46.927Z"
+    }
+  },
+  {
+    "ippId": "IPP-STU001-INT016-2025",
+    "studentId": "STU001",
+    "internshipId": "INT016",
+    "applicationId": "APP034",
+    "internshipDetails": {
+      "company": "TechCorp Solutions",
+      "role": "React Intern",
+      "domain": "Computer science",
+      "startDate": "2026-03-16T00:00:00.000Z",
+      "endDate": "2025-12-08T10:44:55.727Z",
+      "duration": "2",
+      "location": "Pune",
+      "workMode": "Hybrid"
+    },
+    "status": "verified",
+    "createdAt": "2025-12-08T10:44:55.727Z",
+    "updatedAt": "2025-12-08T10:44:55.727Z",
+    "mentorAccessToken": "c4baf983a67ad4bca07a026d6348ea78eb03ed92bd35b6a714b528eafc7ea3e6",
+    "mentorAccessTokenExpiry": "2025-12-15T10:45:54.282Z",
+    "companyMentorEvaluation": {
+      "mentorEmail": "rajesh.kumar@college.edu",
+      "mentorName": "Rajesh Kumar",
+      "mentorDesignation": "",
+      "technicalSkills": {
+        "domainKnowledge": 9,
+        "problemSolving": 9,
+        "codeQuality": 9,
+        "learningAgility": 9,
+        "toolProficiency": 9
+      },
+      "softSkills": {
+        "punctuality": 9,
+        "teamwork": 8,
+        "communication": 9,
+        "leadership": 8,
+        "adaptability": 9,
+        "workEthic": 8
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        "fast learner"
+      ],
+      "areasForImprovement": [
+        "na"
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Highly Recommended",
+      "detailedFeedback": "....",
+      "submittedAt": "2025-12-08T10:46:49.990Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "rajesh.kumar@college.edu",
+      "companyVerifiedAt": "2025-12-08T10:46:49.990Z"
+    },
+    "studentSubmission": {
+      "internshipReport": {
+        "fileUrl": "https://res.cloudinary.com/dftkeoquo/raw/upload/v1765190859/campus_buddy/ipp_documents/IPP-STU001-INT016-2025/doc_1765190835066",
+        "fileName": "Internship Report"
+      },
+      "projectDocumentation": [],
+      "certificateUrl": "",
+      "offerLetterUrl": "",
+      "studentReflection": {
+        "keyLearnings": [
+          "react",
+          "vite"
+        ],
+        "challenges": [
+          "na"
+        ],
+        "achievements": [
+          "na"
+        ],
+        "futureGoals": "nodejs"
+      },
+      "submittedAt": "2025-12-08T10:47:54.882Z"
+    },
+    "summary": {
+      "overallRating": 8.75,
+      "performanceGrade": "A+",
+      "employabilityScore": 88,
+      "completedAt": "2025-12-08T10:47:54.884Z"
+    },
+    "certificate": {
+      "certificateId": "CERT-IPP-STU001-INT016-2025",
+      "certificateUrl": "/certificates/CERT-IPP-STU001-INT016-2025.pdf",
+      "qrCode": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAklEQVR4AewaftIAAAzHSURBVO3BQW4lx5IAQfcC739ln94kkIsJdemRLekDYWa/sNb6fz2stUYPa63Rw1pr9LDWGj2stUYPa63Rw1pr9MVvqPxJFROVW8UbKj+h4g2VW8Whcqs4VG4Vh8qtYqJyVNxUjoqbylFxU5lUvKEyqXhL5U+qmDystUYPa63RF39DxU9Q+S6VScVE5RMqt4o3KiYVb6lMKj5R8QmVScUbKreKNyp+gsobD2ut0cNaa/Sw1hp98Q0qb1S8pXJU3FSOipvKROWomKjcVI6KScVNZVLxRsVN5Q2Vn1ZxUzkqJhUTlZ+g8kbFJx7WWqOHtdboi/8wlVvFpOITKkfFWyqTionKUTFR+UTFWypvqNwq3lCZVNxUjor/ioe11uhhrTV6WGuNvvgPq5io/ISKicpR8ZbKGyqfqLipHBU3laPiVnGo/ASVo+KmMqn4L3pYa40e1lqjL76h4k9SmVRMVG4VE5VJxScqDpVJxVsqk4pD5RMVN5Wj4qbyX1HxJz2stUYPa63Rw1pr9MXfoPJPqripTFSOipvKUTGpuKkcFZOKm8pRcVOZqBwVb6kcFTeVicpR8YmKm8onVI6Kico/6WGtNXpYa42++I2Kf4vKWxWTijdUbhWHyq1iUnGovFXxhsonVN6q+GkVh8qtYlLxb3lYa40e1lqjh7XWyH7hL6gcFTeV76qYqNwqJipHxVsqk4o3VG4VE5WfVvGGyq3iULlVfJfKpOKmclTcVL6r4hMPa63Rw1pr9MU3VBwqb1UcKreKicpR8ZbKJ1SOirdUjopJxURlUvGJiknFTeWouKkcFZ9QuVVMKr5LZVIxeVhrjR7WWqOHtdbIfuFDKt9V8ZbKpOITKj+t4lC5Vfw0laPipnJU3FSOin+Syq1ionJU3FSOionKreKNh7XW6GGtNfrib1C5VRwqt4pD5VZxqEwqbhWfUJlUHCqTirdUJipHxVsqR8VbFYfKT1OZVNxUjoqbyp9UcVM5KiYPa63Rw1pr9LDWGtkv/AWVo+KmMqmYqEwqDpVJxVsqb1TcVN6omKjcKt5QuVUcKreKQ+VWcah8ouKmclTcVH5axSdU3qiYPKy1Rg9rrdEXv1FxqEwq3qqYqLyh8k+quKlMVN5QmVS8pTJRmVS8oXKrOFRuFYfKreJQuVUcKjeVo+KmMqk4VD7xsNYaPay1Rg9rrZH9wl9QOSpuKt9VMVG5VbyhcquYqBwVN5VJxRsqt4pPqEwqDpVJxVsqR8VN5Y2Km8qkYqIyqZioHBWfeFhrjR7WWqMvfqPijYqJyq3iULlVHBX/poqJyqTiqLipHBUTlVvFoTKpuKn8tIpD5VZxqEwq3qo4VCYqt4pDZVIxeVhrjR7WWqOHtdboi99QOSpuFYfKpOKm8l0qk4qbyidUJhU/TeWo+AkVh8pPUDkqJhU3lTdU3lI5Km4qR8VN5Y2HtdboYa01sl94SeVWcajcKg6VW8VE5RMVh8qt4lD5RMVE5VZxqEwqJiq3ikNlUnFTeaPip6l8omKicqv4hMpRMXlYa40e1lqjh7XW6Iu/oeItlaPipjKpmKi8UTGpuKkcFROVT1RMVG4Vn6j4RMWhcqs4VCYVk4qJyq3iUPmEyq3iULlVvPGw1ho9rLVGX/yGylFxU/lExUTlqJhU3FTeqLhVTFSOin+Tyhsqb6kcFZ9QuVUcKp+o+ETFpOITD2ut0cNaa/Sw1hrZL/xhKpOKt1TeqHhL5adVHCqTipvKUXFTOSpuKpOKQ2VScVN5o+InqPxJFZ94WGuNHtZaoy9+Q+Wo+ETFJ1TeqpioHBWTipvKpOKNipvKoXKrmFS8UfFWxaRiojJR+UTFGyo/QeWomDystUYPa63Rw1pr9MW/QOWo+ETFWxWTiknFoXJTmVT8NJWj4lbxCZWj4qYyqThU3qqYqLxR8ZbKpOKNh7XW6GGtNfriNyoOlVvFofJWxZ+k8hMqJhWHyicqbipHxUTlVnGo3ComFYfKJyomKjeVScWh8pbKpOJQmVRMHtZao4e11uhhrTX64odU3FQmKm9UvKUyqThUJhWfqLipvKEyUflExScqbipHxURlUnFTOSpuKm+oTCpuKpOKNx7WWqOHtdboi99QmagcFZOKt1QOlVvFJ1TeUHlLZVIxUTkq3lKZqEwqJipHxScqbiqHyicq3lKZVBwqn3hYa40e1lqjh7XW6IvfqJioHCpvqRwVP6HiUJlU3FQmFYfKJ1TeUjkqJhUTlZvKUfETVI6KW8VE5VB5S+WoeEtlonJUTB7WWqOHtdboi99QmVRMVCYVb1TcVI6KScUnKm4qR8VNZaLyiYo3VP7XVdxUJhVvqNwqJipvPKy1Rg9rrdHDWmtkv/AhlaPipvJdFROVW8Whcqs4VN6qmKhMKiYq/xUVh8qt4rtUbhUTle+quKm8UTF5WGuNHtZaI/uFl1RuFd+lcqv4aSpvVNxUjoqbyhsVN5Wj4qZyVLyl8kbFRGVScVP5roqbyqTip6kcFZOHtdboYa01elhrjb74GypuKt9VMVF5q+JQuVW8oXKrOFQmFROVtyq+q+KmMlE5Km4qk4qJylHxVsWh8pbKpGJS8cbDWmv0sNYa2S/8BZVJxURlUvFdKpOKm8pRcVM5Kt5SmVQcKreKicobFZ9QuVW8ofJWxUTlp1UcKreKQ2VSMXlYa40e1lqjh7XW6IsfojKpuKkcFROVW8Wk4lCZqNwq/kkqR8Wt4lC5VUxUjopJxU3lqLipHBUTlZvKGxWfUPkJFW88rLVGD2utkf3Ch1TeqPiEyk+omKgcFT9BZVIxUTkqJiq3in+Lyq1iojKpOFRuFYfKWxWHyqRi8rDWGj2stUYPa62R/cJfUJlUTFS+q2Kicqt4Q+WtikNlUvGWylExUZlU3FSOij9NZVLxJ6m8VXGo3CreeFhrjR7WWqMv/oaKT1RMVG4VE5Wj4qZyVNxUjoqJyk3lqLip/DSVo2KiMlF5q2KiMqk4VG4qR8VE5Z9U8YmHtdboYa01elhrjb74G1RuFYfKWypHxVsVh8qtYlLxXSoTlbcqPqHyRsU/qWKiMqm4qUwq3lC5qRwVN5WjYvKw1ho9rLVGX3yDyqTiULlVHCq3ijcqbipHxUTlJ1QcKreKQ2Wi8omKm8p3qUwqJiq3ijdUbhWHyk+o+K6HtdboYa01elhrjb74hoqJylFxU5moTCp+WsUnVI6Km8p3qUxUPqHyVsUbFZOKn6ByVNxUJiqTijce1lqjh7XW6IvfqHhD5VYxqZioHBV/msqkYlJxqEwq3qo4VG4Vf1LFWyqTijdUbhWTikPlVvGGyk3lqJg8rLVGD2ut0cNaa/TFN6hMVI6Km8onVN5QuVUcFROVicqk4qYyUTkqfoLKUfETVL5L5S2VicpRMVH5aQ9rrdHDWmv0xTdUfKLiExVvqNxUJhVvVExUbhWTiv8FFW+oTCpuKkfFT1D5kx7WWqOHtdboYa01+uI3VCYVh8onKm4qR8VNZVIxqThUfoLKUfEJlbdUjoqJyqTiT1M5Km4Vh8qt4g2VW8VEZVLxxsNaa/Sw1hrZL7ykMqn4hMpbFYfKT6h4Q+WtikNlUvEJlVvFoXKrOFTeqnhD5Z9UcVM5Km4qk4o3HtZao4e11uhhrTWyX/gBKreKicpRcVP5roqbyhsVN5VJxSdUvqvipnJU3FTeqLipHBU3laPipnJU3FSOipvKd1XcVI6Km8pRMXlYa40e1loj+4X/EJU3Km4qR8U/SeVWcahMKt5S+ZMqbipHxUTlVjFReaPiLZWj4qc9rLVGD2ut0cNaa/TFb6j8SRW3ikPlrYpD5VYxUZlUHCp/mspRMal4S2VSMak4VD6hMqm4qUxUjoqJyicqJg9rrdHDWmv0xd9Q8RNUJiqTionKUXFTmVRMVI6KP63iEypvVHyiYqJyUzkqbiqfqPhExUTljYe11uhhrTV6WGuNvvgGlTcqfoLKUXGrOFTeUjkqbhUTlUnFUXFTOVR+WsVN5VC5VXxC5aiYqExUJiqfqLipHBWfeFhrjR7WWqMv/odUfKLiEypvVLxVcajcKg6Vn1DxhspPUHmj4k+rmFS88bDWGj2stUYPa63RF/9hFROVW8UnVI6KW8UnVI6Km8pRcVP5J6kcFX9axUTlqJioTComKreKNx7WWqOHtdboi2+o+GkVh8qk4i2V71KZVExUbhWTikPlVnGo3CreULlVHCq3ik9UHCo3laPiExX/pIe11uhhrTV6WGuNvvgbVP40lUnFoTKpuKkcFROVW8WkYlLxJ1XcVI6Km8pRMam4qRwVN5XvUnlL5ai4qRwVN5Wj4hMPa63Rw1prZL+w1vp/Pay1Rg9rrdHDWmv0sNYaPay1Rg9rrdH/AY+uu7a/vJqiAAAAAElFTkSuQmCC",
+      "generatedAt": "2025-12-08T10:47:54.975Z"
+    }
+  },
+  {
+    "ippId": "IPP-STU012-004-2025",
+    "studentId": "STU012",
+    "internshipId": "INT004",
+    "applicationId": "APP044",
+    "internshipDetails": {
+      "company": "SmartTech Solutions",
+      "role": "IoT Development Intern",
+      "domain": "Electronics",
+      "startDate": "2024-05-05T00:00:00.000Z",
+      "endDate": "2025-12-08T17:23:04.298Z",
+      "duration": "5 months",
+      "location": "Hyderabad",
+      "workMode": "On-site"
+    },
+    "status": "published",
+    "createdAt": "2025-12-08T17:23:04.298Z",
+    "updatedAt": "2025-12-08T17:23:04.298Z",
+    "mentorAccessToken": "bfb085f79363291ddd12890d7f777e6f5b9ff8c04fdfdba89bbafdf24ed766da",
+    "mentorAccessTokenExpiry": "2025-12-15T18:01:39.640Z",
+    "companyMentorEvaluation": {
+      "mentorEmail": "rajesh.kumar@college.edu",
+      "mentorName": "Rajesh Kumar",
+      "mentorDesignation": "",
+      "technicalSkills": {
+        "domainKnowledge": 2,
+        "problemSolving": 2,
+        "codeQuality": 3,
+        "learningAgility": 3,
+        "toolProficiency": 3
+      },
+      "softSkills": {
+        "punctuality": 3,
+        "teamwork": 3,
+        "communication": 3,
+        "leadership": 3,
+        "adaptability": 3,
+        "workEthic": 3
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        ""
+      ],
+      "areasForImprovement": [
+        ""
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Not Recommended",
+      "detailedFeedback": "",
+      "submittedAt": "2025-12-08T18:02:13.602Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "rajesh.kumar@college.edu",
+      "companyVerifiedAt": "2025-12-08T18:02:13.602Z",
+      "placementCellApproved": true,
+      "placementCellApprovedAt": "2025-12-08T18:06:43.789Z"
+    },
+    "studentSubmission": {
+      "internshipReport": {
+        "fileUrl": "https://res.cloudinary.com/dftkeoquo/image/upload/v1765216963/campus_buddy/ipp_documents/IPP-STU012-004-2025/doc_1765216953798.jpg",
+        "fileName": "Internship Report"
+      },
+      "projectDocumentation": [],
+      "certificateUrl": "",
+      "offerLetterUrl": "",
+      "studentReflection": {
+        "keyLearnings": [
+          "C#",
+          "C++"
+        ],
+        "challenges": [],
+        "achievements": [],
+        "futureGoals": ""
+      },
+      "submittedAt": "2025-12-08T18:02:51.652Z"
+    },
+    "summary": {
+      "overallRating": 2.8,
+      "performanceGrade": "F",
+      "employabilityScore": 28,
+      "recommendationStrength": "Moderate"
+    },
+    "certificate": {
+      "certificateId": "CERT-IPP-STU012-004-2025",
+      "certificateUrl": "/certificates/CERT-IPP-STU012-004-2025.pdf",
+      "qrCode": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAklEQVR4AewaftIAAA1JSURBVO3BQY4cSXAAQffC/P/LLl4SyINiWewZrlZAmNkvrLX+Vw9rrdHDWmv0sNYaPay1Rg9rrdHDWmv0sNYaffEbKn9TxVsqR8W/SeWtikPlVnGovFVxqNwqDpVbxUTlqLipHBUTlU9UvKXyN1VMHtZao4e11uiLP1DxE1Q+UXGo3Cr+poqJyk3lqJhU3FQmKkfFTeWouKlMKv6vqNwq3qj4CSpvPKy1Rg9rrdHDWmv0xTeovFHxlsonVI6Kt1QmFW9U3FQOlVvFofJWxaFyqzhUJhU/QWVS8YbKT1B5o+ITD2ut0cNaa/TFf1jFTWVScaj8NJWfVjFRuakcFZOKT6jcKg6VW8Wh8pbKUXFTOSr+Kx7WWqOHtdboYa01+uL/kYrvqrip/JtUvkvlVjFRmVQcFZ+omKi8VfFf9LDWGj2stUZffEPF/wcVb1S8VTFReaPiLZWjYqIyqZio3CqOipvKUTGpuKn8tIq/6WGtNXpYa40e1lqjL/6Ayv8llaPipnJU3FSOirdUjoqbylExqbipTFSOirdUjoqbykTlqLipHBVvqRwVb6kcFROVf9PDWmv0sNYa2S/8h6i8UXFTmVT8TSq3ionKUfGWylFxU5lUTFQ+UXGo3CreUJlU/Fc8rLVGD2ut0cNaa2S/8A9UjoqbyndVfEJlUnFTOSomKm9VTFT+poqbylExUblVHCqTik+oTCreUvmuik88rLVGD2ut0Rc/pGKicqt4Q+UTKreKQ+UnqEwqJipHxUTlVnGoTFRuFUfFTeWomKi8VfHTKr5LZVIxeVhrjR7WWqOHtdbIfuFDKm9U3FQmFROVT1RMVI6Kicqt4g2VW8UnVN6o+Gkqt4qfpnJU3FSOipvKUTFRuVW88bDWGj2stUZf/IbKUTGpmKjcKg6VicqkYqIyUZmo3CreUJlU3FQmFYfKWxWHyq1ionJU3FTeULlVfJfKreJQuVUcKreKo+KmclRMHtZao4e11uhhrTX64hsqJipHxU1lojKpOFTeUnmj4qbyXSq3ik9UvFExUblVHCq3iu9SuVW8UXFT+S6VTzystUYPa62R/cJLKpOKm8pR8QmVn1ZxU3mj4qbyiYqJyqTiULlVHCq3ionKUTFRmVS8pXJU3FSOionKT6h442GtNXpYa40e1loj+4V/oPJdFTeVT1QcKm9VHCq3ijdUJhU3laPiLZWj4i2Vo+KmclT8BJVJxXep3CoOlVvFGyqTisnDWmv0sNYaffEbFROVo+KmcqjcKiYqn6iYqExUjoqbynep3CoOlVvFoXKrOFRuFYfKreJQuVUcKreKScWh8gmVt1SOionKT3tYa40e1lqjh7XW6Is/oHKreKPipnJU3CoOlbdUjopJxVsVh8pE5VYxUTkq3lL5ropJxU3ljYpPVExUbhWfqDhUbhVvPKy1Rg9rrdEXP0RlonKr+K6Km8qkYqIyqZhUTFTeUHmr4lC5qRwVE5VbxaEyqbipvKFyqzhUbhVHxU3lqJhU/LSHtdboYa01elhrjewX/oHKpGKi8kbFTWVScai8VXGo3CoOlUnFTWVScahMKiYqt4pD5VYxUTkq3lI5Kv42laNiovKJik88rLVGD2utkf3CP1D5RMWhcqs4VCYVE5VbxUTljYqJyqTiLZWfVvGGyq3iDZVJxU3lqLipHBUTlVvFJ1SOipvKUTF5WGuNHtZao4e11uiLP1BxUzkqbioTlaPipnKo3CqOionKrWKicqi8VXGo3Cq+q+KmMlE5Kt5SOSpuKkfFTeUNlbdUjoqbyqTiULlVHCq3ijce1lqjh7XWyH7hJZW3Kr5L5VZxqEwqJiqTipvKGxVvqRwVN5WjYqJyq3hD5VbxhspbFROVScWhcqt4Q+Wtijce1lqjh7XW6GGtNbJf+AcqR8VN5ai4qRwVN5Wj4qbyRsVbKkfFROVWcai8VXGoTComKreKicpRMVGZVNxUjopPqNwqJiqTionKpGKiclRMHtZao4e11sh+4SWVScW/SWVSMVG5VRwqk4qbylHxlspR8QmVW8Whcqs4VH5CxRsqb1UcKreKQ2VSMVGZVEwe1lqjh7XW6GGtNbJf+Acqk4pD5W+r+GkqR8VNZVLxhspPq7ipHBUTlVvFROWomKjcKt5Q+dsqDpVbxRsPa63Rw1pr9MU3qLxR8ZbKUXFT+UTFoXKreKPipvJGxU3lqHhL5VC5VRwqt4o3VH6CylFxU3mj4i2Vo+ItlaNi8rDWGj2stUYPa63RF79R8YbKWypHxUTlrYo3KiYqE5VbxaHyE1SOiknFTWWiclRMKm4qE5VJxaRiojJROSreUvmuh7XW6GGtNfriG1SOipvKpOKNipvKUXFTmVR8V8VN5adVvKFyq3hD5VZxqHyi4qZyVNxUjoq3Kt5QuVVMVN54WGuNHtZao4e11uiL31D5LpVPqNwqDpVbxaFyUzkqJhWfqLipvKHyE1Q+oXJU/ISKQ+VWcahMVD5RcVM5Kj7xsNYaPay1Rl/8RsWh8lbFoXKrOFRuFROVNyp+gspRcas4VP62ionKUXFTOSpuKhOVo+JWcajcKiYqR8VE5VYxUfmbHtZao4e11uhhrTWyX3hJ5VbxCZU3Km4qR8VE5VYxUZlUTFSOionKpGKicquYqLxR8QmVW8V3qdwqDpVbxaHyVsV3Pay1Rg9rrdEX/wKVW8UbKhOVT6hMKm4qR8Wt4lC5VUwqDpVbxUTlqHirYqJyVNxUjoqbylHxlspE5Y2Km8pRMVGZVEwe1lqjh7XW6GGtNfriD1TcVN6ouKkcFTeVo+InqBwVn1CZVEwqJhWfUPmEyq3iULlVvKFyqzhUJhWfULlVHCq3iknFGw9rrdHDWmtkv/APVN6ouKkcFZ9Q+WkVE5VbxaHyiYqbyqRionJU3FQmFROVo+Km8kbFWyqfqDhUJhUTlUnF5GGtNXpYa40e1lqjL76h4lC5VRwqk4pJxVsqR8VNZaLyXRUTlVvFofJWxaEyqbipHBW3iknFoXKrOFRuFYfKJyp+gsqk4o2HtdboYa01sl/4kMqk4m9SeaviULlVHCq3ionKGxU3laPiLZU3Kt5SOSreUvmuipvKv6nijYe11uhhrTV6WGuNvvgNle9SeationJU/ASViconKr5L5VZxqExU/raKT6gcKreKQ2VScVM5KiYqn3hYa40e1lqjL/5AxScq3lKZVLyhcqt4o+Km8kbFWxWHyq3iqJhU3FSOipvKUXFT+YTKpOJQuVUcKjeVo+Km8l0Vn3hYa40e1lqjh7XW6Is/oHKrmKgcFTeVo+ItlaPipnJU3FSOik9UvKVyVNxU3lD5aSq3ikPlVjGp+ITKpOJQ+YTKreJQuVW88bDWGj2stUZffIPKUTFRuVUcKpOKm8qhcqs4VN5SmVS8ofKJik9U3FQOlVvFoXJTOSo+oXKrOCp+QsUnVCYqR8XkYa01elhrjR7WWqMv/kDFTeWNipvKUfFWxXep3CoOlZvKUTGpuKkcKhOVW8Wk4t+kMqk4KiYqf1vFoXKrOFQ+8bDWGj2stUZf/EbFoXKrOFRuFZOKicpRMVG5VUwqJirfpXKrmKj8m1Q+UfGGyq3iqJio3CoOlZvKUXFTOSpuKkfFJx7WWqOHtdboYa01+uI3VD6h8tNUjopJxVsVE5W/qeItlTcqfprKreKomKjcKo6KScVN5Q2VW8VE5aiYPKy1Rg9rrZH9wksqk4pPqPyEikPlVnGo/ISKQ+VWMVE5Km4qR8UnVG4Vn1A5KiYqt4o3VCYVE5W3Kg6VW8UbD2ut0cNaa/Sw1hrZL/wAlVvFROWoeEtlUjFRmVQcKpOKT6j8tIq3VI6Km8qkYqIyqZioHBU3le+q+GkPa63Rw1prZL/wH6JyVNxU3qj421TeqLipHBVvqUwqDpVJxU3lqPiEyq1iovJGxVsqR8VEZVIxeVhrjR7WWqOHtdboi99Q+ZsqbhWHyq3iDZW3Kj5RcajcKj6hclRMKiYVN5U3VG4Vh8pbKkfFpOKmMlE5KiYqb1W88bDWGj2stUZf/IGKn6AyUZmoHBU3laPiEyq3ijcqJipvVXyXyq3ijYqbyicqflrFJyoOlU88rLVGD2ut0cNaa/TFN6i8UfGJipvKoXKrOFQmFZ9QuVUcKreKN1R+gspRMVG5VbxR8QmVicpE5RMVN5WJylExeVhrjR7WWqMv/p+q+AkqR8Wk4qZyVEwqJiq3ikPlrYpD5VZxVNxUJhUTlUnFGxUTlVvFRGVS8V0Pa63Rw1pr9LDWGn3xH6ZyqzhUbhVHxU3lDZW3Kt5QuVUcFT9B5aiYqNwqPlFxqNxUJhUTlYnKpOJQuVUcKreKNx7WWqOHtdboi2+o+GkVE5Wj4qYyqThUfprKWypHxVsVh8qt4lC5VRwVN5Wj4qbyRsVbKpOKicpR8W96WGuNHtZao4e11uiLP6Dyt6m8oTKpmFS8pfJdFTeVNypuKkfFT6g4VG4Vn1D5m1QmFTeVo+ITD2ut0cNaa2S/sNb6Xz2stUYPa63Rw1pr9LDWGj2stUYPa63R/wAivSHdWAB9vwAAAABJRU5ErkJggg==",
+      "generatedAt": "2025-12-08T18:06:43.789Z"
+    },
+    "publishedAt": "2025-12-08T18:06:43.789Z"
+  },
+  {
+    "ippId": "IPP-STU012-INT005-2025",
+    "studentId": "STU012",
+    "internshipId": "INT005",
+    "applicationId": "APP045",
+    "internshipDetails": {
+      "company": "CloudTech Systems",
+      "role": "Backend Development Intern",
+      "domain": "Computer Science",
+      "startDate": "2024-04-30T00:00:00.000Z",
+      "endDate": "2025-12-08T18:14:27.216Z",
+      "duration": "6 months",
+      "location": "Delhi",
+      "workMode": "Hybrid"
+    },
+    "status": "verified",
+    "createdAt": "2025-12-08T18:14:27.216Z",
+    "updatedAt": "2025-12-08T18:14:27.216Z",
+    "mentorAccessToken": "54a5facac46f588bca131183c8b71123126f3f276ed250dd8bcc54c967f3dd6d",
+    "mentorAccessTokenExpiry": "2025-12-15T18:14:52.367Z",
+    "companyMentorEvaluation": {
+      "mentorEmail": "super@college.edu",
+      "mentorName": "Supervisor",
+      "mentorDesignation": "",
+      "technicalSkills": {
+        "domainKnowledge": 7,
+        "problemSolving": 7,
+        "codeQuality": 7,
+        "learningAgility": 7,
+        "toolProficiency": 7
+      },
+      "softSkills": {
+        "punctuality": 7,
+        "teamwork": 7,
+        "communication": 7,
+        "leadership": 7,
+        "adaptability": 7,
+        "workEthic": 7
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        "abc"
+      ],
+      "areasForImprovement": [
+        "NAN"
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Highly Recommended",
+      "detailedFeedback": "",
+      "submittedAt": "2025-12-08T18:15:19.633Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "super@college.edu",
+      "companyVerifiedAt": "2025-12-08T18:15:19.633Z"
+    },
+    "studentSubmission": {
+      "internshipReport": {
+        "fileUrl": "https://res.cloudinary.com/dftkeoquo/image/upload/v1765217778/campus_buddy/ipp_documents/IPP-STU012-INT005-2025/doc_1765217772425.jpg",
+        "fileName": "Internship Report"
+      },
+      "projectDocumentation": [],
+      "certificateUrl": "",
+      "offerLetterUrl": "",
+      "studentReflection": {
+        "keyLearnings": [],
+        "challenges": [],
+        "achievements": [],
+        "futureGoals": ""
+      },
+      "submittedAt": "2025-12-08T18:16:19.857Z"
+    }
+  },
+  {
+    "ippId": "IPP-STU012-INT008-2025",
+    "studentId": "STU012",
+    "internshipId": "INT008",
+    "applicationId": "APP042",
+    "internshipDetails": {
+      "company": "TechCorp Solutions",
+      "role": "Data Science",
+      "domain": "computer science",
+      "startDate": "2025-12-22T00:00:00.000Z",
+      "endDate": "2025-12-08T22:02:25.590Z",
+      "duration": "2",
+      "location": "mumbai",
+      "workMode": "On-site"
+    },
+    "status": "verified",
+    "createdAt": "2025-12-08T22:02:25.590Z",
+    "updatedAt": "2025-12-08T22:02:25.590Z",
+    "companyMentorEvaluation": {
+      "mentorName": "Supervisor",
+      "mentorEmail": "supervisorr@college.edu",
+      "mentorDesignation": "swe1",
+      "technicalSkills": {
+        "domainKnowledge": 6,
+        "problemSolving": 6,
+        "codeQuality": 6,
+        "learningAgility": 7,
+        "toolProficiency": 7
+      },
+      "softSkills": {
+        "punctuality": 8,
+        "teamwork": 8,
+        "communication": 8,
+        "leadership": 8,
+        "adaptability": 8,
+        "workEthic": 8
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        "fast leaner"
+      ],
+      "areasForImprovement": [
+        ""
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Highly Recommended",
+      "detailedFeedback": "",
+      "submittedAt": "2025-12-08T22:25:35.245Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "supervisorr@college.edu",
+      "companyVerifiedAt": "2025-12-08T22:25:35.245Z"
+    },
+    "studentSubmission": {
+      "internshipReport": {
+        "fileUrl": "https://res.cloudinary.com/dftkeoquo/image/upload/v1765232860/campus_buddy/ipp_documents/IPP-STU012-INT008-2025/doc_1765232859110.jpg",
+        "fileName": "Internship Report"
+      },
+      "projectDocumentation": [],
+      "certificateUrl": "",
+      "offerLetterUrl": "",
+      "studentReflection": {
+        "keyLearnings": [
+          "c#"
+        ],
+        "challenges": [],
+        "achievements": [],
+        "futureGoals": ""
+      },
+      "submittedAt": "2025-12-08T22:27:51.020Z"
+    },
+    "summary": {
+      "overallRating": "7.20",
+      "performanceGrade": "C",
+      "employabilityScore": "72"
+    },
+    "certificateUrl": "/certificates/CERT-IPP-STU012-INT008-2025.pdf",
+    "certificateGeneratedAt": "2025-12-08T22:27:51.170Z"
+  },
+  {
+    "ippId": "IPP-STU002-INT102-2025",
+    "studentId": "STU002",
+    "internshipId": "INT102",
+    "applicationId": "APP047",
+    "internshipDetails": {
+      "company": "TechCorp Solutions",
+      "role": "Database",
+      "domain": "CSE",
+      "startDate": "2025-12-23",
+      "endDate": "2025-12-08T22:46:28.684Z",
+      "duration": "2",
+      "location": "pune",
+      "workMode": "On-site"
+    },
+    "status": "verified",
+    "createdAt": "2025-12-08T22:46:28.684Z",
+    "updatedAt": "2025-12-08T22:46:28.684Z",
+    "companyMentorEvaluation": {
+      "mentorName": "Rajesh Kumar",
+      "mentorEmail": "rajesh.kumar@college.edu",
+      "mentorDesignation": "DBMS",
+      "technicalSkills": {
+        "domainKnowledge": 9,
+        "problemSolving": 9,
+        "codeQuality": 9,
+        "learningAgility": 9,
+        "toolProficiency": 9
+      },
+      "softSkills": {
+        "punctuality": 9,
+        "teamwork": 9,
+        "communication": 9,
+        "leadership": 9,
+        "adaptability": 9,
+        "workEthic": 9
+      },
+      "overallPerformance": "Excellent",
+      "strengths": [
+        "fast learner"
+      ],
+      "areasForImprovement": [
+        "na"
+      ],
+      "keyAchievements": [
+        ""
+      ],
+      "wouldRehire": true,
+      "recommendationLevel": "Highly Recommended",
+      "detailedFeedback": "....",
+      "submittedAt": "2025-12-08T22:47:44.312Z"
+    },
+    "verification": {
+      "companyVerified": true,
+      "companyVerifiedBy": "rajesh.kumar@college.edu",
+      "companyVerifiedAt": "2025-12-08T22:47:44.312Z"
+    },
+    "studentSubmission": {
+      "internshipReport": {
+        "fileUrl": "https://res.cloudinary.com/dftkeoquo/image/upload/v1765234084/campus_buddy/ipp_documents/IPP-STU002-INT102-2025/doc_1765234083172.jpg",
+        "fileName": "Internship Report"
+      },
+      "projectDocumentation": [],
+      "certificateUrl": "",
+      "offerLetterUrl": "",
+      "studentReflection": {
+        "keyLearnings": [
+          "MySql"
+        ],
+        "challenges": [
+          "Query handling"
+        ],
+        "achievements": [
+          "database management"
+        ],
+        "futureGoals": "...."
+      },
+      "submittedAt": "2025-12-08T22:48:41.470Z"
+    },
+    "summary": {
+      "overallRating": "9.00",
+      "performanceGrade": "A",
+      "employabilityScore": "90"
+    },
+    "certificateUrl": "/certificates/CERT-IPP-STU002-INT102-2025.pdf",
+    "certificateGeneratedAt": "2025-12-08T22:48:41.583Z"
+  },
+  {
+    "ippId": "IPP-STU012-INT009-2025",
+    "studentId": "STU012",
+    "internshipId": "INT009",
+    "applicationId": "APP043",
+    "internshipDetails": {
+      "company": "TechCorp Solutions",
+      "role": "AI",
+      "domain": "computer science",
+      "startDate": "2025-12-24T00:00:00.000Z",
+      "endDate": "2025-12-09T02:00:18.712Z",
+      "duration": "2",
+      "location": "Delhi",
+      "workMode": "On-site"
+    },
+    "status": "pending_mentor_eval",
+    "createdAt": "2025-12-09T02:00:18.712Z",
+    "updatedAt": "2025-12-09T02:00:18.712Z"
+  }
+]

@@ -1,0 +1,107 @@
+{
+    "nodes": [
+        {
+            "parameters": {},
+            "name": "Start",
+            "type": "n8n-nodes-base.start",
+            "typeVersion": 1,
+            "position": [
+                250,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "updates": [
+                    "message"
+                ],
+                "additionalFields": {}
+            },
+            "name": "Telegram Trigger",
+            "type": "n8n-nodes-base.telegramTrigger",
+            "typeVersion": 1,
+            "position": [
+                450,
+                300
+            ],
+            "webhookId": "your-webhook-id",
+            "credentials": {
+                "telegramApi": {
+                    "id": "your-credential-id",
+                    "name": "Telegram account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "jsCode": "const text = $input.item.json.message.text;\nconst parts = text.trim().split(/\\s+/);\nconst name = parts[0];\nlet status = parts[1]?.toLowerCase();\n\nif (status === 'approved' || status === 'approve') status = 'offered';\nif (status === 'reject') status = 'rejected';\n\nreturn {\n  json: {\n    studentName: name,\n    status: status\n  }\n};"
+            },
+            "name": "Parse Message",
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 1,
+            "position": [
+                650,
+                300
+            ]
+        },
+        {
+            "parameters": {
+                "method": "POST",
+                "url": "http://host.docker.internal:5000/api/integrations/update-status",
+                "sendHeaders": true,
+                "headerParameters": {
+                    "parameters": [
+                        {
+                            "name": "x-api-key",
+                            "value": "n8n-secret-key-123"
+                        }
+                    ]
+                },
+                "options": {},
+                "bodyParameters": {
+                    "parameters": [
+                        {
+                            "name": "studentName",
+                            "value": "={{ $json.studentName }}"
+                        },
+                        {
+                            "name": "status",
+                            "value": "={{ $json.status }}"
+                        }
+                    ]
+                }
+            },
+            "name": "Update Status",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 1,
+            "position": [
+                850,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Telegram Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Parse Message",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Parse Message": {
+            "main": [
+                [
+                    {
+                        "node": "Update Status",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}

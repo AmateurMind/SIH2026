@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firebase Test</title>
+</head>
+<body>
+    <h1>Firebase Connection Test</h1>
+    <button id="testBtn">Test Firebase Connection</button>
+    <button id="createBtn">Create Test Interview</button>
+    <button id="listBtn">List Interviews</button>
+    <pre id="output"></pre>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getFirestore, collection, addDoc, getDocs, query, where } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+        const output = document.getElementById('output');
+        
+        // Replace with your actual Firebase config (use environment variables in production)
+        const firebaseConfig = {
+            apiKey: "YOUR_FIREBASE_API_KEY",
+            authDomain: "campusbuddy-83bdb.firebaseapp.com",
+            projectId: "campusbuddy-83bdb",
+            storageBucket: "campusbuddy-83bdb.firebasestorage.app",
+            messagingSenderId: "658768859849",
+            appId: "1:658768859849:web:4d560dfcd8c04813b42f69"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.getElementById('testBtn').onclick = async () => {
+            try {
+                output.textContent = 'Testing Firebase connection...\n';
+                const testCollection = collection(db, 'interviews');
+                output.textContent += 'Firebase connected successfully!\n';
+                output.textContent += 'Collection reference created: ' + testCollection.id + '\n';
+            } catch (error) {
+                output.textContent += 'Error: ' + error.message + '\n';
+                console.error(error);
+            }
+        };
+
+        document.getElementById('createBtn').onclick = async () => {
+            try {
+                output.textContent = 'Creating test interview...\n';
+                const testInterview = {
+                    position: 'Test Position',
+                    description: 'Test Description',
+                    experience: 5,
+                    techStack: 'React, Node.js',
+                    userId: 'test-user-123',
+                    questions: [],
+                    createdAt: new Date().toISOString()
+                };
+                
+                const docRef = await addDoc(collection(db, 'interviews'), testInterview);
+                output.textContent += 'Interview created with ID: ' + docRef.id + '\n';
+                output.textContent += JSON.stringify(testInterview, null, 2);
+            } catch (error) {
+                output.textContent += 'Error: ' + error.message + '\n';
+                console.error(error);
+            }
+        };
+
+        document.getElementById('listBtn').onclick = async () => {
+            try {
+                output.textContent = 'Fetching interviews...\n';
+                const q = query(collection(db, 'interviews'));
+                const querySnapshot = await getDocs(q);
+                
+                output.textContent += `Found ${querySnapshot.size} interviews:\n\n`;
+                querySnapshot.forEach((doc) => {
+                    output.textContent += `ID: ${doc.id}\n`;
+                    output.textContent += JSON.stringify(doc.data(), null, 2) + '\n\n';
+                });
+            } catch (error) {
+                output.textContent += 'Error: ' + error.message + '\n';
+                console.error(error);
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,1040 @@
+[
+  {
+    "id": "NOTIF_1763702430064_nml21qeo1",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-11-22T05:20:30.064Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Aarav Sharma for Mobile App Development Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Aarav Sharma (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Mobile App Development Intern\nCompany: DataTech Analytics\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP022",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT011",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-11-21T05:20:30.064Z",
+    "status": "sent",
+    "sentAt": "2025-11-22T06:01:28.324Z"
+  },
+  {
+    "id": "NOTIF_1763702430066_2ztdshmo6",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-11-24T05:20:30.064Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Aarav Sharma for Mobile App Development Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Aarav Sharma (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Mobile App Development Intern\nCompany: DataTech Analytics\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP022",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT011",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-11-21T05:20:30.066Z",
+    "status": "sent",
+    "sentAt": "2025-11-24T11:28:57.613Z"
+  },
+  {
+    "id": "NOTIF_1763702430066_eewzhiba9",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-11-26T05:20:30.064Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Aarav Sharma for Mobile App Development Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Aarav Sharma (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Mobile App Development Intern\nCompany: DataTech Analytics\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP022",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT011",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-11-21T05:20:30.066Z",
+    "status": "sent",
+    "sentAt": "2025-11-26T05:43:03.079Z"
+  },
+  {
+    "id": "NOTIF_1764310438943_v52umyb0w",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-11-29T06:13:58.942Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Data Analytics Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Data Analytics Intern\nCompany: DataTech Analytics\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP030",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT008",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-11-28T06:13:58.943Z",
+    "status": "sent",
+    "sentAt": "2025-11-29T06:14:23.890Z"
+  },
+  {
+    "id": "NOTIF_1764310438944_iiyt6f68l",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-01T06:13:58.942Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Data Analytics Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Data Analytics Intern\nCompany: DataTech Analytics\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP030",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT008",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-11-28T06:13:58.944Z",
+    "status": "sent",
+    "sentAt": "2025-12-01T06:14:36.239Z"
+  },
+  {
+    "id": "NOTIF_1764310438944_264yh9y20",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-03T06:13:58.942Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Data Analytics Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Data Analytics Intern\nCompany: DataTech Analytics\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP030",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT008",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-11-28T06:13:58.944Z",
+    "status": "sent",
+    "sentAt": "2025-12-05T14:10:45.211Z"
+  },
+  {
+    "id": "NOTIF_1764310765113_f2k5nmsov",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-11-29T06:19:25.113Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Mobile App Development Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Mobile App Development Intern\nCompany: DataTech Analytics\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP030",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT011",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-11-28T06:19:25.113Z",
+    "status": "sent",
+    "sentAt": "2025-11-29T06:20:23.709Z"
+  },
+  {
+    "id": "NOTIF_1764310765114_0qv050yhd",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-01T06:19:25.113Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Mobile App Development Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Mobile App Development Intern\nCompany: DataTech Analytics\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP030",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT011",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-11-28T06:19:25.114Z",
+    "status": "sent",
+    "sentAt": "2025-12-01T06:19:36.263Z"
+  },
+  {
+    "id": "NOTIF_1764310765114_r39hb1gmd",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-03T06:19:25.113Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Mobile App Development Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Mobile App Development Intern\nCompany: DataTech Analytics\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP030",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT011",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-11-28T06:19:25.114Z",
+    "status": "sent",
+    "sentAt": "2025-12-05T14:10:45.556Z"
+  },
+  {
+    "id": "NOTIF_1764388271758_mrr7r4otb",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-11-30T03:51:11.758Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for IoT Development Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: IoT Development Intern\nCompany: SmartTech Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP032",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT004",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-11-29T03:51:11.758Z",
+    "status": "sent",
+    "sentAt": "2025-11-30T07:34:01.184Z"
+  },
+  {
+    "id": "NOTIF_1764388271759_676x0ru8d",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-02T03:51:11.758Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for IoT Development Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: IoT Development Intern\nCompany: SmartTech Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP032",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT004",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-11-29T03:51:11.759Z",
+    "status": "sent",
+    "sentAt": "2025-12-02T07:42:26.766Z"
+  },
+  {
+    "id": "NOTIF_1764388271759_ruj3vxn2l",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-04T03:51:11.758Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for IoT Development Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: IoT Development Intern\nCompany: SmartTech Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP032",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT004",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-11-29T03:51:11.759Z",
+    "status": "sent",
+    "sentAt": "2025-12-05T14:10:45.957Z"
+  },
+  {
+    "id": "NOTIF_1765187999627_62j6ukl3a",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-09T09:59:59.627Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for React Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: React Intern\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP034",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT016",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-08T09:59:59.627Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765187999627_dftlajynv",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-11T09:59:59.627Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for React Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: React Intern\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP034",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT016",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-08T09:59:59.627Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765187999628_yntkh7kbi",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-13T09:59:59.627Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for React Intern",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: React Intern\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP034",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT016",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-08T09:59:59.628Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765189441719_s12rvsiad",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-09T10:24:01.719Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for ML",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: ML\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP035",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT017",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-08T10:24:01.719Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765189441719_jy8jtd9ng",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-11T10:24:01.719Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for ML",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: ML\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP035",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT017",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-08T10:24:01.719Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765189441720_ufsa97n8n",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-13T10:24:01.719Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for ML",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: ML\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP035",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT017",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-08T10:24:01.720Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765192117601_1o22xevw7",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-09T11:08:37.601Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Frontend",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Frontend\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP036",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT013",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-08T11:08:37.601Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765192117602_kfb3xr74p",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-11T11:08:37.601Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Frontend",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Frontend\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP036",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT013",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-08T11:08:37.602Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765192117603_ro23fudxg",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-13T11:08:37.601Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Frontend",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Frontend\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP036",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT013",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-08T11:08:37.603Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765196844513_a1o2jj64h",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-09T12:27:24.513Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Priya Patel for Hardware Engineering Intern",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Priya Patel (priya.patel@college.edu)\nDepartment: Information Technology\nCGPA: 8.8\n\nInternship: Hardware Engineering Intern\nCompany: SmartTech Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP038",
+      "mentorId": "MEN002",
+      "studentId": "STU002",
+      "internshipId": "INT009",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-08T12:27:24.513Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765196844514_2fvb5t8d8",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-11T12:27:24.513Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Priya Patel for Hardware Engineering Intern",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Priya Patel (priya.patel@college.edu)\nDepartment: Information Technology\nCGPA: 8.8\n\nInternship: Hardware Engineering Intern\nCompany: SmartTech Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP038",
+      "mentorId": "MEN002",
+      "studentId": "STU002",
+      "internshipId": "INT009",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-08T12:27:24.514Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765196844515_b9rr4ql4u",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-13T12:27:24.513Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Priya Patel for Hardware Engineering Intern",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Priya Patel (priya.patel@college.edu)\nDepartment: Information Technology\nCGPA: 8.8\n\nInternship: Hardware Engineering Intern\nCompany: SmartTech Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP038",
+      "mentorId": "MEN002",
+      "studentId": "STU002",
+      "internshipId": "INT009",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-08T12:27:24.515Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765214195924_su440uofj",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-09T17:16:35.924Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Embedded system ",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Embedded system \nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP040",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT002",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-08T17:16:35.924Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765214195925_hbsgqem4l",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-11T17:16:35.924Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Embedded system ",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Embedded system \nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP040",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT002",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-08T17:16:35.925Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765214195925_rd543n6u1",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-13T17:16:35.924Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Embedded system ",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Embedded system \nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP040",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT002",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-08T17:16:35.925Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765215589007_0ak3s38w4",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-09T17:39:49.007Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Data Science",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Data Science\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP041",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT003",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-08T17:39:49.007Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765215589008_8kgyp50ov",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-11T17:39:49.007Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Data Science",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Data Science\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP041",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT003",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-08T17:39:49.008Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765215589009_jqnmxcnts",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-13T17:39:49.007Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Data Science",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Data Science\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP041",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT003",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-08T17:39:49.009Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765215652221_796rhknfd",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-09T17:40:52.221Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for AI",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: AI\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP042",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT004",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-08T17:40:52.221Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765215652222_tlr7j4821",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-11T17:40:52.221Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for AI",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: AI\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP042",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT004",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-08T17:40:52.222Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765215652223_ndu7lgepl",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-13T17:40:52.221Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for AI",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: AI\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP042",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT004",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-08T17:40:52.223Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765216277762_gkpv8b63o",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-09T17:51:17.762Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for AI",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: AI\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP042",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT004",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-08T17:51:17.762Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765216277762_b3cg85jow",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-11T17:51:17.762Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for AI",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: AI\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP042",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT004",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-08T17:51:17.762Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765216277763_xq3x9i2xt",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-13T17:51:17.762Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for AI",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: AI\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP042",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT004",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-08T17:51:17.763Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765216579878_qpbztwep1",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-09T17:56:19.878Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for frontend",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: frontend\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP043",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT100",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-08T17:56:19.878Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765216579879_da0axew70",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-11T17:56:19.878Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for frontend",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: frontend\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP043",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT100",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-08T17:56:19.879Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765216579879_nof2nwi89",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-13T17:56:19.878Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for frontend",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: frontend\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP043",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT100",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-08T17:56:19.879Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765228942089_hi2oj8bwu",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-09T21:22:22.089Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Database",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Database\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP046",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT102",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-08T21:22:22.089Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765228942090_5uw7itzs0",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-11T21:22:22.089Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Database",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Database\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP046",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT102",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-08T21:22:22.090Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765228942091_ydcwlwgxr",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-13T21:22:22.089Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for Database",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: Database\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP046",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT102",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-08T21:22:22.091Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765233897194_q6c82tc7h",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-09T22:44:57.194Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Priya Patel for Database",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Priya Patel (priya.patel@college.edu)\nDepartment: Information Technology\nCGPA: 8.8\n\nInternship: Database\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP047",
+      "mentorId": "MEN002",
+      "studentId": "STU002",
+      "internshipId": "INT102",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-08T22:44:57.194Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765233897195_u8egdnpy6",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-11T22:44:57.194Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Priya Patel for Database",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Priya Patel (priya.patel@college.edu)\nDepartment: Information Technology\nCGPA: 8.8\n\nInternship: Database\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP047",
+      "mentorId": "MEN002",
+      "studentId": "STU002",
+      "internshipId": "INT102",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-08T22:44:57.195Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765233897196_s5l9bmhcq",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-13T22:44:57.194Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Priya Patel for Database",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Priya Patel (priya.patel@college.edu)\nDepartment: Information Technology\nCGPA: 8.8\n\nInternship: Database\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP047",
+      "mentorId": "MEN002",
+      "studentId": "STU002",
+      "internshipId": "INT102",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-08T22:44:57.196Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765265183482_iu4pnls5x",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-10T07:26:23.482Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for frontend",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: frontend\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP049",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT100",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-09T07:26:23.482Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765265183483_p5mp7pdke",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-12T07:26:23.482Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for frontend",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: frontend\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP049",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT100",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-09T07:26:23.483Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765265183484_iripysaam",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-14T07:26:23.482Z",
+    "recipientEmail": "rajesh.kumar@college.edu",
+    "recipientName": "Dr. Rajesh Kumar",
+    "subject": "📋 Pending Approval Required - Sumit for frontend",
+    "message": "Dear Dr. Rajesh Kumar,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (aarav.sharma@college.edu)\nDepartment: Computer Science\nCGPA: 8.5\n\nInternship: frontend\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP049",
+      "mentorId": "MEN001",
+      "studentId": "STU001",
+      "internshipId": "INT100",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-09T07:26:23.484Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765266254828_o5x3jemh1",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-10T07:44:14.828Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Sumit (Recovered) for Mobile App Development Intern",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Sumit (Recovered) (sumit.recovered@college.edu)\nDepartment: Computer Science\nCGPA: 8\n\nInternship: Mobile App Development Intern\nCompany: AppCraft Studios\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP050",
+      "mentorId": "MEN002",
+      "studentId": "STU012",
+      "internshipId": "INT003",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-09T07:44:14.828Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765266254829_p5xu5238u",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-12T07:44:14.828Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Sumit (Recovered) for Mobile App Development Intern",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Sumit (Recovered) (sumit.recovered@college.edu)\nDepartment: Computer Science\nCGPA: 8\n\nInternship: Mobile App Development Intern\nCompany: AppCraft Studios\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP050",
+      "mentorId": "MEN002",
+      "studentId": "STU012",
+      "internshipId": "INT003",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-09T07:44:14.829Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765266254830_t07d40t76",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-14T07:44:14.828Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Sumit (Recovered) for Mobile App Development Intern",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Sumit (Recovered) (sumit.recovered@college.edu)\nDepartment: Computer Science\nCGPA: 8\n\nInternship: Mobile App Development Intern\nCompany: AppCraft Studios\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP050",
+      "mentorId": "MEN002",
+      "studentId": "STU012",
+      "internshipId": "INT003",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-09T07:44:14.830Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765267057907_fgoii6pe5",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-10T07:57:37.906Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Priya Patel for backend",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Priya Patel (priya.patel@college.edu)\nDepartment: Information Technology\nCGPA: 8.8\n\nInternship: backend\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP050",
+      "mentorId": "MEN002",
+      "studentId": "STU002",
+      "internshipId": "INT101",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-09T07:57:37.907Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765267057909_xbebbrpn0",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-12T07:57:37.906Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Priya Patel for backend",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Priya Patel (priya.patel@college.edu)\nDepartment: Information Technology\nCGPA: 8.8\n\nInternship: backend\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP050",
+      "mentorId": "MEN002",
+      "studentId": "STU002",
+      "internshipId": "INT101",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-09T07:57:37.909Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765267057911_oy83srkow",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-14T07:57:37.906Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Priya Patel for backend",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Priya Patel (priya.patel@college.edu)\nDepartment: Information Technology\nCGPA: 8.8\n\nInternship: backend\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP050",
+      "mentorId": "MEN002",
+      "studentId": "STU002",
+      "internshipId": "INT101",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-09T07:57:37.911Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765267105262_74tmjuwdt",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-10T07:58:25.262Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Priya Patel for Data Science",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a gentle reminder that the following application requires your approval:\n\nStudent: Priya Patel (priya.patel@college.edu)\nDepartment: Information Technology\nCGPA: 8.8\n\nInternship: Data Science\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP051",
+      "mentorId": "MEN002",
+      "studentId": "STU002",
+      "internshipId": "INT008",
+      "reminderNumber": 1
+    },
+    "createdAt": "2025-12-09T07:58:25.262Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765267105264_rgfkbrbez",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-12T07:58:25.262Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Priya Patel for Data Science",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a important reminder that the following application requires your approval:\n\nStudent: Priya Patel (priya.patel@college.edu)\nDepartment: Information Technology\nCGPA: 8.8\n\nInternship: Data Science\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP051",
+      "mentorId": "MEN002",
+      "studentId": "STU002",
+      "internshipId": "INT008",
+      "reminderNumber": 2
+    },
+    "createdAt": "2025-12-09T07:58:25.264Z",
+    "status": "pending"
+  },
+  {
+    "id": "NOTIF_1765267105267_rjks97xci",
+    "type": "mentor_approval_reminder",
+    "scheduledTime": "2025-12-14T07:58:25.262Z",
+    "recipientEmail": "priyanka.singh@college.edu",
+    "recipientName": "Dr. Priyanka Singh",
+    "subject": "📋 Pending Approval Required - Priya Patel for Data Science",
+    "message": "Dear Dr. Priyanka Singh,\n\nThis is a urgent reminder that the following application requires your approval:\n\nStudent: Priya Patel (priya.patel@college.edu)\nDepartment: Information Technology\nCGPA: 8.8\n\nInternship: Data Science\nCompany: TechCorp Solutions\n\nThe student is waiting for your decision. Please log in to the mentor portal to approve or reject this application.\n\n⚠️ This application has been pending for over 5 days. Please take action soon.\n\nThank you,\nCampus Placement Cell",
+    "metadata": {
+      "applicationId": "APP051",
+      "mentorId": "MEN002",
+      "studentId": "STU002",
+      "internshipId": "INT008",
+      "reminderNumber": 3
+    },
+    "createdAt": "2025-12-09T07:58:25.267Z",
+    "status": "pending"
+  }
+]

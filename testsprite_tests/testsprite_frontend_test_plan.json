@@ -1,0 +1,574 @@
+[
+  {
+    "id": "TC001",
+    "title": "User Registration with Valid Details",
+    "description": "Verify that a new student can register successfully with valid input data and receives a 201 response with correct payload.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send POST request to /api/auth/register with valid name, email, password, department, semester, and CGPA"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 201 Created"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response body confirms successful registration"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "User Registration with Missing Required Fields",
+    "description": "Verify registration fails with 400 error when required fields are missing in the request payload.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send POST request to /api/auth/register with missing 'email' and 'password' fields"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 400 Bad Request"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify error message clearly indicates missing required fields"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "User Login with Correct Credentials",
+    "description": "Check that a registered user can authenticate with valid email and password and receives a JWT token with correct scopes.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send POST request to /api/auth/login with valid email and password"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 200 OK"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response contains a valid JWT token including role claims"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "User Login with Invalid Credentials",
+    "description": "Check that login fails with 401 Unauthorized error when incorrect credentials are provided.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send POST request to /api/auth/login with invalid email or password"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 401 Unauthorized"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify error message indicates invalid credentials"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Fetch Authenticated User Profile",
+    "description": "Verify that an authenticated user can fetch their profile data successfully with a valid JWT.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send GET request to /api/auth/profile with valid Authorization Bearer token"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 200 OK"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response payload contains correct user profile data"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Fetch Authenticated Profile with Invalid or Expired Token",
+    "description": "Ensure request to fetch profile with invalid or expired JWT returns 401 Unauthorized.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send GET request to /api/auth/profile with expired or malformed token"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 401 Unauthorized"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "CRUD Operations on Student Profile",
+    "description": "Validate that students can create, retrieve, update, and delete their profiles with appropriate authorization and validation.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send POST request to /api/students to create profile"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify profile created with 201 status"
+      },
+      {
+        "type": "action",
+        "description": "Send GET request to /api/students/{id} to retrieve profile"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify profile data matches created data"
+      },
+      {
+        "type": "action",
+        "description": "Send PUT request to /api/students/{id} to update profile fields with valid changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify updated profile data is returned and saved"
+      },
+      {
+        "type": "action",
+        "description": "Send DELETE request to /api/students/{id} as an admin user to delete the profile"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 204 No Content and student profile is deleted"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Resume Upload with Valid PDF",
+    "description": "Ensure students can upload resume files securely and server returns a 201 status on success.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send POST request to /api/resume with valid PDF file and authorization token"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 201 Created"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Resume Upload Rejects Invalid File Types",
+    "description": "Verify that uploading non-PDF file formats returns appropriate error code and message.",
+    "category": "error handling",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send POST request to /api/resume with a non-PDF file type"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 400 Bad Request"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Secure Resume PDF Streaming Access",
+    "description": "Verify that authorized users can stream the resume PDF securely, while unauthorized users receive 403 Forbidden.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send GET request to /api/resumes/{studentId} with valid Authorization token"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 200 OK and content-type is application/pdf"
+      },
+      {
+        "type": "action",
+        "description": "Send GET request to /api/resumes/{studentId} without valid Authorization or invalid token"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 403 Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Share Resume via Expiring Link",
+    "description": "Test if authenticated users can generate expiring shareable links for resumes successfully.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send POST request to /api/resume-management/share with valid JWT"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 200 OK and a valid expiring URL is returned"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Internship Creation by Authorized Roles",
+    "description": "Verify that only admin and recruiter roles can create internship postings successfully.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send POST request to /api/internships with valid internship data as admin user"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 201 Created"
+      },
+      {
+        "type": "action",
+        "description": "Send POST request to /api/internships as student role"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 403 Forbidden"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Internship Listing with Multi-Criteria Filters",
+    "description": "Verify that internships can be retrieved filtered by department and skills via query parameters.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send GET request to /api/internships?department=Computer Science&skills=JavaScript"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 200 OK and returned internships match filter criteria"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no internships outside specified department or skills are included"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Student Application Submission Validations",
+    "description": "Check application submission fails with 400 validation errors when required fields are missing or invalid.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send POST request to /api/applications with empty or incomplete cover letter"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 400 Bad Request"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify error message indicates invalid or missing fields"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Real-time Application Status Tracking",
+    "description": "Verify that students can retrieve their application status with correct visual indicators.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send GET request to /api/applications filtered by student with valid JWT"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify returned applications include current status fields with correct values"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify status visual indicators align with application data"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Mentor Application Review and Feedback Workflow",
+    "description": "Check mentors can bulk approve or reject applications with feedback, which updates student-visible status correctly.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send PUT requests to /api/applications/{id}/status to update application status with feedback as mentor"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 200 OK"
+      },
+      {
+        "type": "action",
+        "description": "Student fetches application status to confirm mentor feedback is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify feedback text and status updates are reflected correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Admin Internship Management Operations",
+    "description": "Validate admin users can create, update, and delete internships with authorization enforced.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send POST to /api/internships as admin to create internship"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify internship creation returns 201 Created"
+      },
+      {
+        "type": "action",
+        "description": "Send PUT to /api/internships/{id} as admin to update internship details"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify update status is 200 OK"
+      },
+      {
+        "type": "action",
+        "description": "Send DELETE to /api/internships/{id} as admin to delete internship"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 204 No Content"
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "Recruiter Posting and Candidate Filtering",
+    "description": "Verify recruiters can manage their internship postings and filter candidates as per criteria securely.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send GET request to /api/internships/my-postings with recruiter JWT"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify postings belong only to authenticated recruiter"
+      },
+      {
+        "type": "action",
+        "description": "Send candidate filter requests with skill and CGPA filters"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify filtered candidate lists returned correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "Analytics Data Access by Role",
+    "description": "Ensure analytics API endpoints return correct data per user role and forbid unauthorized access.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send GET request to /api/analytics/dashboard as admin"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify 200 OK with dashboard analytics data is returned"
+      },
+      {
+        "type": "action",
+        "description": "Send GET request to /api/analytics/student/{studentId} as the same student"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify 200 OK with student-specific metrics"
+      },
+      {
+        "type": "action",
+        "description": "Send GET request to /api/analytics/student/{studentId} as unauthorized user"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify 403 Forbidden is returned"
+      }
+    ]
+  },
+  {
+    "id": "TC020",
+    "title": "Notification Scheduling and Dispatch",
+    "description": "Test that authenticated users can schedule notifications, list them, and cancel them, and that background dispatch functions as expected.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send POST request to /api/notifications to schedule a notification with valid data"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response is 201 Created and notification is scheduled"
+      },
+      {
+        "type": "action",
+        "description": "Send GET request to /api/notifications to list all scheduled notifications"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify returned notifications include the newly scheduled one"
+      },
+      {
+        "type": "action",
+        "description": "Send POST request to /api/notifications/{id}/cancel to cancel a scheduled notification"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response is 200 OK and notification is cancelled"
+      }
+    ]
+  },
+  {
+    "id": "TC021",
+    "title": "Frontend Role-Based Route Protection and Responsiveness",
+    "description": "Verify the React frontend displays appropriate dashboards based on user role and protects routes accordingly with responsive design and accessibility standards.",
+    "category": "ui",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Login as student, mentor, admin, and recruiter roles respectively"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify visible dashboard elements match user role permissions"
+      },
+      {
+        "type": "action",
+        "description": "Attempt to access protected routes without login"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify user is redirected to login page"
+      },
+      {
+        "type": "action",
+        "description": "Resize browser window and test UI layout on different screen sizes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify UI is responsive and accessible (ARIA roles, keyboard navigation)"
+      }
+    ]
+  },
+  {
+    "id": "TC022",
+    "title": "JWT Token Verification Middleware",
+    "description": "Ensure the authentication middleware correctly verifies JWT tokens on protected routes and rejects invalid or expired tokens.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send request to a protected API endpoint with a valid JWT"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify request is authorized and response is successful"
+      },
+      {
+        "type": "action",
+        "description": "Send request with expired or malformed JWT token"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status is 401 Unauthorized"
+      }
+    ]
+  },
+  {
+    "id": "TC023",
+    "title": "Concurrency Handling on Application Status Updates",
+    "description": "Test the system handles simultaneous status update requests on the same application without inconsistent states.",
+    "category": "error handling",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Simultaneously send multiple PUT requests to /api/applications/{id}/status with different status updates"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify system processes requests serially or manages concurrency without corrupting application state"
+      }
+    ]
+  },
+  {
+    "id": "TC024",
+    "title": "API Error Codes and Messages Compliance",
+    "description": "Verify all critical API endpoints return proper HTTP status codes and detailed error messages as per specification on failure scenarios.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Invoke endpoints with invalid data or unauthorized access attempts"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify appropriate HTTP status codes (400, 401, 403, 404) returned"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify error messages are informative and conform to API documentation"
+      }
+    ]
+  }
+]

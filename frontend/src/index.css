@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    /* #F8F9FC */
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    /* Blue 600 */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Nunito', system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a,
+  button,
+  [role="button"],
+  input[type="button"],
+  input[type="submit"] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 text-white px-4 py-2 md:px-5 md:py-2.5 rounded-xl font-medium text-sm sm:text-base hover:bg-primary-700 active:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-secondary-900 border border-secondary-200 px-4 py-2 md:px-5 md:py-2.5 rounded-xl font-medium text-sm sm:text-base hover:bg-secondary-50 active:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm;
+  }
+
+  .btn-outline {
+    @apply border border-primary-600 text-primary-600 px-4 py-2 md:px-5 md:py-2.5 rounded-xl font-medium text-sm sm:text-base hover:bg-primary-50 active:bg-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 text-white px-4 py-2 md:px-5 md:py-2.5 rounded-xl font-medium text-sm sm:text-base hover:bg-red-700 active:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-success {
+    @apply bg-green-600 text-white px-4 py-2 md:px-5 md:py-2.5 rounded-xl font-medium text-sm sm:text-base hover:bg-green-700 active:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-disabled {
+    @apply bg-gray-100 text-gray-400 px-4 py-2 md:px-5 md:py-2.5 rounded-xl font-medium text-sm sm:text-base cursor-not-allowed;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 md:py-2.5 text-sm sm:text-base border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-soft border border-gray-100 hover:shadow-soft-hover transition-all duration-300;
+  }
+
+  .navbar-item {
+    @apply text-gray-600 hover:text-primary-600 active:text-primary-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-gray-50 active:bg-gray-100;
+  }
+
+  .navbar-item-active {
+    @apply text-primary-600 bg-primary-50 px-3 py-2 rounded-lg text-sm font-medium;
+  }
+
+  /* Ensure comfortable tap targets on touch devices */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Modern Card Style (Replacing Glassmorphism) */
+  .glass-panel {
+    @apply bg-white rounded-2xl shadow-soft border border-gray-100;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-panel-lite {
+    @apply bg-white rounded-2xl shadow-soft border border-gray-100;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Hover effect for cards */
+  .glass-hover {
+    @apply transition-all duration-300;
+  }
+
+  .glass-hover:hover {
+    @apply transform -translate-y-1 shadow-soft-hover;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Fix toast position on mobile to avoid bottom navigation bar */
+@media (max-width: 768px) {
+
+  /* Target react-hot-toast container - it contains toast notifications */
+  body>div[style*="position: fixed"][style*="bottom"]:has(div[role="status"][aria-live="polite"]) {
+    bottom: 80px !important;
+  }
+
+  /* Fallback: target any fixed div at bottom that contains status role */
+  body>div[style*="position: fixed"]:has([role="status"]) {
+    bottom: 80px !important;
+  }
+}

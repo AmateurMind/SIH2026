@@ -1,0 +1,52 @@
+[
+  {
+    "id": "TC001",
+    "title": "register student api validation",
+    "description": "Test the /api/auth/register endpoint to ensure student registration succeeds with valid data and returns 201 status, and returns 400 status on validation errors."
+  },
+  {
+    "id": "TC002",
+    "title": "user login and jwt issuance",
+    "description": "Test the /api/auth/login endpoint to verify user authentication with valid credentials returns 200 and JWT token, and invalid credentials return 401."
+  },
+  {
+    "id": "TC003",
+    "title": "fetch authenticated user profile",
+    "description": "Test the /api/auth/profile endpoint to ensure it returns the authenticated user's profile data with 200 status and returns 401 if unauthorized."
+  },
+  {
+    "id": "TC004",
+    "title": "verify jwt token validity",
+    "description": "Test the /api/auth/verify endpoint to confirm it returns 200 for valid JWT tokens and 401 for invalid or expired tokens."
+  },
+  {
+    "id": "TC005",
+    "title": "student profile creation and listing",
+    "description": "Test the /api/students POST endpoint for creating student profiles with proper authorization and validation, and GET endpoint for listing students with role-based access returning 200."
+  },
+  {
+    "id": "TC006",
+    "title": "student profile update and deletion",
+    "description": "Test the /api/students/{id} PUT endpoint to update student profiles and DELETE endpoint to remove students by admin, verifying correct status codes and authorization enforcement."
+  },
+  {
+    "id": "TC007",
+    "title": "secure resume upload and streaming",
+    "description": "Test the /api/resume POST endpoint for secure resume upload by authenticated users returning 201, and /api/resumes/{studentId} GET endpoint for streaming PDF resumes with access control returning 200 or 403."
+  },
+  {
+    "id": "TC008",
+    "title": "internship creation and filtering",
+    "description": "Test the /api/internships POST endpoint for creating internships by authorized admin/recruiter users returning 201, and GET endpoint for listing internships with query filters returning 200."
+  },
+  {
+    "id": "TC009",
+    "title": "application submission and status update",
+    "description": "Test the /api/applications POST endpoint for submitting internship applications with validation returning 201 or 400, and PUT endpoint /api/applications/{id}/status for updating application status with authorization returning 200 or 403."
+  },
+  {
+    "id": "TC010",
+    "title": "notification scheduling and cancellation",
+    "description": "Test the /api/notifications POST endpoint for scheduling notifications returning 201, GET endpoint for listing scheduled notifications returning 200, and POST /api/notifications/{id}/cancel for cancelling notifications returning 200 or 404."
+  }
+]

@@ -1,0 +1,12 @@
+- [ ] Analyze current resume builder implementation and flow
+- [ ] Modify steps array to reorder flow: Personal → Education → Skills → Projects → Achievements → Summary
+- [ ] Update step descriptions and indicators for new flow
+- [ ] Enhance AI summary generation to leverage skills data
+- [ ] Improve AI prompt engineering with skills as primary input
+- [ ] Update step content rendering logic for new order
+- [ ] Ensure smooth navigation between reordered steps
+- [ ] Test data persistence across new flow
+- [ ] Validate save draft functionality with new flow
+- [ ] Test complete user flow from start to finish
+- [ ] Verify PDF generation works with new flow
+- [ ] Perform final testing and optimization

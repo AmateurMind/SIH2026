@@ -1,0 +1,75 @@
+name: Test Suite
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      mongodb:
+        image: mongo:5.0
+        ports:
+          - 27017:27017
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: backend/package-lock.json
+
+    - name: Install backend dependencies
+      run: |
+        cd backend
+        npm ci
+
+    - name: Create test environment file
+      run: |
+        cd backend
+        cp .env .env.test
+        echo "NODE_ENV=test" >> .env.test
+        echo "MONGODB_URI=mongodb://localhost:27017/campus-placement-test" >> .env.test
+
+    - name: Wait for MongoDB
+      run: |
+        until nc -z localhost 27017; do
+          echo "Waiting for MongoDB..."
+          sleep 2
+        done
+        echo "MongoDB is ready!"
+
+    - name: Run TestSprite tests
+      run: |
+        cd backend
+        npm test
+      env:
+        NODE_ENV: test
+        JWT_SECRET: test-secret-key-campus-placement
+        MONGODB_URI: mongodb://localhost:27017/campus-placement-test
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: test-results
+        path: backend/test-results/
+
+    - name: Generate test report
+      if: always()
+      run: |
+        cd backend
+        if [ -f test-results/results.json ]; then
+          echo "## Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`json" >> $GITHUB_STEP_SUMMARY
+          cat test-results/results.json | jq '.summary' >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+        fi

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "std-evt-1765233428826",
+    "type": "student_personal_event",
+    "title": "solve paper",
+    "description": "....",
+    "date": "2025-12-10T18:30:00.000Z",
+    "time": "09:00",
+    "location": "library",
+    "company": "Personal Event",
+    "studentId": "STU001",
+    "createdAt": "2025-12-08T22:37:08.826Z"
+  }
+]

@@ -1,0 +1,30 @@
+﻿node : (node:19036) [MONGODB DRIVER] 
+Warning: useNewUrlParser is a deprecated 
+option: useNewUrlParser has no effect 
+since Node.js Driver version 4.0.0 and 
+will be removed in the next major version
+At line:1 char:1
++ node check_student_ids.js 2>&1 | 
+Out-File -Encoding utf8 student_ids. ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: ((node:19036) [M...t major version  
+  :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 
+(Use `node --trace-warnings ...` to show 
+where the warning was created)
+(node:19036) [MONGODB DRIVER] Warning: 
+useUnifiedTopology is a deprecated 
+option: useUnifiedTopology has no effect 
+since Node.js Driver version 4.0.0 and 
+will be removed in the next major version
+Connected to MongoDB
+Found 6 students:
+  - Aarav Sharma (email: aarav.sharma@college.edu, id: STU001, _id: 68da3e3f0e248ab9eaa6f4cd)
+  - Priya Patel (email: priya.patel@college.edu, id: STU002, _id: 68da3e3f0e248ab9eaa6f4cf)
+  - Rohit Kumar (email: rohit.kumar@college.edu, id: STU003, _id: 68da3e3f0e248ab9eaa6f4d1)
+  - Sneha Reddy (email: sneha.reddy@college.edu, id: STU004, _id: 68da3e3f0e248ab9eaa6f4d3)
+  - Arjun Gupta (email: arjun.gupta@college.edu, id: STU005, _id: 68da3e3f0e248ab9eaa6f4d5)
+  - md suhail (email: suhail17mohammad@gmail.com, id: STU006, _id: 691b33d8661409276ba4a853)

@@ -1,0 +1,38 @@
+# Test results and coverage
+test-results/
+coverage/
+*.log
+
+# Environment files
+.env
+.env.local
+.env.test
+.env.production
+.env.development
+.env.sample
+
+# Node modules
+node_modules/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build files
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
