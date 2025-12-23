@@ -73,7 +73,7 @@ module.exports = {
         'soft-hover': '0 20px 40px -10px rgba(0,0,0,0.12)',
       },
       fontFamily: {
-        sans: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['Nunito', 'Manrope', 'Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

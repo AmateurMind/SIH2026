@@ -101,7 +101,7 @@ const AdminDashboard = () => {
         { label: 'Total Students', value: statsData.totalStudents.toLocaleString(), change: '+12%', icon: Users, color: 'text-blue-600', bg: 'bg-blue-50' },
         { label: 'Recruiters', value: statsData.recruiters.toLocaleString(), change: '+4%', icon: Building2, color: 'text-purple-600', bg: 'bg-purple-50' },
         { label: 'Active Internships', value: statsData.activeInternships.toLocaleString(), change: '+8%', icon: Briefcase, color: 'text-rose-600', bg: 'bg-rose-50' },
-        { label: 'Placement Rate', value: `${statsData.placementRate}%`, change: '+5%', icon: FileCheck, color: 'text-emerald-600', bg: 'bg-emerald-50' },
+        { label: 'Career Success Rate', value: `${statsData.placementRate}%`, change: 'Flex', icon: FileCheck, color: 'text-emerald-600', bg: 'bg-emerald-50' },
     ];
 
     const timeAgo = (date) => {

@@ -5,7 +5,7 @@ const { authorize } = require('../middleware/auth');
 const requireHybridAuth = require('../middleware/clerkHybridAuth');
 const router = express.Router();
 
-const { Application, Internship, Student } = require('../models');
+const { Application, Internship, Student, InternshipPerformancePassport } = require('../models');
 
 // Faculty events and Student events are still JSON-based for now (as per user scope not mentioning them)
 // But we should protect against file read errors more robustly or consider migrating them too.
@@ -98,7 +98,7 @@ router.get('/events', requireHybridAuth, async (req, res) => {
         events.push({
           id: `start-${app.id}`,
           type: 'internship_start',
-          title: `Starts: ${internshipTitle}`,
+          title: req.user.role === 'student' ? `Starts: ${internshipTitle}` : `${studentName} starts: ${internshipTitle}`,
           company: companyName,
           date: internship.startDate,
           time: '09:00 AM',
@@ -129,7 +129,7 @@ router.get('/events', requireHybridAuth, async (req, res) => {
           events.push({
             id: `end-${app.id}`,
             type: 'internship_end',
-            title: `Ends: ${internshipTitle}`,
+            title: req.user.role === 'student' ? `Ends: ${internshipTitle}` : `${studentName} ends: ${internshipTitle}`,
             company: companyName,
             date: endDateObj.toISOString(),
             time: '05:00 PM',
@@ -138,6 +138,28 @@ router.get('/events', requireHybridAuth, async (req, res) => {
           });
         }
       }
+    });
+
+    // 3. Add IPP Verification Events
+    const ipps = await InternshipPerformancePassport.find({
+      'verification.finalStatus': 'verified'
+    }).lean();
+
+    ipps.forEach(ipp => {
+      const student = students.find(s => s.id === ipp.studentId);
+      const studentName = student ? student.name : 'Unknown Student';
+      const eventDate = ipp.verification.facultyApprovedAt || ipp.updatedAt;
+
+      events.push({
+        id: `ipp-${ipp._id}`,
+        type: 'ipp_verified',
+        title: req.user.role === 'student' ? 'Passport Verified' : `${studentName} - Passport Verified`,
+        company: ipp.internshipDetails?.company || 'Unknown',
+        date: eventDate,
+        time: '12:00 PM',
+        location: 'Placement Portal',
+        ippId: ipp._id
+      });
     });
 
     // Add Faculty Events
