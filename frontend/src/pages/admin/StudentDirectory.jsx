@@ -63,28 +63,7 @@ const StudentDirectory = () => {
             const response = await axios.get('/students/directory', { params });
 
             if (response.data.success) {
-                const studentsData = response.data.students;
-
-                // Fetch IPP counts for each student
-                const studentsWithIPPs = await Promise.all(
-                    studentsData.map(async (student) => {
-                        try {
-                            const ippResponse = await ippService.getStudentIPPs(student.id || student._id);
-                            return {
-                                ...student,
-                                ippCount: ippResponse.count || ippResponse.data?.length || 0
-                            };
-                        } catch (error) {
-                            console.error(`Error fetching IPPs for student ${student.id}:`, error);
-                            return {
-                                ...student,
-                                ippCount: 0
-                            };
-                        }
-                    })
-                );
-
-                setStudents(studentsWithIPPs);
+                setStudents(response.data.students);
                 setPagination(prev => ({
                     ...prev,
                     total: response.data.pagination.total,

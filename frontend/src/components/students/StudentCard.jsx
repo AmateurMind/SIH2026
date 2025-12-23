@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, FileText, Eye, User, GraduationCap, ChevronRight, Briefcase } from 'lucide-react';
+import { Mail, Phone, MapPin, FileText, Eye, User, GraduationCap, ChevronRight, Briefcase, Star } from 'lucide-react';
 
 const StudentCard = ({ student, onViewProfile, onViewResumes, onViewIPPs, viewMode = 'grid', actions }) => {
     const {
@@ -11,7 +11,8 @@ const StudentCard = ({ student, onViewProfile, onViewResumes, onViewIPPs, viewMo
         profilePicture,
         skills = [],
         resumeCount = 0,
-        ippCount = 0
+        ippCount = 0,
+        averageRating = 0
     } = student;
 
     // --- GRID VIEW ---
@@ -62,10 +63,10 @@ const StudentCard = ({ student, onViewProfile, onViewResumes, onViewIPPs, viewMo
 
                     {/* Contact & Stats Mini-Grid */}
                     <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-6">
-                        <div className="bg-gray-50 rounded-lg p-2 sm:p-2.5 flex flex-col items-center justify-center text-center border border-gray-100">
-                            <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-500 mb-1" />
+                        <div className="bg-gray-50 rounded-lg p-2 sm:p-2.5 flex flex-col items-center justify-center text-center border border-gray-100 group/rating transition-colors hover:bg-purple-50">
+                            <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-500 mb-1 fill-purple-500" />
                             <span className="text-[10px] sm:text-xs font-semibold text-gray-700">
-                                {resumeCount} Resume{resumeCount !== 1 && 's'}
+                                {averageRating || 'N/A'} Rating
                             </span>
                         </div>
                         <div className="bg-gray-50 rounded-lg p-2 sm:p-2.5 flex flex-col items-center justify-center text-center border border-gray-100">
@@ -227,14 +228,10 @@ const StudentCard = ({ student, onViewProfile, onViewResumes, onViewIPPs, viewMo
                     >
                         View
                     </button>
-                    {resumeCount > 0 && (
-                        <button
-                            onClick={() => onViewResumes(student)}
-                            className="px-3 sm:px-4 py-1 text-[10px] sm:text-xs font-medium text-gray-500 hover:text-gray-900 transition-colors"
-                        >
-                            {resumeCount} Resume{resumeCount !== 1 && 's'}
-                        </button>
-                    )}
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-purple-600 mb-1">
+                        <Star className="w-3 h-3 fill-purple-600" />
+                        <span>{averageRating || 'N/A'}</span>
+                    </div>
                     {ippCount > 0 && onViewIPPs && (
                         <button
                             onClick={() => onViewIPPs(student)}

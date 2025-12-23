@@ -18,6 +18,7 @@ const StudentProfile = () => {
     const navigate = useNavigate();
     const [student, setStudent] = useState(null);
     const [resumes, setResumes] = useState([]);
+    const [stats, setStats] = useState(null);
 
     const [loading, setLoading] = useState(true);
     const [showPdfViewer, setShowPdfViewer] = useState(false);
@@ -28,7 +29,17 @@ const StudentProfile = () => {
     useEffect(() => {
         fetchStudentProfile();
         fetchStudentResumes();
+        fetchStudentStats();
     }, [id]);
+
+    const fetchStudentStats = async () => {
+        try {
+            const response = await axios.get(`/analytics/student/${id}`);
+            setStats(response.data);
+        } catch (error) {
+            console.error('Fetch stats error:', error);
+        }
+    };
 
     const fetchStudentProfile = async () => {
         try {
@@ -160,9 +171,9 @@ const StudentProfile = () => {
                                 <div className="text-2xl font-bold text-blue-600">{student.cgpa || 'N/A'}</div>
                                 <div className="text-xs text-gray-600">CGPA</div>
                             </div>
-                            <div className="bg-purple-50 rounded-lg p-4 text-center min-w-[120px]">
-                                <div className="text-2xl font-bold text-purple-600">{resumes.length}</div>
-                                <div className="text-xs text-gray-600">Resumes</div>
+                            <div className="bg-purple-50 rounded-lg p-4 text-center min-w-[120px] transition-all hover:bg-purple-100">
+                                <div className="text-2xl font-bold text-purple-600">{stats?.averageRating ?? 'N/A'}</div>
+                                <div className="text-xs text-gray-600">Performance Rating</div>
                             </div>
                         </div>
                     </div>

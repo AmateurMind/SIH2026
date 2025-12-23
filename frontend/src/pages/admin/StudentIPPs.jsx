@@ -119,71 +119,73 @@ const StudentIPPs = () => {
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                        {ipps.map((ipp) => (
-                            <div
-                                key={ipp.ippId}
-                                className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all p-4 sm:p-6"
-                            >
-                                <div className="flex items-start justify-between mb-4">
-                                    <div className="flex-1">
-                                        <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
-                                            {ipp.internshipDetails?.role || 'Internship Role'}
-                                        </h3>
-                                        <p className="text-sm text-gray-600 flex items-center gap-1">
-                                            <Building className="w-4 h-4" />
-                                            {ipp.internshipDetails?.company || 'Company'}
-                                        </p>
-                                    </div>
-                                    <IPPStatusBadge status={ipp.status || 'pending'} />
-                                </div>
-
-                                <div className="space-y-2 mb-4">
-                                    {ipp.internshipDetails?.startDate && (
-                                        <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                                            <Calendar className="w-4 h-4" />
-                                            <span>
-                                                {new Date(ipp.internshipDetails.startDate).toLocaleDateString()} - {' '}
-                                                {ipp.internshipDetails.endDate
-                                                    ? new Date(ipp.internshipDetails.endDate).toLocaleDateString()
-                                                    : 'Ongoing'}
-                                            </span>
-                                        </div>
-                                    )}
-                                    {ipp.internshipDetails?.location && (
-                                        <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                                            <FileText className="w-4 h-4" />
-                                            <span>{ipp.internshipDetails.location}</span>
-                                        </div>
-                                    )}
-                                    {ipp.summary?.performanceGrade && (
-                                        <div className="inline-flex items-center px-2 py-1 bg-amber-50 text-amber-700 rounded text-xs font-semibold">
-                                            Grade: {ipp.summary.performanceGrade}
-                                        </div>
-                                    )}
-                                </div>
-
-                                <button
-                                    type="button"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        e.stopPropagation();
-                                        console.log('Button clicked, IPP:', ipp);
-                                        const ippId = ipp.ippId || ipp._id || ipp.id;
-                                        console.log('Extracted IPP ID:', ippId);
-                                        if (ippId) {
-                                            handleViewIPP(ippId);
-                                        } else {
-                                            toast.error('IPP ID not found');
-                                            console.error('IPP object:', ipp);
-                                        }
-                                    }}
-                                    className="w-full flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 sm:py-2.5 px-4 rounded-lg transition-colors text-sm sm:text-base"
+                        {ipps
+                            .filter(ipp => ['verified', 'published'].includes(ipp.status))
+                            .map((ipp) => (
+                                <div
+                                    key={ipp.ippId}
+                                    className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all p-4 sm:p-6"
                                 >
-                                    View Passport
-                                    <ExternalLink className="w-4 h-4" />
-                                </button>
-                            </div>
-                        ))}
+                                    <div className="flex items-start justify-between mb-4">
+                                        <div className="flex-1">
+                                            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
+                                                {ipp.internshipDetails?.role || 'Internship Role'}
+                                            </h3>
+                                            <p className="text-sm text-gray-600 flex items-center gap-1">
+                                                <Building className="w-4 h-4" />
+                                                {ipp.internshipDetails?.company || 'Company'}
+                                            </p>
+                                        </div>
+                                        <IPPStatusBadge status={ipp.status || 'pending'} />
+                                    </div>
+
+                                    <div className="space-y-2 mb-4">
+                                        {ipp.internshipDetails?.startDate && (
+                                            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
+                                                <Calendar className="w-4 h-4" />
+                                                <span>
+                                                    {new Date(ipp.internshipDetails.startDate).toLocaleDateString()} - {' '}
+                                                    {ipp.internshipDetails.endDate
+                                                        ? new Date(ipp.internshipDetails.endDate).toLocaleDateString()
+                                                        : 'Ongoing'}
+                                                </span>
+                                            </div>
+                                        )}
+                                        {ipp.internshipDetails?.location && (
+                                            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
+                                                <FileText className="w-4 h-4" />
+                                                <span>{ipp.internshipDetails.location}</span>
+                                            </div>
+                                        )}
+                                        {ipp.summary?.performanceGrade && (
+                                            <div className="inline-flex items-center px-2 py-1 bg-amber-50 text-amber-700 rounded text-xs font-semibold">
+                                                Grade: {ipp.summary.performanceGrade}
+                                            </div>
+                                        )}
+                                    </div>
+
+                                    <button
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            console.log('Button clicked, IPP:', ipp);
+                                            const ippId = ipp.ippId || ipp._id || ipp.id;
+                                            console.log('Extracted IPP ID:', ippId);
+                                            if (ippId) {
+                                                handleViewIPP(ippId);
+                                            } else {
+                                                toast.error('IPP ID not found');
+                                                console.error('IPP object:', ipp);
+                                            }
+                                        }}
+                                        className="w-full flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 sm:py-2.5 px-4 rounded-lg transition-colors text-sm sm:text-base"
+                                    >
+                                        View Passport
+                                        <ExternalLink className="w-4 h-4" />
+                                    </button>
+                                </div>
+                            ))}
                     </div>
                 )}
             </div>
