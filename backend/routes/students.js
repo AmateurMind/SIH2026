@@ -3,7 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const { authorize, verifyStudentAccess } = require('../middleware/auth');
 const requireHybridAuth = require('../middleware/clerkHybridAuth');
-const { Student, Application, Internship } = require('../models');
+const { Student, Application, Internship, Feedback, InternshipPerformancePassport, Resume } = require('../models');
 const { uploadToCloudinary, deleteFromCloudinary, extractPublicId } = require('../utils/cloudinary');
 const router = express.Router();
 
@@ -501,32 +501,37 @@ router.get('/directory', requireHybridAuth, authorize('admin', 'recruiter', 'men
       .limit(parseInt(limit))
       .lean();
 
-    // Get resume count for each student
-    const { Resume } = require('../models');
+    // Get resume count, rating, and ipp count for each student
     const enrichedStudents = await Promise.all(students.map(async (student) => {
-      const resumeCount = await Resume.countDocuments({ userId: student._id });
-      const latestResume = await Resume.findOne({ userId: student._id })
-        .sort({ lastModified: -1 })
-        .select('_id title')
-        .lean();
+      const [resumes, studentIPPs, feedback] = await Promise.all([
+        Resume.find({ userId: student._id }).select('_id title lastModified').lean(),
+        InternshipPerformancePassport.find({
+          studentId: student.id,
+          status: { $in: ['verified', 'published'] }
+        }).select('summary ippId status').lean(),
+        Feedback.find({ studentId: student.id }).select('rating').lean()
+      ]);
+
+      // Calculate performance rating
+      let ratings = [];
+      feedback.forEach(f => { if (f.rating) ratings.push(f.rating * 2); });
+      studentIPPs.forEach(ipp => { if (ipp.summary?.overallRating) ratings.push(ipp.summary.overallRating); });
+
+      const averageRating = ratings.length > 0
+        ? Math.round((ratings.reduce((a, b) => a + b, 0) / ratings.length) * 10) / 10
+        : 0;
+
+      const latestResume = resumes.length > 0
+        ? resumes.sort((a, b) => b.lastModified - a.lastModified)[0]
+        : null;
 
       return {
-        _id: student._id,
-        id: student.id,
-        name: student.name,
-        email: student.email,
-        phone: student.phone,
-        department: student.department,
-        year: student.year,
-        semester: student.semester,
-        cgpa: student.cgpa,
-        profilePicture: student.profilePicture,
-        skills: student.skills || [],
-        resumeCount,
+        ...student,
+        resumeCount: resumes.length,
+        ippCount: studentIPPs.length,
+        averageRating,
         latestResumeId: latestResume?._id || null,
-        latestResumeTitle: latestResume?.title || null,
-        createdAt: student.createdAt,
-        updatedAt: student.updatedAt
+        latestResumeTitle: latestResume?.title || null
       };
     }));
 

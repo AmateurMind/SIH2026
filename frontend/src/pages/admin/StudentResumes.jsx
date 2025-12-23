@@ -2,18 +2,29 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { ArrowLeft, FileText, Loader2, Download, Eye, Calendar, Palette } from 'lucide-react';
+import { ArrowLeft, FileText, Loader2, Download, Eye, Calendar, Palette, Star } from 'lucide-react';
 
 const StudentResumes = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [student, setStudent] = useState(null);
     const [resumes, setResumes] = useState([]);
+    const [stats, setStats] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetchStudentResumes();
+        fetchStudentStats();
     }, [id]);
+
+    const fetchStudentStats = async () => {
+        try {
+            const response = await axios.get(`/analytics/student/${id}`);
+            setStats(response.data);
+        } catch (error) {
+            console.error('Fetch stats error:', error);
+        }
+    };
 
     const fetchStudentResumes = async () => {
         try {
@@ -72,9 +83,12 @@ const StudentResumes = () => {
                                     {student?.department} • {student?.email}
                                 </p>
                             </div>
-                            <div className="bg-purple-50 rounded-lg p-4 text-center min-w-[100px]">
-                                <div className="text-3xl font-bold text-purple-600">{resumes.length}</div>
-                                <div className="text-xs text-gray-600">Total Resumes</div>
+                            <div className="bg-purple-50 rounded-lg p-4 text-center min-w-[120px]">
+                                <div className="text-3xl font-bold text-purple-600 flex items-center justify-center gap-1">
+                                    <Star className="w-6 h-6 fill-purple-600" />
+                                    {stats?.averageRating ?? 'N/A'}
+                                </div>
+                                <div className="text-xs text-gray-600">Performance Rating</div>
                             </div>
                         </div>
                     </div>
@@ -101,8 +115,8 @@ const StudentResumes = () => {
                                         <div className="flex items-center gap-3 mb-2">
                                             <h3 className="text-xl font-bold text-gray-900">{resume.title}</h3>
                                             <span className={`px-3 py-1 text-xs font-medium rounded-full ${resume.isPublic
-                                                    ? 'bg-green-100 text-green-700 border border-green-200'
-                                                    : 'bg-gray-100 text-gray-600 border border-gray-200'
+                                                ? 'bg-green-100 text-green-700 border border-green-200'
+                                                : 'bg-gray-100 text-gray-600 border border-gray-200'
                                                 }`}>
                                                 {resume.isPublic ? 'Public' : 'Private'}
                                             </span>
