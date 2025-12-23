@@ -45,6 +45,7 @@ import AdminLoginPage from './pages/admin/AdminLoginPage';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminInternships from './pages/admin/AdminInternships';
 import AdminCalendar from './pages/admin/AdminCalendar';
+import AdminAnalytics from './pages/admin/AdminAnalytics';
 
 // Pages - Recruiter
 import RecruiterLoginPage from './pages/recruiter/RecruiterLoginPage';
@@ -276,6 +277,7 @@ function AppContent() {
               <Route path="/admin/ipp/:ippId" element={<ProtectedRoute role="admin"><IPPDetail /></ProtectedRoute>} />
               <Route path="/admin/internships" element={<ProtectedRoute role="admin"><AdminInternships /></ProtectedRoute>} />
               <Route path="/admin/calendar" element={<ProtectedRoute role="admin"><AdminCalendar /></ProtectedRoute>} />
+              <Route path="/admin/analytics" element={<ProtectedRoute role="admin"><AdminAnalytics /></ProtectedRoute>} />
             </>
           )}
 

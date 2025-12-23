@@ -60,9 +60,9 @@ const AdminCalendar = () => {
                 date: parseISO(event.date),
                 time: event.time ? event.time : undefined
             })).filter(event => {
-                // For mentors, show all events (including student applications)
-                if (user?.role === 'mentor') return true;
-                // For admins, show only faculty events to avoid cluttering with all student apps
+                // For mentors and admins, show all events (including student applications)
+                if (user?.role === 'mentor' || user?.role === 'admin') return true;
+                // Default: show faculty events
                 return event.type === 'faculty_event';
             });
 
@@ -162,7 +162,8 @@ const AdminCalendar = () => {
                   ${event.type === 'faculty_event' ? 'bg-purple-50 text-purple-700 border-purple-100' :
                                         event.type === 'application_submitted' ? 'bg-blue-50 text-blue-700 border-blue-100' :
                                             event.type === 'internship_start' ? 'bg-emerald-50 text-emerald-700 border-emerald-100' :
-                                                event.type === 'internship_end' ? 'bg-rose-50 text-rose-700 border-rose-100' : 'bg-gray-50 text-gray-700 border-gray-100'}
+                                                event.type === 'internship_end' ? 'bg-rose-50 text-rose-700 border-rose-100' :
+                                                    event.type === 'ipp_verified' ? 'bg-amber-50 text-amber-700 border-amber-100' : 'bg-gray-50 text-gray-700 border-gray-100'}
                 `}
                             >
                                 {event.title}
@@ -316,11 +317,18 @@ const AdminCalendar = () => {
 
                                         <div className="flex items-start justify-between mb-2">
                                             <span className={`
-                          text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wide
-                          ${event.type === 'faculty_event' ? 'bg-purple-100 text-purple-700' :
-                                                    event.type === 'application_submitted' ? 'bg-blue-100 text-blue-700' : ''}
-                        `}>
-                                                {event.type === 'faculty_event' ? 'FACULTY EVENT' : 'SYSTEM EVENT'}
+                                                text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wide
+                                                ${event.type === 'faculty_event' ? 'bg-purple-100 text-purple-700' :
+                                                    event.type === 'application_submitted' ? 'bg-blue-100 text-blue-700' :
+                                                        event.type === 'internship_start' ? 'bg-emerald-100 text-emerald-700' :
+                                                            event.type === 'internship_end' ? 'bg-rose-100 text-rose-700' :
+                                                                event.type === 'ipp_verified' ? 'bg-amber-100 text-amber-700' : 'bg-slate-100 text-slate-700'}
+                                            `}>
+                                                {event.type === 'faculty_event' ? 'FACULTY EVENT' :
+                                                    event.type === 'application_submitted' ? 'STUDENT APP' :
+                                                        event.type === 'internship_start' ? 'INTERN START' :
+                                                            event.type === 'internship_end' ? 'INTERN END' :
+                                                                event.type === 'ipp_verified' ? 'PASSPORT VERIFIED' : 'SYSTEM EVENT'}
                                             </span>
                                             {event.time && (
                                                 <span className="text-sm font-medium text-slate-500 flex items-center">
