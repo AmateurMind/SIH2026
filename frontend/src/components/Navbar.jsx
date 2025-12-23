@@ -210,7 +210,7 @@ const Navbar = () => {
 
             <div className="hidden md:flex items-center space-x-1">
               {navigationItems
-                .filter(item => !['Jobs', 'Career'].includes(item.label))
+                .filter(item => !['Jobs', 'Career', 'Applications'].includes(item.label))
                 .map((item) => (
                   <NavItem key={item.path} item={item} />
                 ))}

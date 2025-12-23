@@ -6,7 +6,8 @@ const {
   Internship,
   Application,
   Feedback,
-  Recruiter
+  Recruiter,
+  InternshipPerformancePassport
 } = require('../models');
 const router = express.Router();
 
@@ -275,26 +276,42 @@ router.get('/student/:studentId', requireHybridAuth, async (req, res) => {
     // Get student feedback
     const studentFeedback = await Feedback.find({ studentId });
 
+    // Get Student's IPPs (Verified internships)
+    const studentIPPs = await InternshipPerformancePassport.find({
+      studentId,
+      status: { $in: ['verified', 'published'] }
+    });
+
     // Calculate application status breakdown
     const applicationsByStatus = {};
     studentApplications.forEach(app => {
       applicationsByStatus[app.status] = (applicationsByStatus[app.status] || 0) + 1;
     });
 
-    // Calculate average rating from feedback
-    let averageRating = 0;
+    // Calculate average rating from IPPs and feedback
+    let ratings = [];
     if (studentFeedback.length > 0) {
-      const totalRating = studentFeedback.reduce((sum, f) => sum + (f.rating || 0), 0);
-      averageRating = Math.round((totalRating / studentFeedback.length) * 10) / 10;
+      studentFeedback.forEach(f => {
+        if (f.rating) ratings.push(f.rating * 2); // Convert 1-5 to 1-10
+      });
+    }
+    if (studentIPPs.length > 0) {
+      studentIPPs.forEach(ipp => {
+        if (ipp.summary?.overallRating) {
+          ratings.push(ipp.summary.overallRating);
+        }
+      });
     }
 
-    // Extract skills developed
-    const skillsSet = new Set();
-    studentFeedback.forEach(f => {
-      if (f.suggestions) {
-        // Assuming skills developed are in suggestions field
-        // This might need adjustment based on actual schema
-        skillsSet.add(f.suggestions);
+    const averageRating = ratings.length > 0
+      ? Math.round((ratings.reduce((a, b) => a + b, 0) / ratings.length) * 10) / 10
+      : 0;
+
+    // Extract skills developed from IPPs
+    const skillsAcquired = new Set();
+    studentIPPs.forEach(ipp => {
+      if (ipp.postAssessment?.newSkillsAcquired) {
+        ipp.postAssessment.newSkillsAcquired.forEach(skill => skillsAcquired.add(skill));
       }
     });
 
@@ -309,13 +326,25 @@ router.get('/student/:studentId', requireHybridAuth, async (req, res) => {
     // Get student details for skills and achievements
     const student = await Student.findOne({ id: studentId }).select('skills achievements');
 
+    // Count badges (Profile achievements + Verified IPP certificates)
+    const profileBadges = student ? (student.achievements || []) : [];
+    const certificateBadges = studentIPPs
+      .filter(ipp => ipp.certificate?.certificateUrl)
+      .map(ipp => ({
+        id: `CERT-${ipp.ippId}`,
+        name: `Internship Certificate - ${ipp.internshipDetails?.company}`,
+        type: 'certificate',
+        date: ipp.certificate.generatedAt
+      }));
+
     const analytics = {
       totalApplications: studentApplications.length,
       applicationsByStatus,
       averageRating,
-      skillsDeveloped: Array.from(skillsSet), // Keep for backward compatibility
-      skills: student ? student.skills : [], // Add profile skills
-      totalBadges: student ? (student.achievements || []).length : 0,
+      skillsDeveloped: Array.from(skillsAcquired),
+      skills: student ? student.skills : [],
+      totalBadges: profileBadges.length + certificateBadges.length,
+      badges: [...profileBadges, ...certificateBadges],
       applicationHistory,
       feedback: studentFeedback
     };

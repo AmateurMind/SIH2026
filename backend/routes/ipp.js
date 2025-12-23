@@ -820,8 +820,14 @@ router.put('/:ippId/student-submission', requireHybridAuth, async (req, res) => 
             // 3. Generate Certificate
             try {
                 const certResult = await generateCertificate(ippForCert);
-                ipp.certificateUrl = certResult.downloadUrl;
-                ipp.certificateGeneratedAt = new Date();
+                const qrCodeData = await generateQRCode(certResult.certificateId, ipp.ippId);
+
+                ipp.certificate = {
+                    certificateId: certResult.certificateId,
+                    certificateUrl: certResult.downloadUrl,
+                    generatedAt: new Date(),
+                    qrCode: qrCodeData
+                };
                 console.log('✅ Certificate generated automatically:', certResult.fileName);
             } catch (certError) {
                 console.error('❌ Certificate generation failed:', certError);
@@ -918,8 +924,14 @@ router.put('/:ippId/faculty-assessment', requireHybridAuth, async (req, res) => 
                 // 3. Generate Certificate
                 try {
                     const certResult = await generateCertificate(ippForCert);
-                    ipp.certificateUrl = certResult.downloadUrl;
-                    ipp.certificateGeneratedAt = new Date();
+                    const qrCodeData = await generateQRCode(certResult.certificateId, ipp.ippId);
+
+                    ipp.certificate = {
+                        certificateId: certResult.certificateId,
+                        certificateUrl: certResult.downloadUrl,
+                        generatedAt: new Date(),
+                        qrCode: qrCodeData
+                    };
                     console.log('✅ Certificate generated automatically (Faculty):', certResult.fileName);
                 } catch (certError) {
                     console.error('❌ Certificate generation failed:', certError);
