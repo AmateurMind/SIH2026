@@ -14,16 +14,8 @@ const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-// Enable offline persistence
-// Enable offline persistence with multi-tab support
-enableMultiTabIndexedDbPersistence(db).catch((err) => {
-  if (err.code === "failed-precondition") {
-    console.warn("Firebase: Persistence failed to enable. Multiple tabs might be open without multi-tab support.");
-  } else if (err.code === "unimplemented") {
-    console.warn("Firebase: The current browser doesn't support offline persistence.");
-  } else {
-    console.error("Firebase persistence error:", err);
-  }
-});
+// Modern offline persistence configuration
+// (Removing deprecated enableMultiTabIndexedDbPersistence which causes issues in some environments)
+
 
 export { db };

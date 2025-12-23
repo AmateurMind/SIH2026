@@ -344,3 +344,5 @@ This project was created as a comprehensive solution for managing campus interns
 ---
 
 **Made with ❤️ for educational institutions and students worldwide**
+#   S T R O T A S - I E E E - R A N C H I  
+ 

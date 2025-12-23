@@ -209,9 +209,11 @@ const Navbar = () => {
             </div>
 
             <div className="hidden md:flex items-center space-x-1">
-              {navigationItems.map((item) => (
-                <NavItem key={item.path} item={item} />
-              ))}
+              {navigationItems
+                .filter(item => !['Jobs', 'Career'].includes(item.label))
+                .map((item) => (
+                  <NavItem key={item.path} item={item} />
+                ))}
             </div>
 
             <div className="flex items-center space-x-4">

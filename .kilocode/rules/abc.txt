@@ -1,9 +1,0 @@
-# abc.txt
-
-Rule description here...
-bro listen there is http://localhost:5173 where studnets will login then there s http://localhost:5174/mentor/dashboard ,5174 whihc is superadmin inside 5174 we have mentor admin and recruiter ok?
-
-## Guidelines
-
-- Guideline 1
-- Guideline 2
