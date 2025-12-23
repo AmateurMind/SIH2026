@@ -30,6 +30,3 @@ npm run install:all
 npm run dev
 ```
 
----
-**Made with ❤️ by the Campus Buddy Team**
-##   S T R O T A S - I E E E - R A N C H I
