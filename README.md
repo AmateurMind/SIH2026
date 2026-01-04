@@ -5,7 +5,6 @@
 This repository contains the source code for **Campus Buddy**, a comprehensive campus internship and placement portal designed to streamline the recruitment process for universities, students, and recruiters.
 
 ## 🔗 Links
-- **GitHub Repository:** [https://github.com/AmateurMind/STROTAS-IEEE-RANCHI](https://github.com/AmateurMind/STROTAS-IEEE-RANCHI)
 - **Live Demo:** [https://campusbuddy-0qnu.onrender.com/](https://campusbuddy-0qnu.onrender.com/)
 - **Video Link:** [https://drive.google.com/file/d/1LaeYHCljAd0YjW3vX9aXCzOjxk3YBazw/view?usp=sharing](https://drive.google.com/file/d/1LaeYHCljAd0YjW3vX9aXCzOjxk3YBazw/view?usp=sharing)
 
