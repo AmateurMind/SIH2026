@@ -19,15 +19,19 @@ Built with a modern tech stack, it features role-based access control, real-time
 
 ### 👨‍🎓 For Students
 - **Smart Dashboard:** Real-time overview of application status, recommended opportunities, and performance analytics.
-- **AI Resume Builder:** Create ATS-friendly professional resumes with AI-assisted content generation.
-- **Intelligent Discovery:** Personalized internship recommendations based on skills, CGPA, and department.
+- **AI Resume Builder:** Create ATS-friendly professional resumes with AI-assisted content generation and automated skill extraction from uploaded documents.
+- **Skill Gap Analysis:** AI-powered identification of missing skills for desired job roles with personalized learning recommendations.
+- **AI Mock Interview:** Real-time AI-powered technical and HR mock interviews with behavioral analysis and feedback.
+- **Calendar Integration:** Integrated event scheduling and management for interviews, tasks, and placement activities.
+- **Intelligent Discovery:** Personalized internship recommendations based on skills, academic performance, and preferences.
 - **Application Tracking:** Visual status indicators for applied, pending, approved, and rejected applications.
-- **Secure Profile:** manage academic details and secure document access.
+- **Secure Profile:** Comprehensive profile management for academic details and secure document access.
 
 ### 👩‍🏫 For Mentors & Faculty
 - **Streamlined Approval:** Efficient workflow for reviewing and approving student applications.
-- **Progress Monitoring:** Track mentee performance and placement success rates.
-- **Bulk Actions:** Manage multiple applications simultaneously with ease.
+- **Progress Monitoring:** Track mentee performance and placement success rates in real-time.
+- **Calendar Management:** Oversee interview schedules and academic deadlines for mentees.
+- **Bulk Actions:** Manage multiple applications and evaluations simultaneously with ease.
 
 ### 🏢 For Recruiters
 - **Internship Posting:** Create and manage internship listings with detailed requirements.
@@ -35,8 +39,10 @@ Built with a modern tech stack, it features role-based access control, real-time
 - **Application Management:** Review candidate profiles and resumes securely.
 
 ### ⚙️ For Administrators
-- **Centralized Control:** Manage users, roles, and platform settings.
-- **Advanced Analytics:** aggregated data on placement trends, department performance, and recruiter engagement.
+- **Centralized Control:** Manage users, roles, and platform settings from a unified command center.
+- **Advanced Analytics:** In-depth data on placement trends, department performance, and recruiter engagement.
+- **Institutional Calendar:** Organize campus-wide recruitment events and institutional deadlines.
+- **System Logs:** Monitor platform activity and ensure secure role-based access.
 
 ---
 
