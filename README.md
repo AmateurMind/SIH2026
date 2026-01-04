@@ -95,9 +95,9 @@ Follow these instructions to set up the project locally.
 ---
 
 ## 👥 Team
-- **Member 1**: [Name]
-- **Member 2**: [Name]
-- **Member 3**: [Name]
+- **Member 1**: Mohammad Suhail
+- **Member 2**: Rohan Pawar
+- **Member 3**: Nirmal Pawar
 
 ---
 
