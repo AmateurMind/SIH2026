@@ -6,7 +6,7 @@ This repository contains the source code for **Campus Buddy**, a comprehensive c
 
 ## 🔗 Links
 - **GitHub Repository:** [https://github.com/AmateurMind/STROTAS-IEEE-RANCHI](https://github.com/AmateurMind/STROTAS-IEEE-RANCHI)
-- **Live Demo:** [Insert Deployed Link Here]
+- **Live Demo:** [https://campusbuddy-0qnu.onrender.com/](https://campusbuddy-0qnu.onrender.com/)
 
 ---
 
