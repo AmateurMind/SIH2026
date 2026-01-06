@@ -9,7 +9,7 @@ const IPPStatusBadge = ({ status }) => {
         },
         pending_mentor_eval: {
             color: 'bg-amber-100 text-amber-800 border-amber-200',
-            label: 'Awaiting Mentor',
+            label: 'Awaiting Supervisor/Recruiter',
             icon: '⏳'
         },
         pending_student_submission: {

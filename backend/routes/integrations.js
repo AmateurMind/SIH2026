@@ -1,10 +1,72 @@
 const express = require('express');
 const router = express.Router();
+const axios = require('axios');
 console.log('🔄 Integrations Router Loaded');
 
 const { Student, Application, Internship } = require('../models');
 const { notifyApplicationStatusChange } = require('../utils/notify');
 const notificationService = require('../services/notificationService');
+
+// N8n Webhook URL for mentor notifications (set in .env or use default)
+const N8N_WEBHOOK_URL = process.env.N8N_MENTOR_WEBHOOK_URL || null;
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || null;
+const TELEGRAM_MENTOR_CHAT_ID = process.env.TELEGRAM_MENTOR_CHAT_ID || null;
+
+// Helper function to notify mentor via Telegram when student applies
+const notifyMentorNewApplication = async (application, student, internship, mentor) => {
+    try {
+        // Option 1: Direct Telegram notification
+        if (TELEGRAM_BOT_TOKEN && TELEGRAM_MENTOR_CHAT_ID) {
+            const message = `📋 *New Application!*
+
+👤 *Student:* ${student.name}
+📧 *Email:* ${student.email}
+🎓 *CGPA:* ${student.cgpa || 'N/A'} | *Sem:* ${student.semester || 'N/A'}
+🏢 *Internship:* ${internship.title}
+🏭 *Company:* ${internship.company}
+
+Reply with:
+\`${student.name.split(' ')[0]} approved\` or \`${student.name.split(' ')[0]} rejected\``;
+
+            await axios.post(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                chat_id: TELEGRAM_MENTOR_CHAT_ID,
+                text: message,
+                parse_mode: 'Markdown'
+            });
+            console.log(`[NOTIFY] Sent Telegram notification for new application ${application.id}`);
+        }
+
+        // Option 2: N8n Webhook (if configured)
+        if (N8N_WEBHOOK_URL) {
+            await axios.post(N8N_WEBHOOK_URL, {
+                type: 'new_application',
+                application: {
+                    id: application.id,
+                    status: application.status
+                },
+                student: {
+                    id: student.id,
+                    name: student.name,
+                    email: student.email,
+                    cgpa: student.cgpa,
+                    semester: student.semester
+                },
+                internship: {
+                    id: internship.id,
+                    title: internship.title,
+                    company: internship.company
+                },
+                mentor: mentor ? {
+                    id: mentor.id,
+                    name: mentor.name
+                } : null
+            });
+            console.log(`[NOTIFY] Sent N8n webhook for new application ${application.id}`);
+        }
+    } catch (error) {
+        console.error('[NOTIFY] Failed to send mentor notification:', error.message);
+    }
+};
 
 // Test route
 router.get('/test', (req, res) => {
@@ -114,15 +176,20 @@ router.post('/update-status', requireApiKey, async (req, res) => {
         console.log(`[DEBUG] Found latest application: ${application.id} for Internship ${internship?.id} (${internship?.title})`);
 
         // 4. Update Status
-        const validStatuses = ['offered', 'rejected', 'interview_scheduled', 'shortlisted', 'hired', 'completed'];
+        const validStatuses = ['offered', 'rejected', 'interview_scheduled', 'shortlisted', 'hired', 'completed', 'approved'];
         if (!validStatuses.includes(status.toLowerCase())) {
             return res.status(400).json({ error: 'Invalid status. Allowed: ' + validStatuses.join(', ') });
         }
 
-        // "hired" automatically means "completed"
+        // Status mapping for Telegram commands
         let finalStatus = status.toLowerCase();
         if (finalStatus === 'hired') {
-            finalStatus = 'completed';
+            finalStatus = 'completed';  // hired → completed
+        } else if (finalStatus === 'approved') {
+            finalStatus = 'approved';   // mentor approval
+            application.mentorApproval = 'approved';
+        } else if (finalStatus === 'rejected') {
+            application.mentorApproval = 'rejected';
         }
 
         // If already in this status, return success (prevents duplicate errors)
