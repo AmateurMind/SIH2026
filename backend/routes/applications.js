@@ -6,6 +6,7 @@ const { authorize } = require('../middleware/auth');
 const requireHybridAuth = require('../middleware/clerkHybridAuth');
 const { notifyApplicationStatusChange } = require('../utils/notify');
 const notificationService = require('../services/notificationService');
+const { notifyMentorNewApplication } = require('../utils/telegramNotify');
 const mongoose = require('mongoose');
 const { Student, Application, Internship } = require('../models');
 const router = express.Router();
@@ -378,6 +379,10 @@ router.post('/', requireHybridAuth, authorize('student'), async (req, res) => {
     if (assignedMentorId) {
       await notificationService.scheduleMentorApprovalReminder(newApplication.toObject());
     }
+
+    // Send Telegram notification to mentor about new application
+    const mentor = mentors.find(m => m.id === assignedMentorId);
+    await notifyMentorNewApplication(newApplication.toObject(), req.user, internship, mentor);
 
     res.status(201).json({
       message: 'Application submitted successfully',

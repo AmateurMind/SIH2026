@@ -1,5 +1,5 @@
 {
-  "name": "Telegram HR Automation - CampusBuddy",
+  "name": "Telegram HR & Mentor Automation - CampusBuddy",
   "nodes": [
     {
       "parameters": {
@@ -19,7 +19,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Get the message text from Telegram\nconst message = $input.first().json.message.text;\nconst chatId = $input.first().json.message.chat.id;\n\n// Parse format: \"Name hired\" or \"Name offered\" etc.\nconst regex = /^(.+?)\\s+(offered|hired|rejected|shortlisted|completed)$/i;\nconst match = message.match(regex);\n\nif (!match) {\n  return {\n    json: {\n      success: false,\n      error: \"Invalid format. Use: 'StudentName hired' or 'StudentName offered'\",\n      chatId: chatId\n    }\n  };\n}\n\nconst studentName = match[1].trim();\nconst status = match[2].toLowerCase();\n\nreturn {\n  json: {\n    success: true,\n    studentName: studentName,\n    status: status,\n    chatId: chatId,\n    originalMessage: message\n  }\n};"
+        "jsCode": "// Get the message text from Telegram\nconst message = $input.first().json.message.text;\nconst chatId = $input.first().json.message.chat.id;\nconst fromUser = $input.first().json.message.from;\n\n// Parse format: \"Name action\" where action is one of the valid statuses\n// Supported: hired, completed, approved, rejected, offered, shortlisted\nconst regex = /^(.+?)\\s+(offered|hired|rejected|shortlisted|completed|approved)$/i;\nconst match = message.match(regex);\n\nif (!match) {\n  return {\n    json: {\n      success: false,\n      error: \"Invalid format. Use: 'StudentName hired' or 'StudentName approved'\",\n      chatId: chatId\n    }\n  };\n}\n\nconst studentName = match[1].trim();\nconst status = match[2].toLowerCase();\n\n// Determine action type for response message\nlet actionType = 'HR Action';\nif (status === 'approved' || status === 'rejected') {\n  actionType = 'Mentor Action';\n}\n\nreturn {\n  json: {\n    success: true,\n    studentName: studentName,\n    status: status,\n    actionType: actionType,\n    chatId: chatId,\n    originalMessage: message,\n    fromUser: fromUser.first_name || fromUser.username\n  }\n};"
       },
       "id": "parse-message",
       "name": "Parse Message",
@@ -75,7 +75,13 @@
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "={\n  \"studentName\": \"{{ $json.studentName }}\",\n  \"status\": \"{{ $json.status }}\"\n}",
-        "options": {}
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
       },
       "id": "update-status-api",
       "name": "Update Application Status",
@@ -85,8 +91,36 @@
     },
     {
       "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition-api-success",
+              "leftValue": "={{ $json.success }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "check-api-success",
+      "name": "Check API Success",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1130, 200]
+    },
+    {
+      "parameters": {
         "chatId": "={{ $('Parse Message').item.json.chatId }}",
-        "text": "=✅ *Status Updated Successfully!*\n\n👤 Student: {{ $json.data.student }}\n🏢 Internship: {{ $json.data.internship }}\n📋 New Status: *{{ $json.data.status.toUpperCase() }}*\n\n_The student can now initialize their IPP._",
+        "text": "=✅ *{{ $('Parse Message').item.json.actionType }} Successful!*\n\n👤 *Student:* {{ $json.data.student }}\n🏢 *Internship:* {{ $json.data.internship }}\n📋 *Status:* *{{ $json.data.status.toUpperCase() }}*\n\n👨‍💼 _Action by: {{ $('Parse Message').item.json.fromUser }}_\n\n{{ $json.data.status === 'completed' ? '🎓 _Student can now initialize their Internship Performance Passport (IPP) from their dashboard._' : '' }}",
         "additionalFields": {
           "parse_mode": "Markdown"
         }
@@ -95,7 +129,7 @@
       "name": "Send Success Message",
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
-      "position": [1130, 200],
+      "position": [1350, 100],
       "credentials": {
         "telegramApi": {
           "id": "TELEGRAM_CREDENTIAL_ID",
@@ -106,7 +140,7 @@
     {
       "parameters": {
         "chatId": "={{ $json.chatId }}",
-        "text": "=❌ *Error*\n\n{{ $json.error }}\n\n*Valid formats:*\n• `Priya hired`\n• `Jon Snow offered`\n• `StudentName completed`\n\n*Valid statuses:* offered, hired, rejected, shortlisted, completed",
+        "text": "=❌ *Error*\n\n{{ $json.error }}\n\n*Valid formats:*\n• `Priya hired` - Mark as completed (HR)\n• `Jon approved` - Approve application (Mentor)\n• `Jon rejected` - Reject application (Mentor)\n• `Priya offered` - Mark as offered\n\n*Valid actions:* hired, completed, approved, rejected, offered, shortlisted",
         "additionalFields": {
           "parse_mode": "Markdown"
         }
@@ -126,7 +160,7 @@
     {
       "parameters": {
         "chatId": "={{ $('Parse Message').item.json.chatId }}",
-        "text": "=❌ *API Error*\n\nCould not update status for *{{ $('Parse Message').item.json.studentName }}*\n\nError: {{ $json.error || 'Unknown error' }}\n\n_Please check if the student exists in the database._",
+        "text": "=❌ *API Error*\n\nCould not update status for *{{ $('Parse Message').item.json.studentName }}*\n\nError: {{ $json.error || 'Student not found or already updated' }}\n\n_Please check if the student exists in the database._",
         "additionalFields": {
           "parse_mode": "Markdown"
         }
@@ -135,7 +169,7 @@
       "name": "Send API Error",
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
-      "position": [1130, 340],
+      "position": [1350, 300],
       "credentials": {
         "telegramApi": {
           "id": "TELEGRAM_CREDENTIAL_ID",
@@ -189,13 +223,22 @@
       "main": [
         [
           {
-            "node": "Send Success Message",
+            "node": "Check API Success",
             "type": "main",
             "index": 0
           }
         ]
-      ],
-      "error": [
+      ]
+    },
+    "Check API Success": {
+      "main": [
+        [
+          {
+            "node": "Send Success Message",
+            "type": "main",
+            "index": 0
+          }
+        ],
         [
           {
             "node": "Send API Error",
