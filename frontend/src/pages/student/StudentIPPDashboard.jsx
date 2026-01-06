@@ -37,7 +37,7 @@ const StudentIPPDashboard = () => {
             const existingIppInternshipIds = new Set(ippsResponse.data.map(ipp => ipp.internshipId));
 
             const eligible = applications.filter(app =>
-                (app.status === 'accepted' || app.status === 'offered' || app.status === 'completed') &&
+                (app.status === 'accepted' || app.status === 'offered' || app.status === 'hired' || app.status === 'completed') &&
                 // Check if directly linked in app data
                 (!app.ippId || app.ippStatus === 'pending_creation' || app.ippStatus === 'not_applicable') &&
                 // EXTRA CHECK: Verify we don't already have an IPP for this internship
