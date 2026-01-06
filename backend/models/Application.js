@@ -36,6 +36,7 @@ const applicationSchema = new mongoose.Schema({
       'accepted',
       'declined',
       'pending_mentor_approval',
+      'hired',
       'completed'
     ],
     default: 'applied'
