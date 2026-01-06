@@ -2,8 +2,9 @@
 
 A comprehensive campus internship and placement portal designed to streamline the recruitment process for universities, students, and recruiters.
 
-## 🔗 Live Demo
-- **Website:** [https://campusbuddy-0qnu.onrender.com/](https://campusbuddy-0qnu.onrender.com/)
+## 🔗 Links
+- **Live Demo:** [https://campusbuddy-0qnu.onrender.com/](https://campusbuddy-0qnu.onrender.com/)
+- **Video Demo:** [https://drive.google.com/file/d/1LaeYHCljAd0YjW3vX9aXCzOjxk3YBazw/view](https://drive.google.com/file/d/1LaeYHCljAd0YjW3vX9aXCzOjxk3YBazw/view)
 
 ---
 
