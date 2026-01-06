@@ -1,12 +1,9 @@
-# 🎓 Campus Buddy - IEEE Mega Project 8.0 Submission
+# 🎓 Campus Buddy
 
-**Team Submission for IEEE Mega Project 8.0 (BITS Ranchi)**
+A comprehensive campus internship and placement portal designed to streamline the recruitment process for universities, students, and recruiters.
 
-This repository contains the source code for **Campus Buddy**, a comprehensive campus internship and placement portal designed to streamline the recruitment process for universities, students, and recruiters.
-
-## 🔗 Links
-- **Live Demo:** [https://campusbuddy-0qnu.onrender.com/](https://campusbuddy-0qnu.onrender.com/)
-- **Video Link:** [https://drive.google.com/file/d/1LaeYHCljAd0YjW3vX9aXCzOjxk3YBazw/view?usp=sharing](https://drive.google.com/file/d/1LaeYHCljAd0YjW3vX9aXCzOjxk3YBazw/view?usp=sharing)
+## 🔗 Live Demo
+- **Website:** [https://campusbuddy-0qnu.onrender.com/](https://campusbuddy-0qnu.onrender.com/)
 
 ---
 
@@ -162,11 +159,7 @@ EXTERNAL_API_KEY=n8n-secret-key-123
 
 ---
 
-## 👥 Team
-- **Member 1**: Mohammad Suhail
-- **Member 2**: Rohan Pawar
-- **Member 3**: Nirmal Pawar
-
----
-
-**Submitted for IEEE Mega Project 8.0 | BITS, Mesra, Ranchi**
+## 👥 Contributors
+- Mohammad Suhail
+- Rohan Pawar
+- Nirmal Pawar
