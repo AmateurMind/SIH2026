@@ -100,6 +100,68 @@ Follow these instructions to set up the project locally.
 
 ---
 
+## 🤖 N8n Telegram Automation (HR & Mentor Workflow)
+
+Campus Buddy integrates with **N8n** and **Telegram** for automated application status updates. HR/Recruiters and Mentors can approve, reject, or hire students directly via Telegram commands.
+
+### How It Works
+1. **Student applies** → Mentor gets Telegram notification
+2. **Mentor replies** `Jon approved` or `Jon rejected` → Application status updated
+3. **HR replies** `Priya hired` → Student marked as completed, can initialize IPP
+
+### Supported Commands
+| Command | Action | Who Uses |
+|---------|--------|----------|
+| `Name approved` | Approve application | Mentor |
+| `Name rejected` | Reject application | Mentor |
+| `Name hired` | Mark as completed | HR/Recruiter |
+| `Name offered` | Mark as offered | HR/Recruiter |
+| `Name shortlisted` | Mark as shortlisted | HR/Recruiter |
+
+### Setup Instructions
+
+#### Prerequisites
+- Docker Desktop installed
+- ngrok account (free tier works)
+- Telegram Bot Token (from @BotFather)
+
+#### Step 1: Start ngrok
+```bash
+ngrok http 5678
+```
+Copy the HTTPS URL (e.g., `https://xxxx-xx-xx.ngrok-free.app`)
+
+#### Step 2: Run N8n with Docker
+```bash
+docker run -it --rm --name n8n -p 5678:5678 -e WEBHOOK_URL=https://YOUR-NGROK-URL -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
+```
+Replace `YOUR-NGROK-URL` with your actual ngrok URL.
+
+#### Step 3: Configure N8n
+1. Open `http://localhost:5678` in browser
+2. Import workflow from `backend/n8n_telegram_workflow.json`
+3. Add Telegram credentials (Bot Token from @BotFather)
+4. Activate the workflow
+
+#### Step 4: Set Telegram Webhook
+```bash
+curl "https://api.telegram.org/botYOUR_BOT_TOKEN/setWebhook?url=https://YOUR-NGROK-URL/webhook/telegram-trigger"
+```
+
+#### Backend Environment Variables
+Add to `backend/.env`:
+```env
+TELEGRAM_BOT_TOKEN=your_bot_token
+TELEGRAM_MENTOR_CHAT_ID=your_chat_id
+EXTERNAL_API_KEY=n8n-secret-key-123
+```
+
+### Workflow Files
+- `backend/n8n_telegram_workflow.json` - N8n workflow to import
+- `N8N_SETUP_GUIDE.md` - Detailed setup documentation
+
+---
+
 ## 👥 Team
 - **Member 1**: Mohammad Suhail
 - **Member 2**: Rohan Pawar

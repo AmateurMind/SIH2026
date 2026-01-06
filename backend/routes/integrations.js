@@ -243,4 +243,57 @@ router.post('/update-status', requireApiKey, async (req, res) => {
     }
 });
 
+// One-time migration: Update 2024 dates to 2026
+router.post('/migrate-dates', requireApiKey, async (req, res) => {
+    try {
+        console.log('[MIGRATE] Starting date migration: 2024 → 2026');
+
+        // Find all internships with 2024 dates
+        const internships = await Internship.find({});
+        let updatedCount = 0;
+
+        for (const internship of internships) {
+            let needsUpdate = false;
+
+            // Check startDate
+            if (internship.startDate) {
+                const startYear = new Date(internship.startDate).getFullYear();
+                if (startYear === 2024) {
+                    const newStartDate = new Date(internship.startDate);
+                    newStartDate.setFullYear(2026);
+                    internship.startDate = newStartDate;
+                    needsUpdate = true;
+                }
+            }
+
+            // Check applicationDeadline
+            if (internship.applicationDeadline) {
+                const deadlineYear = new Date(internship.applicationDeadline).getFullYear();
+                if (deadlineYear === 2024) {
+                    const newDeadline = new Date(internship.applicationDeadline);
+                    newDeadline.setFullYear(2026);
+                    internship.applicationDeadline = newDeadline;
+                    needsUpdate = true;
+                }
+            }
+
+            if (needsUpdate) {
+                await internship.save();
+                updatedCount++;
+                console.log(`[MIGRATE] Updated internship: ${internship.id} - ${internship.title}`);
+            }
+        }
+
+        res.json({
+            success: true,
+            message: `Migration complete. Updated ${updatedCount} internships from 2024 to 2026.`,
+            updatedCount
+        });
+
+    } catch (error) {
+        console.error('Error in date migration:', error);
+        res.status(500).json({ error: 'Migration failed', details: error.message });
+    }
+});
+
 module.exports = router;
