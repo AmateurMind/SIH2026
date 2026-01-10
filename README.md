@@ -4,7 +4,7 @@ A comprehensive campus internship and placement portal designed to streamline th
 
 ## 🔗 Links
 - **Live Demo:** [https://campusbuddy-0qnu.onrender.com/](https://campusbuddy-0qnu.onrender.com/)
-- **Video Demo:** [https://drive.google.com/file/d/1LaeYHCljAd0YjW3vX9aXCzOjxk3YBazw/view](https://drive.google.com/file/d/1LaeYHCljAd0YjW3vX9aXCzOjxk3YBazw/view)
+- **Video Demo:** [[https://drive.google.com/file/d/1LaeYHCljAd0YjW3vX9aXCzOjxk3YBazw/view](https://drive.google.com/file/d/1LaeYHCljAd0YjW3vX9aXCzOjxk3YBazw/view)](https://www.youtube.com/watch?v=A15PEUzelfs)
 
 ---
 
