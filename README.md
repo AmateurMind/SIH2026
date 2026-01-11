@@ -160,7 +160,3 @@ EXTERNAL_API_KEY=n8n-secret-key-123
 
 ---
 
-## 👥 Contributors
-- Mohammad Suhail
-- Rohan Pawar
-- Nirmal Pawar
