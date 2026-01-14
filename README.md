@@ -146,13 +146,6 @@ Replace `YOUR-NGROK-URL` with your actual ngrok URL.
 curl "https://api.telegram.org/botYOUR_BOT_TOKEN/setWebhook?url=https://YOUR-NGROK-URL/webhook/telegram-trigger"
 ```
 
-#### Backend Environment Variables
-Add to `backend/.env`:
-```env
-TELEGRAM_BOT_TOKEN=your_bot_token
-TELEGRAM_MENTOR_CHAT_ID=your_chat_id
-EXTERNAL_API_KEY=n8n-secret-key-123
-```
 
 ### Workflow Files
 - `backend/n8n_telegram_workflow.json` - N8n workflow to import
