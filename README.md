@@ -1,5 +1,6 @@
 # 🎓 Campus Buddy
 
+
 A comprehensive campus internship and placement portal designed to streamline the recruitment process for universities, students, mentors, and recruiters.
 
 ---
