@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { TooltipButton } from "./tooltip-button";
 import { Volume2, VolumeX } from "lucide-react";
 import { RecordAnswer } from "./record-answer";
+import { FocusMonitor } from "./focus-monitor";
 
 interface QuestionSectionProps {
   questions: { question: string; answer: string }[];
@@ -38,8 +39,11 @@ export const QuestionSection = ({ questions }: QuestionSectionProps) => {
     }
   };
 
-  return (
-    <div className="w-full min-h-96 border border-blue-100 rounded-2xl p-6 shadow-md bg-white">
+ return (
+  <div className="w-full flex gap-6 items-start">
+    
+    {/* existing questions panel — nothing inside changed */}
+    <div className="flex-1 min-w-0 min-h-96 border border-blue-100 rounded-2xl p-6 shadow-md bg-white">
       <Tabs
         defaultValue={questions[0]?.question}
         className="w-full space-y-8"
@@ -58,13 +62,11 @@ export const QuestionSection = ({ questions }: QuestionSectionProps) => {
             </TabsTrigger>
           ))}
         </TabsList>
-
         {questions?.map((tab, i) => (
           <TabsContent key={i} value={tab.question} className="space-y-6">
             <p className="text-lg text-left tracking-wide text-slate-900 font-medium leading-relaxed">
               {tab.question}
             </p>
-
             <div className="w-full flex items-center justify-end">
               <TooltipButton
                 content={isPlaying ? "Stop" : "Start"}
@@ -79,7 +81,6 @@ export const QuestionSection = ({ questions }: QuestionSectionProps) => {
                 buttonClassName="hover:bg-blue-50 hover:text-blue-700 text-slate-500 transition-colors"
               />
             </div>
-
             <RecordAnswer
               question={tab}
               isWebCam={isWebCam}
@@ -89,5 +90,10 @@ export const QuestionSection = ({ questions }: QuestionSectionProps) => {
         ))}
       </Tabs>
     </div>
-  );
+
+    {/* focus monitor sidebar */}
+    <FocusMonitor onSuspicionUpdate={(score, log) => console.log("Focus score:", score, log)} />
+
+  </div>
+);
 };
