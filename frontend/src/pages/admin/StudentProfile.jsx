@@ -9,6 +9,7 @@ import {
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
+import ATSScoreCard from '../../components/ats/ATSScoreCard';
 
 // Set worker path
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
@@ -298,6 +299,9 @@ const StudentProfile = () => {
                         </div>
                     )}
                 </div>
+
+                {/* ATS Score Section */}
+                <ATSScoreCard studentId={id} isFacultyView={true} />
             </div>
             {/* PDF Viewer Modal */}
             {showPdfViewer && selectedPdf && (

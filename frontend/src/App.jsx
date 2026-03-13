@@ -59,6 +59,9 @@ import MentorDashboard from './pages/mentor/MentorDashboard';
 import CompanyMentorEvaluation from './pages/mentor/CompanyMentorEvaluation';
 import EvaluationSuccess from './pages/mentor/EvaluationSuccess';
 
+// Components - ATS
+import ATSFacultyDashboard from './components/ats/ATSFacultyDashboard';
+
 // Context
 import { AuthProvider, useAuth } from './context/AuthContext';
 
@@ -254,6 +257,7 @@ function AppContent() {
               <Route path="/mentor/students/:id/ipps" element={<ProtectedRoute role="mentor"><StudentIPPs /></ProtectedRoute>} />
               <Route path="/mentor/ipp/:ippId" element={<ProtectedRoute role="mentor"><IPPDetail /></ProtectedRoute>} />
               <Route path="/mentor/calendar" element={<ProtectedRoute role="mentor"><AdminCalendar /></ProtectedRoute>} />
+              <Route path="/mentor/ats-scores" element={<ProtectedRoute role="mentor"><ATSFacultyDashboard /></ProtectedRoute>} />
             </>
           )}
 
@@ -276,6 +280,7 @@ function AppContent() {
               <Route path="/admin/internships" element={<ProtectedRoute role="admin"><AdminInternships /></ProtectedRoute>} />
               <Route path="/admin/calendar" element={<ProtectedRoute role="admin"><AdminCalendar /></ProtectedRoute>} />
               <Route path="/admin/analytics" element={<ProtectedRoute role="admin"><AdminAnalytics /></ProtectedRoute>} />
+              <Route path="/admin/ats-scores" element={<ProtectedRoute role="admin"><ATSFacultyDashboard /></ProtectedRoute>} />
             </>
           )}
 

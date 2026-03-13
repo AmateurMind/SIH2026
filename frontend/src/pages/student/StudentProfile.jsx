@@ -8,6 +8,7 @@ import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 import { openResumeSecurely } from '../../utils/resumeViewer';
 import { useNavigate } from 'react-router-dom';
+import ATSScoreCard from '../../components/ats/ATSScoreCard';
 import { User, Mail, Building, Calendar, Award, Phone, MapPin, FileText, Code, Camera, Edit2, Save, X as XIcon, Upload, Trash2, ExternalLink, ChevronLeft, ChevronRight, LogOut } from 'lucide-react';
 
 // Set worker path for react-pdf
@@ -467,6 +468,9 @@ const StudentProfile = () => {
                 </button>
               )}
             </div>
+
+            {/* ATS Score Section */}
+            <ATSScoreCard />
           </div>
         </div>
       </div >

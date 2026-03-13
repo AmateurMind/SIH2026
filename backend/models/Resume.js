@@ -104,7 +104,46 @@ const resumeSchema = new mongoose.Schema({
     // Metadata
     version: { type: Number, default: 1 },
     lastModified: { type: Date, default: Date.now },
-    createdAt: { type: Date, default: Date.now }
+    createdAt: { type: Date, default: Date.now },
+
+    // ATS Analysis Results
+    atsScore: { type: Number, default: null, min: 0, max: 100 },
+    atsAnalysis: {
+        score: { type: Number },
+        issues: [{
+            category: String,
+            severity: String,
+            message: String,
+            impact: String
+        }],
+        suggestions: [String],
+        details: {
+            formatting: {
+                wordCount: Number,
+                issues: [Object]
+            },
+            content: {
+                actionVerbs: Number,
+                quantifiableAchievements: Number
+            },
+            keywords: {
+                totalWords: Number,
+                uniqueWords: Number,
+                density: String,
+                matchedKeywords: [String],
+                matchRate: Number
+            },
+            sections: {
+                found: [String],
+                missing: [String]
+            },
+            contact: {
+                hasEmail: Boolean,
+                hasPhone: Boolean
+            }
+        },
+        analyzedAt: { type: Date, default: Date.now }
+    }
 });
 
 // Update lastModified before saving

@@ -65,6 +65,11 @@ const studentSchema = new mongoose.Schema({
   totalInternshipsCompleted: { type: Number, default: 0 },
   averageInternshipRating: { type: Number, default: 0, min: 0, max: 10 },
 
+  // ATS Resume Score
+  atsScore: { type: Number, default: null, min: 0, max: 100 },
+  atsAnalyzedAt: { type: Date, default: null },
+  atsResumeId: { type: mongoose.Schema.Types.ObjectId, ref: 'Resume', default: null },
+
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now }
 });

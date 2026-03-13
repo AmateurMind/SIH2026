@@ -21,11 +21,15 @@ class NotificationService {
     this.startTime = Date.now();
 
     // Process immediately on start
-    this.processNotifications();
+    this.processNotifications().catch((error) => {
+      console.error('[NotificationService] Initial processing failed:', error.message || error);
+    });
 
     // Set up interval processing
     this.intervalId = setInterval(() => {
-      this.processNotifications();
+      this.processNotifications().catch((error) => {
+        console.error('[NotificationService] Interval processing failed:', error.message || error);
+      });
     }, this.processingInterval);
 
     // Clean up old notifications daily
@@ -64,7 +68,7 @@ class NotificationService {
       return processedCount;
     } catch (error) {
       console.error('[NotificationService] Error processing notifications:', error);
-      throw error;
+      return 0;
     }
   }
 

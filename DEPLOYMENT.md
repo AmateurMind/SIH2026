@@ -1,11 +1,20 @@
-# Deployment Guide (Vercel + Render)
+# Deployment Guide (Render Full Stack)
 
 This repo is a monorepo:
 
-- `frontend` (Vite React app) -> deploy on Vercel
-- `backend` (Express API) -> deploy on Render
+- `frontend` (Vite React app) -> deploy on Render Static Site
+- `backend` (Express API) -> deploy on Render Web Service
 
-## 1) Backend (Render)
+## 1) Deploy With Blueprint
+
+Use the included `render.yaml` blueprint at repo root.
+
+It provisions:
+
+- `campus-placement-backend` (Node web service)
+- `campus-placement-frontend` (static site)
+
+## 2) Backend (Render)
 
 Create a new **Web Service** from this repo.
 
@@ -14,15 +23,14 @@ Create a new **Web Service** from this repo.
 - Start Command: `npm start`
 - Health Check Path: `/health`
 
-You can also use the included `render.yaml` blueprint.
+The blueprint already sets the backend root/build/start commands.
 
 Set these Render environment variables:
 
 - `NODE_ENV=production`
-- `PORT=10000` (or let Render provide PORT automatically)
 - `MONGODB_URI` (use `campus-placement-v2` DB)
-- `FRONTEND_URL` (your Vercel production URL)
-- `SUPERADMIN_URL` (same Vercel URL)
+- `FRONTEND_URL` (your Render static site URL)
+- `SUPERADMIN_URL` (same frontend URL)
 - `JWT_SECRET`
 - `CLERK_SECRET_KEY`
 - `CLERK_PUBLISHABLE_KEY`
@@ -47,20 +55,19 @@ After deploy, note backend URL:
 
 - `https://<your-render-service>.onrender.com`
 
-## 2) Frontend (Vercel)
+## 3) Frontend (Render Static Site)
 
-Create a new Vercel project from this repo.
+Create a new Render Static Site from this repo, or let the blueprint create it.
 
-- Framework: `Vite`
 - Root Directory: `frontend`
 - Build Command: `npm run build`
 - Output Directory: `dist`
 
-`frontend/vercel.json` is included to support SPA routing refresh.
+SPA rewrite is configured in `render.yaml` (`/* -> /index.html`).
 
 Set these Vercel environment variables:
 
-- `VITE_API_URL=https://<your-render-service>.onrender.com/api`
+- `VITE_API_URL=https://<your-backend-service>.onrender.com/api`
 - `VITE_CLERK_PUBLISHABLE_KEY`
 - `VITE_FIREBASE_API_KEY`
 - `VITE_FIREBASE_AUTH_DOMAIN`
@@ -75,15 +82,15 @@ Set these Vercel environment variables:
 - `VITE_WEB3FORMS_KEY`
 - `VITE_GOOGLE_CALENDAR_API_KEY`
 
-## 3) Post-deploy checks
+## 4) Post-deploy checks
 
 1. Backend health:
    - `https://<render-url>/health`
-2. Frontend loads without console CORS errors.
+2. Frontend loads without CORS errors.
 3. Login works for admin/student.
 4. Student directory loads and shows `campus-placement-v2` data.
 
-## 4) Important
+## 5) Important
 
 - Do not commit real `.env` files.
 - Rotate secrets that were previously exposed.

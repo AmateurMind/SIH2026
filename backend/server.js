@@ -19,6 +19,7 @@ const analyticsRoutes = require('./routes/analytics');
 const resumeRoutes = require('./routes/resume');
 const resumeViewRoutes = require('./routes/resumes');
 const resumeManagementRoutes = require('./routes/resumeManagement');
+const atsRoutes = require('./routes/ats');
 const notificationRoutes = require('./routes/notifications');
 const integrationsRoutes = require('./routes/integrations'); // External integrations (n8n, etc.)
 const ippRoutes = require('./routes/ipp');
@@ -123,6 +124,7 @@ app.use('/api/analytics', analyticsRoutes);
 app.use('/api/resume', resumeRoutes);
 app.use('/api/resumes', resumeViewRoutes);
 app.use('/api/resume-management', resumeManagementRoutes);
+app.use('/api/ats', atsRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/integrations', integrationsRoutes);
 app.use('/api/ipp', ippRoutes);
