@@ -71,9 +71,7 @@ const ATSScoreCard = ({ studentId = null, isFacultyView = false }) => {
 
     setUploading(true);
     try {
-      const res = await axios.post('/ats/analyze', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      });
+      const res = await axios.post('/ats/analyze', formData);
 
       if (res.data.success) {
         toast.success(`Resume analyzed! ATS Score: ${res.data.atsScore}`);
