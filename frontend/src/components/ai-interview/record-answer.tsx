@@ -114,13 +114,40 @@ export const RecordAnswer = ({
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const chatSessionRef = useRef<ReturnType<typeof createOpenRouterChatSession> | null>(null);
+  const restartTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const startInProgressRef = useRef(false);
 
   const { activeUserId: userId } = usePortalAuth();
   const { interviewId } = useParams();
 
+  const startRecordingSafely = async () => {
+    if (isRecording || startInProgressRef.current) return;
+
+    startInProgressRef.current = true;
+    try {
+      await Promise.resolve(startSpeechToText());
+    } catch (error) {
+      if ((error as DOMException)?.name !== "InvalidStateError") {
+        console.error("Unable to start speech recognition", error);
+      }
+    } finally {
+      if (restartTimerRef.current) {
+        clearTimeout(restartTimerRef.current);
+      }
+      restartTimerRef.current = setTimeout(() => {
+        startInProgressRef.current = false;
+      }, 200);
+    }
+  };
+
+  const stopRecordingSafely = () => {
+    if (!isRecording) return;
+    stopSpeechToText();
+  };
+
   const recordUserAnswer = async () => {
     if (isRecording) {
-      stopSpeechToText();
+      stopRecordingSafely();
 
       if (userAnswer?.length < 30) {
         toast.error("Error", {
@@ -139,7 +166,7 @@ export const RecordAnswer = ({
 
       setAiResult(aiResult);
     } else {
-      startSpeechToText();
+      await startRecordingSafely();
     }
   };
 
@@ -207,8 +234,15 @@ export const RecordAnswer = ({
 
   const recordNewAnswer = () => {
     setUserAnswer("");
-    stopSpeechToText();
-    startSpeechToText();
+    stopRecordingSafely();
+
+    if (restartTimerRef.current) {
+      clearTimeout(restartTimerRef.current);
+    }
+
+    restartTimerRef.current = setTimeout(() => {
+      startRecordingSafely();
+    }, 250);
   };
 
   const saveUserAnswer = async () => {
@@ -255,7 +289,7 @@ export const RecordAnswer = ({
       }
 
       setUserAnswer("");
-      stopSpeechToText();
+      stopRecordingSafely();
     } catch (error) {
       toast("Error", {
         description: "An error occurred while generating feedback.",
@@ -275,6 +309,15 @@ export const RecordAnswer = ({
 
     setUserAnswer(combineTranscripts);
   }, [results]);
+
+  useEffect(() => {
+    return () => {
+      if (restartTimerRef.current) {
+        clearTimeout(restartTimerRef.current);
+      }
+      startInProgressRef.current = false;
+    };
+  }, []);
 
   return (
     <div className="w-full flex flex-col items-center gap-8 mt-4">

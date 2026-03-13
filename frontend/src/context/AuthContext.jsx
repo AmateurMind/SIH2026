@@ -25,6 +25,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const interceptorRef = useRef(null);
+  const syncRequestInFlightRef = useRef(false);
 
   // Update global getToken reference
   useEffect(() => {
@@ -142,76 +143,97 @@ export const AuthProvider = ({ children }) => {
 
   // Sync Clerk user with backend MongoDB user
   useEffect(() => {
-    const syncUserWithBackend = async () => {
-      console.log('AuthContext: syncUserWithBackend called', { isLoaded, isSignedIn, clerkUser: !!clerkUser });
-      const legacyToken = getLegacyToken();
+    let cancelled = false;
 
-      if (isLoaded && isSignedIn && clerkUser) {
-        const fallbackUser = buildFallbackUserFromClerk();
-        try {
-          const token = await getToken();
-          console.log('AuthContext: got Clerk token:', token ? `${token.substring(0, 50)}...` : 'NULL');
-          if (!token) {
-            console.error('AuthContext: Clerk returned null token!');
-            // Use fallback user since we can't get backend profile
+    const syncUserWithBackend = async () => {
+      if (syncRequestInFlightRef.current) {
+        return;
+      }
+
+      syncRequestInFlightRef.current = true;
+      try {
+        const legacyToken = getLegacyToken();
+
+        if (isLoaded && isSignedIn && clerkUser) {
+          const fallbackUser = buildFallbackUserFromClerk();
+          try {
+            const token = await getToken();
+            if (!token) {
+              // Use fallback user since we can't get backend profile
+              const normalizedFallback = normalizeUser(null, fallbackUser);
+              if (!cancelled && normalizedFallback) {
+                setUser(normalizedFallback);
+              }
+              if (!cancelled) {
+                setLoading(false);
+              }
+              return;
+            }
+
+            // Set the token directly in headers for this request
+            const response = await axios.get('/auth/profile', {
+              headers: {
+                'Authorization': `Bearer ${token}`
+              }
+            });
+            const normalizedUser = normalizeUser(response.data?.user, fallbackUser);
+            if (!cancelled) {
+              setUser(normalizedUser);
+            }
+            clearLegacyToken();
+          } catch (error) {
+            console.error('Failed to sync user with backend:', error.response?.status, error.response?.data || error.message);
             const normalizedFallback = normalizeUser(null, fallbackUser);
-            if (normalizedFallback) {
+            if (!cancelled && normalizedFallback) {
               setUser(normalizedFallback);
             }
-            setLoading(false);
-            return;
-          }
-
-          // Set the token directly in headers for this request
-          console.log('AuthContext: fetching /auth/profile with token');
-          const response = await axios.get('/auth/profile', {
-            headers: {
-              'Authorization': `Bearer ${token}`
+          } finally {
+            if (!cancelled) {
+              setLoading(false);
             }
-          });
-          console.log('AuthContext: profile response', response.data);
-          const normalizedUser = normalizeUser(response.data?.user, fallbackUser);
-          setUser(normalizedUser);
-          console.log('AuthContext: user set', response.data.user);
-          clearLegacyToken();
-        } catch (error) {
-          console.error('Failed to sync user with backend:', error.response?.status, error.response?.data || error.message);
-          const normalizedFallback = normalizeUser(null, fallbackUser);
-          if (normalizedFallback) {
-            setUser(normalizedFallback);
           }
-        } finally {
-          console.log('AuthContext: setting loading to false');
-          setLoading(false);
-        }
-      } else if (legacyToken) {
-        try {
-          axios.defaults.headers.common['Authorization'] = `Bearer ${legacyToken}`;
-          console.log('AuthContext: fetching /auth/profile via legacy token');
-          const response = await axios.get('/auth/profile');
-          const normalizedUser = normalizeUser(response.data?.user);
-          setUser(normalizedUser);
-        } catch (legacyError) {
-          console.error('Failed to sync legacy session:', legacyError);
+        } else if (legacyToken) {
+          try {
+            axios.defaults.headers.common['Authorization'] = `Bearer ${legacyToken}`;
+            const response = await axios.get('/auth/profile');
+            const normalizedUser = normalizeUser(response.data?.user);
+            if (!cancelled) {
+              setUser(normalizedUser);
+            }
+          } catch (legacyError) {
+            console.error('Failed to sync legacy session:', legacyError);
+            clearLegacyToken();
+            if (!cancelled) {
+              setUser(null);
+            }
+            delete axios.defaults.headers.common['Authorization'];
+          } finally {
+            if (!cancelled) {
+              setLoading(false);
+            }
+          }
+        } else if (isLoaded && !isSignedIn) {
+          if (!cancelled) {
+            setUser(null);
+          }
           clearLegacyToken();
-          setUser(null);
           delete axios.defaults.headers.common['Authorization'];
-        } finally {
-          setLoading(false);
+          if (!cancelled) {
+            setLoading(false);
+          }
         }
-      } else if (isLoaded && !isSignedIn) {
-        console.log('AuthContext: not signed in, clearing user');
-        setUser(null);
-        clearLegacyToken();
-        delete axios.defaults.headers.common['Authorization'];
-        setLoading(false);
-      } else {
-        console.log('AuthContext: conditions not met for sync');
+      } finally {
+        syncRequestInFlightRef.current = false;
       }
     };
 
     syncUserWithBackend();
-  }, [isLoaded, isSignedIn, clerkUser, getToken]);
+
+    return () => {
+      cancelled = true;
+      syncRequestInFlightRef.current = false;
+    };
+  }, [isLoaded, isSignedIn, userId]);
 
   const shouldFallbackToLegacy = (error) => {
     const status = error?.status || error?.response?.status;

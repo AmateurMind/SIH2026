@@ -178,8 +178,6 @@ function AppContent() {
     return () => clearTimeout(timer);
   }, []);
 
-  console.log('AppContent: rendering', { user: !!user, loading, minLoading, appMode: currentAppMode });
-
   if (loading || minLoading) {
     return <LoadingScreen />;
   }

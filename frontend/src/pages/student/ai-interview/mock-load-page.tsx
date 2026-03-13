@@ -3,7 +3,7 @@ import { db } from "@/config/firebase.config";
 import { Interview } from "@/types";
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { LoaderPage } from "./loader-page.tsx";
 import { CustomBreadCrumb } from "@/components/ai-interview/custom-bread-crumb";
 import { Button } from "@/components/ui/button";
@@ -17,8 +17,6 @@ export const MockLoadPage = () => {
   const [interview, setInterview] = useState<Interview | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isWebCamEnabled, setIsWebCamEnabled] = useState(false);
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     setIsLoading(true);
@@ -41,18 +39,18 @@ export const MockLoadPage = () => {
     };
 
     fetchInterview();
-  }, [interviewId, navigate]);
+  }, [interviewId]);
 
   if (isLoading) {
     return <LoaderPage className="w-full h-[70vh]" />;
   }
 
   if (!interviewId) {
-    navigate("/ai-interview", { replace: true });
+    return <Navigate to="/ai-interview" replace />;
   }
 
-  if (!interview) {
-    navigate("/ai-interview", { replace: true });
+  if (!isLoading && !interview) {
+    return <Navigate to="/ai-interview" replace />;
   }
 
   return (
