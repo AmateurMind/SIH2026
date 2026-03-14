@@ -9,6 +9,7 @@ import {
   Video,
   VideoOff,
   WebcamIcon,
+  Keyboard,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import useSpeechToText, { ResultType } from "react-hook-speech-to-text";
@@ -113,6 +114,7 @@ export const RecordAnswer = ({
   const [aiResult, setAiResult] = useState<AIResponse | null>(null);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [inputMode, setInputMode] = useState<"voice" | "text">("voice");
   const chatSessionRef = useRef<ReturnType<typeof createOpenRouterChatSession> | null>(null);
   const restartTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const startInProgressRef = useRef(false);
@@ -329,54 +331,81 @@ export const RecordAnswer = ({
         loading={loading}
       />
 
-      <div className="w-full h-[400px] md:w-96 flex flex-col items-center justify-center border border-blue-100 p-4 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl">
-        {isWebCam ? (
-          <WebCam
-            onUserMedia={() => setIsWebCam(true)}
-            onUserMediaError={() => setIsWebCam(false)}
-            className="w-full h-full object-cover rounded-xl"
-          />
-        ) : (
-          <WebcamIcon className="min-w-24 min-h-24 text-slate-300" />
-        )}
+      {/* Input mode toggle */}
+      <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-lg">
+        <button
+          onClick={() => {
+            setInputMode("voice");
+            setUserAnswer("");
+            stopRecordingSafely();
+          }}
+          className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+            inputMode === "voice"
+              ? "bg-white text-blue-700 shadow-sm"
+              : "text-slate-500 hover:text-slate-700"
+          }`}
+        >
+          <Mic className="w-4 h-4" />
+          Voice
+        </button>
+        <button
+          onClick={() => {
+            stopRecordingSafely();
+            setInputMode("text");
+            setUserAnswer("");
+          }}
+          className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+            inputMode === "text"
+              ? "bg-white text-blue-700 shadow-sm"
+              : "text-slate-500 hover:text-slate-700"
+          }`}
+        >
+          <Keyboard className="w-4 h-4" />
+          Type
+        </button>
       </div>
 
+      {/* Controls */}
       <div className="flex items-center justify-center gap-4">
-        <TooltipButton
-          content={isWebCam ? "Turn Off" : "Turn On"}
-          buttonVariant="outline"
-          buttonClassName={isWebCam ? "border-red-200 text-red-600 hover:bg-red-50 hover:border-red-300" : "border-blue-200 text-blue-600 hover:bg-blue-50 hover:border-blue-300"}
-          icon={
-            isWebCam ? (
-              <VideoOff className="min-w-5 min-h-5" />
-            ) : (
-              <Video className="min-w-5 min-h-5" />
-            )
-          }
-          onClick={() => setIsWebCam(!isWebCam)}
-        />
+        {inputMode === "voice" && (
+          <>
+            <TooltipButton
+              content={isWebCam ? "Turn Off" : "Turn On"}
+              buttonVariant="outline"
+              buttonClassName={isWebCam ? "border-red-200 text-red-600 hover:bg-red-50 hover:border-red-300" : "border-blue-200 text-blue-600 hover:bg-blue-50 hover:border-blue-300"}
+              icon={
+                isWebCam ? (
+                  <VideoOff className="min-w-5 min-h-5" />
+                ) : (
+                  <Video className="min-w-5 min-h-5" />
+                )
+              }
+              onClick={() => setIsWebCam(!isWebCam)}
+            />
 
-        <TooltipButton
-          content={isRecording ? "Stop Recording" : "Start Recording"}
-          buttonVariant="outline"
-          buttonClassName={isRecording ? "border-red-200 text-red-600 hover:bg-red-50 hover:border-red-300 animate-pulse" : "border-blue-200 text-blue-600 hover:bg-blue-50 hover:border-blue-300"}
-          icon={
-            isRecording ? (
-              <StopCircle className="min-w-5 min-h-5" />
-            ) : (
-              <Mic className="min-w-5 min-h-5" />
-            )
-          }
-          onClick={recordUserAnswer}
-        />
+            <TooltipButton
+              content={isRecording ? "Stop Recording" : "Start Recording"}
+              buttonVariant="outline"
+              buttonClassName={isRecording ? "border-red-200 text-red-600 hover:bg-red-50 hover:border-red-300 animate-pulse" : "border-blue-200 text-blue-600 hover:bg-blue-50 hover:border-blue-300"}
+              icon={
+                isRecording ? (
+                  <StopCircle className="min-w-5 min-h-5" />
+                ) : (
+                  <Mic className="min-w-5 min-h-5" />
+                )
+              }
+              onClick={recordUserAnswer}
+            />
 
-        <TooltipButton
-          content="Record Again"
-          buttonVariant="outline"
-          buttonClassName="border-blue-200 text-blue-600 hover:bg-blue-50 hover:border-blue-300"
-          icon={<RefreshCw className="min-w-5 min-h-5" />}
-          onClick={recordNewAnswer}
-        />
+            <TooltipButton
+              content="Record Again"
+              buttonVariant="outline"
+              buttonClassName="border-blue-200 text-blue-600 hover:bg-blue-50 hover:border-blue-300"
+              icon={<RefreshCw className="min-w-5 min-h-5" />}
+              onClick={recordNewAnswer}
+            />
+          </>
+        )}
 
         <TooltipButton
           content="Save Result"
@@ -389,23 +418,50 @@ export const RecordAnswer = ({
               <Save className="min-w-5 min-h-5" />
             )
           }
-          onClick={() => setOpen(!open)}
-          disbaled={!aiResult}
+          onClick={async () => {
+            if (inputMode === "text") {
+              if (!userAnswer || userAnswer.trim().length < 30) {
+                toast.error("Error", {
+                  description: "Your answer should be more than 30 characters",
+                });
+                return;
+              }
+              const result = await generateResult(
+                question.question,
+                question.answer,
+                userAnswer
+              );
+              setAiResult(result);
+            }
+            setOpen(!open);
+          }}
+          disbaled={!aiResult && inputMode === "voice"}
         />
       </div>
 
       <div className="w-full mt-4 p-6 border border-blue-100 rounded-xl bg-white shadow-md">
         <h2 className="text-lg font-semibold text-blue-900">Your Answer:</h2>
 
-        <p className="text-sm mt-3 text-slate-700 whitespace-normal leading-relaxed">
-          {userAnswer || "Start recording to see your answer here"}
-        </p>
-
-        {interimResult && (
-          <p className="text-sm text-slate-500 mt-3 bg-slate-50 p-2 rounded border border-slate-100">
-            <strong className="text-slate-700">Current Speech:</strong>{" "}
-            {interimResult}
-          </p>
+        {inputMode === "text" ? (
+          <textarea
+            className="w-full mt-3 p-3 text-sm text-slate-700 border border-blue-100 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-200 leading-relaxed"
+            rows={6}
+            placeholder="Type your answer here..."
+            value={userAnswer}
+            onChange={(e) => setUserAnswer(e.target.value)}
+          />
+        ) : (
+          <>
+            <p className="text-sm mt-3 text-slate-700 whitespace-normal leading-relaxed">
+              {userAnswer || "Start recording to see your answer here"}
+            </p>
+            {interimResult && (
+              <p className="text-sm text-slate-500 mt-3 bg-slate-50 p-2 rounded border border-slate-100">
+                <strong className="text-slate-700">Current Speech:</strong>{" "}
+                {interimResult}
+              </p>
+            )}
+          </>
         )}
       </div>
     </div>
