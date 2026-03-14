@@ -52,8 +52,8 @@ router.post('/analyze', authenticate, authorize('student'), upload.single('resum
             });
         }
 
-        // Analyze the resume text
-        const analysis = atsService.analyzeResume(parsedResume.text, jobDescription || null);
+        // Analyze the resume text (now async — uses Groq AI)
+        const analysis = await atsService.analyzeResume(parsedResume.text, jobDescription || null);
 
         // Save the resume to database with ATS analysis
         const resume = new Resume({
@@ -91,8 +91,20 @@ router.post('/analyze', authenticate, authorize('student'), upload.single('resum
                 score: analysis.score,
                 issues: analysis.issues,
                 suggestions: analysis.suggestions,
-                details: analysis.details
+                details: analysis.details,
+                scoreBreakdown: analysis.scoreBreakdown || null
             },
+            aiInsights: analysis.aiInsights ? {
+                modelUsed: analysis.aiInsights._modelUsed || null,
+                executiveSummary: analysis.aiInsights.executiveSummary,
+                candidateScore: analysis.aiInsights.candidateScore,
+                candidateScoreReason: analysis.aiInsights.candidateScoreReason,
+                projectQuality: analysis.aiInsights.projectQuality,
+                strengths: analysis.aiInsights.strengths || [],
+                priorityFixes: analysis.aiInsights.priorityFixes || [],
+                rewrittenBullets: analysis.aiInsights.rewrittenBullets || [],
+                redFlags: analysis.aiInsights.redFlags || []
+            } : null,
             resumeId: resume._id,
             analyzedAt: new Date()
         });

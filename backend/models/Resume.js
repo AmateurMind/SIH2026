@@ -47,7 +47,7 @@ const resumeSchema = new mongoose.Schema({
     },
     template: {
         type: String,
-        enum: ['classic', 'modern', 'minimal', 'minimal-image'],
+        enum: ['classic', 'modern', 'minimal', 'minimal-image', 'analyzed'],
         default: 'modern'
     },
     accentColor: {

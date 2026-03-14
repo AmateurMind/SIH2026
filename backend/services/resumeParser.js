@@ -22,49 +22,53 @@ function parseResume(buffer, filename) {
 }
 
 /**
- * Parse PDF file and extract text
+ * Parse PDF file and extract text using pdfjs-dist directly
+ * (pdf-parse v2 has an ESM/CJS compatibility bug with ./lib/pdf-parse.js)
  * @param {Buffer} buffer - PDF file buffer
  * @returns {Promise<{text: string, numPages: number, metadata: object}>}
  */
 async function parsePDF(buffer) {
-    // Import library entry directly to avoid pdf-parse index debug code
-    // that tries to read ./test/data/* in serverless bundles.
-    const pdfParseModule = await import('pdf-parse/lib/pdf-parse.js');
-    const pdfParse = pdfParseModule.default || pdfParseModule;
-    try {
-        const data = await pdfParse(buffer);
-        return {
-            text: data.text,
-            numPages: data.numpages,
-            metadata: data.info || {}
-        };
-    } catch (firstError) {
-        // Some PDFs have malformed xref tables. Re-save once via pdf-lib and retry.
-        const pdfLibModule = await import('pdf-lib');
-        const { PDFDocument, ParseSpeeds } = pdfLibModule;
+    const pdfjsLib = await import('pdfjs-dist/legacy/build/pdf.mjs');
+    const path = await import('path');
+    const { pathToFileURL } = await import('url');
 
-        try {
-            const repairedDoc = await PDFDocument.load(buffer, {
-                ignoreEncryption: true,
-                parseSpeed: ParseSpeeds.Fastest,
-                throwOnInvalidObject: false,
-                capNumbers: false,
-            });
-            const repairedBytes = await repairedDoc.save({
-                useObjectStreams: false,
-                addDefaultPage: false,
-            });
+    // Resolve the bundled worker file as a file:// URL (required by pdfjs-dist ESM in Node.js)
+    const workerPath = path.resolve(
+        __dirname,
+        '../../node_modules/pdfjs-dist/legacy/build/pdf.worker.mjs'
+    );
+    pdfjsLib.GlobalWorkerOptions.workerSrc = pathToFileURL(workerPath).href;
 
-            const repairedData = await pdfParse(Buffer.from(repairedBytes));
-            return {
-                text: repairedData.text,
-                numPages: repairedData.numpages,
-                metadata: repairedData.info || {}
-            };
-        } catch {
-            throw firstError;
-        }
+    const uint8Array = new Uint8Array(buffer);
+    const loadingTask = pdfjsLib.getDocument({
+        data: uint8Array,
+        useWorkerFetch: false,
+        isEvalSupported: false,
+        useSystemFonts: true,
+        disableFontFace: true,
+    });
+
+    const pdfDoc = await loadingTask.promise;
+    const numPages = pdfDoc.numPages;
+    const textPages = [];
+
+    for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+        const page = await pdfDoc.getPage(pageNum);
+        const textContent = await page.getTextContent();
+        const pageText = textContent.items
+            .map(item => ('str' in item ? item.str : ''))
+            .join(' ');
+        textPages.push(pageText);
+        page.cleanup();
     }
+
+    await pdfDoc.destroy();
+
+    return {
+        text: textPages.join('\n'),
+        numPages,
+        metadata: {}
+    };
 }
 
 /**
