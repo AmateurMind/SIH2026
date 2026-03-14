@@ -16,7 +16,7 @@ import {
   Zap
 } from 'lucide-react';
 
-const ATSScoreCard = ({ studentId = null, isFacultyView = false }) => {
+const ATSScoreCard = ({ studentId = null, isFacultyView = false, triggerRefresh = 0 }) => {
   const [atsScore, setAtsScore] = useState(null);
   const [atsAnalysis, setAtsAnalysis] = useState(null);
   const [aiInsights, setAiInsights] = useState(null);
@@ -28,7 +28,7 @@ const ATSScoreCard = ({ studentId = null, isFacultyView = false }) => {
 
   useEffect(() => {
     fetchATSScore();
-  }, [studentId]);
+  }, [studentId, triggerRefresh]);
 
   const fetchATSScore = async () => {
     try {

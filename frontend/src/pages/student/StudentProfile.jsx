@@ -37,6 +37,7 @@ const StudentProfile = () => {
     profilePicture: user?.profilePicture || ''
   });
   const [uploading, setUploading] = useState(false);
+  const [triggerAtsRefresh, setTriggerAtsRefresh] = useState(0);
 
   const handleFileUpload = async (file) => {
     if (!file) return;
@@ -136,6 +137,7 @@ const StudentProfile = () => {
         setPdfResumes(res.data.resumes || []);
       }
       setShowUploadModal(false);
+      setTriggerAtsRefresh(prev => prev + 1); // Trigger ATS fetch
     } catch (error) {
       toast.error(error.response?.data?.error || 'Upload failed');
     } finally {
@@ -150,6 +152,7 @@ const StudentProfile = () => {
       await axios.delete(`/students/pdf-resume/${resumeId}`);
       toast.success('Resume deleted successfully');
       setPdfResumes([]); // Clear locally since we only allow 1 resume
+      setTriggerAtsRefresh(prev => prev + 1); // Trigger ATS fetch
     } catch (error) {
       toast.error('Failed to delete resume');
     }
@@ -470,7 +473,7 @@ const StudentProfile = () => {
             </div>
 
             {/* ATS Score Section */}
-            <ATSScoreCard />
+            <ATSScoreCard triggerRefresh={triggerAtsRefresh} />
           </div>
         </div>
       </div >

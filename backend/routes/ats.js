@@ -4,6 +4,7 @@ const { authenticate, authorize } = require('../middleware/auth');
 const { Student, Resume } = require('../models');
 const atsService = require('../services/atsService');
 const resumeParser = require('../services/resumeParser');
+const axios = require('axios');
 
 const router = express.Router();
 
@@ -132,17 +133,58 @@ router.get('/my-score', authenticate, authorize('student'), async (req, res) => 
             atsScore: { $exists: true, $ne: null }
         }).sort({ createdAt: -1 });
 
+        // If no explicit AI analysis exists OR a newer base resume was uploaded, compute dynamically
+        let dynamicAtsResult = null;
+        if (student.pdfResumes && student.pdfResumes.length > 0) {
+            // Get the most recently uploaded base resume
+            const latestPdf = student.pdfResumes.sort((a, b) => new Date(b.uploadedAt) - new Date(a.uploadedAt))[0];
+            
+            if (!latestResume || new Date(latestPdf.uploadedAt) > new Date(latestResume.createdAt)) {
+                try {
+                // Download file from Cloudinary (or wherever filePath points)
+                const response = await axios.get(latestPdf.filePath, { responseType: 'arraybuffer' });
+                const buffer = Buffer.from(response.data);
+                
+                // Parse resume
+                const parsedResume = await resumeParser.parseResume(buffer, latestPdf.originalName || latestPdf.filename);
+                
+                // Analyze it dynamically (NOT saved to DB)
+                const analysis = await atsService.analyzeResume(parsedResume.text, null);
+                
+                // Construct a dynamic result to match what frontend expects from `latestResume`
+                dynamicAtsResult = {
+                    _id: 'dynamic-' + latestPdf._id, // Fake ID for frontend
+                    title: latestPdf.originalName || 'Base Resume',
+                    atsScore: analysis.score,
+                    atsAnalysis: {
+                        score: analysis.score,
+                        issues: analysis.issues,
+                        suggestions: analysis.suggestions,
+                        details: analysis.details,
+                        scoreBreakdown: analysis.scoreBreakdown || null,
+                        analyzedAt: new Date()
+                    },
+                    aiInsights: analysis.aiInsights || null
+                };
+            } catch (err) {
+                console.error("Failed to dynamically calculate ATS score:", err);
+                // Fail silently, return null for ATS score
+            }
+            }
+        }
+
         res.json({
             success: true,
-            atsScore: student.atsScore,
-            atsAnalyzedAt: student.atsAnalyzedAt,
-            resumeId: student.atsResumeId,
-            latestResume: latestResume ? {
+            atsScore: dynamicAtsResult ? dynamicAtsResult.atsScore : (latestResume ? latestResume.atsScore : student.atsScore),
+            atsAnalyzedAt: dynamicAtsResult ? dynamicAtsResult.atsAnalysis.analyzedAt : (latestResume ? student.atsAnalyzedAt : student.atsAnalyzedAt),
+            resumeId: dynamicAtsResult ? dynamicAtsResult._id : (latestResume ? student.atsResumeId : student.atsResumeId),
+            latestResume: dynamicAtsResult ? dynamicAtsResult : (latestResume ? {
                 _id: latestResume._id,
                 title: latestResume.title,
                 atsScore: latestResume.atsScore,
-                atsAnalysis: latestResume.atsAnalysis
-            } : null
+                atsAnalysis: latestResume.atsAnalysis,
+                aiInsights: latestResume.aiInsights
+            } : null)
         });
 
     } catch (error) {
@@ -218,6 +260,45 @@ router.get('/student/:studentId', authenticate, authorize('admin', 'mentor'), as
             atsScore: { $exists: true, $ne: null }
         }).sort({ createdAt: -1 });
 
+        // If no explicit AI analysis exists OR a newer base resume was uploaded, compute dynamically
+        let dynamicAtsResult = null;
+        if (student.pdfResumes && student.pdfResumes.length > 0) {
+            // Get the most recently uploaded base resume
+            const latestPdf = student.pdfResumes.sort((a, b) => new Date(b.uploadedAt) - new Date(a.uploadedAt))[0];
+            
+            if (!latestResume || new Date(latestPdf.uploadedAt) > new Date(latestResume.createdAt)) {
+                try {
+                // Download file from Cloudinary (or wherever filePath points)
+                const response = await axios.get(latestPdf.filePath, { responseType: 'arraybuffer' });
+                const buffer = Buffer.from(response.data);
+                
+                // Parse resume
+                const parsedResume = await resumeParser.parseResume(buffer, latestPdf.originalName || latestPdf.filename);
+                
+                // Analyze it dynamically (NOT saved to DB)
+                const analysis = await atsService.analyzeResume(parsedResume.text, null);
+                
+                // Construct a dynamic result to match what frontend expects
+                dynamicAtsResult = {
+                    _id: 'dynamic-' + latestPdf._id,
+                    title: latestPdf.originalName || 'Base Resume',
+                    atsScore: analysis.score,
+                    atsAnalysis: {
+                        score: analysis.score,
+                        issues: analysis.issues,
+                        suggestions: analysis.suggestions,
+                        details: analysis.details,
+                        scoreBreakdown: analysis.scoreBreakdown || null,
+                        analyzedAt: new Date()
+                    },
+                    aiInsights: analysis.aiInsights || null
+                };
+            } catch (err) {
+                console.error("Failed to dynamically calculate ATS score for student:", err);
+            }
+            }
+        }
+
         res.json({
             success: true,
             student: {
@@ -228,15 +309,16 @@ router.get('/student/:studentId', authenticate, authorize('admin', 'mentor'), as
                 department: student.department,
                 semester: student.semester
             },
-            atsScore: student.atsScore,
-            atsAnalyzedAt: student.atsAnalyzedAt,
-            resumeId: student.atsResumeId,
-            latestResume: latestResume ? {
+            atsScore: dynamicAtsResult ? dynamicAtsResult.atsScore : (latestResume ? student.atsScore : student.atsScore),
+            atsAnalyzedAt: dynamicAtsResult ? dynamicAtsResult.atsAnalysis.analyzedAt : (latestResume ? student.atsAnalyzedAt : student.atsAnalyzedAt),
+            resumeId: dynamicAtsResult ? dynamicAtsResult._id : (latestResume ? student.atsResumeId : student.atsResumeId),
+            latestResume: dynamicAtsResult ? dynamicAtsResult : (latestResume ? {
                 _id: latestResume._id,
                 title: latestResume.title,
                 atsScore: latestResume.atsScore,
-                atsAnalysis: latestResume.atsAnalysis
-            } : null
+                atsAnalysis: latestResume.atsAnalysis,
+                aiInsights: latestResume.aiInsights
+            } : null)
         });
 
     } catch (error) {
