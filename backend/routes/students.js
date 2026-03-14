@@ -380,7 +380,7 @@ router.post('/upload-pdf-resume', requireHybridAuth, authorize('student'), pdfUp
 
     res.json({
       message: 'PDF resume uploaded successfully',
-      resume: resumeData
+      resume: student.pdfResumes[student.pdfResumes.length - 1]
     });
   } catch (error) {
     console.error('PDF upload error:', error);
