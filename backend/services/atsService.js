@@ -118,12 +118,12 @@ function getResumeQualityScore(text) {
     const tokens = tokenize(text);
     const wordCount = tokens.length;
 
-    // Section check
+    // Section check — match all common heading variants including ALL-CAPS PDF headings
     const sectionKeywords = {
-        experience: ['experience', 'work history', 'employment'],
-        education:  ['education', 'academic', 'degree', 'university'],
-        skills:     ['skills', 'technical skills', 'core competencies'],
-        contact:    ['email', 'phone', 'linkedin', 'contact']
+        experience: ['experience', 'work history', 'employment', 'internship', 'work experience', 'professional experience'],
+        education:  ['education', 'academic', 'degree', 'university', 'college', 'b.tech', 'bachelor', 'b.e.', 'school'],
+        skills:     ['skills', 'technical skills', 'core competencies', 'competencies', 'technologies', 'tech stack', 'tools'],
+        contact:    ['email', 'phone', 'linkedin', 'contact', 'github', 'portfolio']
     };
     const textLower = text.toLowerCase();
     const missingSections = Object.entries(sectionKeywords)
@@ -135,10 +135,19 @@ function getResumeQualityScore(text) {
     if (wordCount < 200) score -= 3;
     if (/\|.*\|/.test(text)) score -= 2;          // tables
 
+    // Extended action verb list covering engineering/internship resumes
+    const ACTION_VERBS = new Set([
+        'achieved','improved','developed','managed','led','created','implemented','designed',
+        'increased','reduced','built','delivered','launched','optimized','automated','deployed',
+        'engineered','collaborated','contributed','integrated','maintained','mentored','coordinated',
+        'architected','analyzed','migrated','monitored','resolved','streamlined','trained','tested',
+        'configured','established','executed','facilitated','generated','identified','applied','earned'
+    ]);
+
     const details = {
         formatting: { wordCount, issues: [] },
         content: {
-            actionVerbs: tokens.filter(t => ['achieved','improved','developed','managed','led','created','implemented','designed','increased','reduced','built','delivered','launched','optimized'].includes(t)).length,
+            actionVerbs: tokens.filter(t => ACTION_VERBS.has(t)).length,
             quantifiableAchievements: (text.match(/\d+%?/g) || []).length
         },
         sections: {
@@ -216,8 +225,17 @@ Return ONLY valid JSON (no markdown, no extra text):
   "priorityFixes": ["<actionable fix 1>", "<actionable fix 2>", "<actionable fix 3>"],
   "rewrittenBullets": ["<improved resume bullet 1>", "<improved bullet 2>", "<improved bullet 3>"],
   "credibilityRisk": <number 0-10>,
-  "redFlags": ["<flag 1>", "<flag 2>"]
+  "redFlags": ["<flag 1>", "<flag 2>"],
+  "sectionsFound": ["<section name>"],
+  "sectionsMissing": ["<section name>"]
 }
+
+For sectionsFound/sectionsMissing: check for the presence of these 4 standard resume sections:
+- "experience" (work experience, internship, employment history)
+- "education" (academic background, degree, university, college)
+- "skills" (technical skills, tools, technologies, competencies)
+- "contact" (email, phone, LinkedIn, GitHub, address)
+List only those 4 canonical names in the arrays.
 
 candidateScore guide:
 - 26-30: Exceptional — SIH/eYRC winner + strong evidence or 6+ months real experience + great projects
@@ -288,6 +306,23 @@ async function analyzeResume(resumeText, jobDescription = null) {
         Promise.resolve(getResumeQualityScore(resumeText)),
         Promise.resolve(detectExperienceScore(resumeText))
     ]);
+
+    // Use AI section detection if available — overrides keyword-based fallback
+    if (aiInsights?.sectionsFound !== undefined) {
+        const ALL_SECTIONS = ['experience', 'education', 'skills', 'contact'];
+        const found   = aiInsights.sectionsFound   || [];
+        const missing = aiInsights.sectionsMissing || ALL_SECTIONS.filter(s => !found.includes(s));
+        quality.details.sections.found   = found;
+        quality.details.sections.missing = missing;
+
+        // Re-adjust quality score based on AI-reported sections
+        const aiMissingCount = missing.length;
+        const kwMissingCount = quality.details.sections.missing.length;
+        // Recalculate section penalty delta
+        quality.score = Math.max(0, Math.min(10,
+            quality.score + (kwMissingCount - aiMissingCount) * 1.5
+        ));
+    }
 
     const achievementScore = detectAchievementScore(resumeText);          // 0-20
     const experiencePoints = Math.min(30, experienceResult.score);        // 0-30

@@ -16,7 +16,7 @@ import {
   Zap
 } from 'lucide-react';
 
-const ATSScoreCard = ({ studentId = null, isFacultyView = false, triggerRefresh = 0 }) => {
+const ATSScoreCard = ({ studentId = null, isFacultyView = false, triggerRefresh = 0, hasResume = true }) => {
   const [atsScore, setAtsScore] = useState(null);
   const [atsAnalysis, setAtsAnalysis] = useState(null);
   const [aiInsights, setAiInsights] = useState(null);
@@ -26,9 +26,18 @@ const ATSScoreCard = ({ studentId = null, isFacultyView = false, triggerRefresh 
   const [showAnalysisModal, setShowAnalysisModal] = useState(false);
   const [uploading, setUploading] = useState(false);
 
+  // Clear score immediately when resume is deleted
   useEffect(() => {
+    if (!hasResume && !isFacultyView) {
+      setAtsScore(null);
+      setAtsAnalysis(null);
+      setAiInsights(null);
+      setScoreBreakdown(null);
+      setLoading(false);
+      return;
+    }
     fetchATSScore();
-  }, [studentId, triggerRefresh]);
+  }, [studentId, triggerRefresh, hasResume]);
 
   const fetchATSScore = async () => {
     try {

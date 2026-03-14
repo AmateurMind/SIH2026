@@ -473,7 +473,10 @@ const StudentProfile = () => {
             </div>
 
             {/* ATS Score Section */}
-            <ATSScoreCard triggerRefresh={triggerAtsRefresh} />
+            <ATSScoreCard
+              triggerRefresh={triggerAtsRefresh}
+              hasResume={(pdfResumes.length > 0) || (user?.pdfResumes && user.pdfResumes.length > 0)}
+            />
           </div>
         </div>
       </div >
