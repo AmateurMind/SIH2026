@@ -115,6 +115,7 @@ export const RecordAnswer = ({
   const [aiResult, setAiResult] = useState<AIResponse | null>(null);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [inputMode, setInputMode] = useState<"voice" | "text">("voice");
   const chatSessionRef = useRef<ReturnType<typeof createOpenRouterChatSession> | null>(null);
   const restartTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -250,8 +251,11 @@ export const RecordAnswer = ({
 
   const saveUserAnswer = async () => {
     setLoading(true);
+    setIsSaving(true);
 
     if (!aiResult) {
+      setLoading(false);
+      setIsSaving(false);
       return;
     }
 
@@ -300,6 +304,7 @@ export const RecordAnswer = ({
       console.log(error);
     } finally {
       setLoading(false);
+      setIsSaving(false);
       setOpen(!open);
     }
   };
@@ -336,6 +341,12 @@ export const RecordAnswer = ({
         loading={loading}
       />
 
+      {isSaving && (
+        <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/40">
+          <CubeLoader />
+        </div>
+      )}
+
       {/* Input mode toggle */}
       <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-lg">
         <button
@@ -368,6 +379,18 @@ export const RecordAnswer = ({
           <Keyboard className="w-4 h-4" />
           Type
         </button>
+      </div>
+
+      <div className="w-full h-[400px] md:w-96 flex flex-col items-center justify-center border border-blue-100 p-4 bg-white rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl">
+        {isWebCam ? (
+          <WebCam
+            onUserMedia={() => setIsWebCam(true)}
+            onUserMediaError={() => setIsWebCam(false)}
+            className="w-full h-full object-cover rounded-xl"
+          />
+        ) : (
+          <WebcamIcon className="min-w-24 min-h-24 text-slate-300" />
+        )}
       </div>
 
       {/* Controls */}
