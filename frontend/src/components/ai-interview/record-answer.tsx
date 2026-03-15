@@ -18,6 +18,7 @@ import WebCam from "react-webcam";
 import { TooltipButton } from "./tooltip-button";
 import { toast } from "sonner";
 import { SaveModal } from "./save-modal";
+import { CubeLoader } from "../ui/cube-loader";
 import {
   addDoc,
   collection,
@@ -321,7 +322,11 @@ export const RecordAnswer = ({
     };
   }, []);
 
-  return (
+  return isAiGenerating ? (
+    <div className="w-full flex-col min-h-[400px] flex items-center justify-center">
+      <CubeLoader />
+    </div>
+  ) : (
     <div className="w-full flex flex-col items-center gap-8 mt-4">
       {/* save modal */}
       <SaveModal
