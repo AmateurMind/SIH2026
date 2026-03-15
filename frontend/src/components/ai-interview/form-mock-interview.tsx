@@ -13,6 +13,7 @@ import { Headings } from "./headings";
 import { Button } from "./ui/button";
 import { Loader, Trash2 } from "lucide-react";
 import { Separator } from "./ui/separator";
+import { CubeLoader } from "../ui/cube-loader";
 import {
   FormControl,
   FormField,
@@ -332,134 +333,138 @@ The questions should assess skills in ${data.techStack} development and best pra
 
           <Separator className="my-6 bg-gray-200" />
 
-          <FormProvider {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="w-full flex-col flex items-start justify-start gap-6"
-            >
-              <FormField
-                control={form.control}
-                name="position"
-                render={({ field }) => (
-                  <FormItem className="w-full space-y-4">
-                    <div className="w-full flex items-center justify-between">
-                      <FormLabel className="text-gray-700 font-medium">Job Role / Job Position</FormLabel>
-                      <FormMessage className="text-sm text-red-500" />
-                    </div>
-                    <FormControl>
-                      <Input
-                        className="h-12 bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-blue-500/20 focus:border-blue-500"
-                        disabled={loading}
-                        placeholder="eg:- Full Stack Developer"
-                        {...field}
-                        value={field.value ?? ""}
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="description"
-                render={({ field }) => (
-                  <FormItem className="w-full space-y-4">
-                    <div className="w-full flex items-center justify-between">
-                      <FormLabel className="text-gray-700 font-medium">Job Description</FormLabel>
-                      <FormMessage className="text-sm text-red-500" />
-                    </div>
-                    <FormControl>
-                      <Textarea
-                        className="min-h-[120px] bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-blue-500/20 focus:border-blue-500 resize-none"
-                        disabled={loading}
-                        placeholder="eg:- describe your job role"
-                        {...field}
-                        value={field.value ?? ""}
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="experience"
-                render={({ field }) => (
-                  <FormItem className="w-full space-y-4">
-                    <div className="w-full flex items-center justify-between">
-                      <FormLabel className="text-gray-700 font-medium">Years of Experience</FormLabel>
-                      <FormMessage className="text-sm text-red-500" />
-                    </div>
-                    <FormControl>
-                      <Input
-                        type="number"
-                        className="h-12 bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-blue-500/20 focus:border-blue-500"
-                        disabled={loading}
-                        placeholder="eg:- 5 Years"
-                        value={field.value ?? ""}
-                        onChange={(event) =>
-                          field.onChange(
-                            event.target.value === ""
-                              ? undefined
-                              : Number(event.target.value)
-                          )
-                        }
-                        onBlur={field.onBlur}
-                        name={field.name}
-                        ref={field.ref}
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="techStack"
-                render={({ field }) => (
-                  <FormItem className="w-full space-y-4">
-                    <div className="w-full flex items-center justify-between">
-                      <FormLabel className="text-gray-700 font-medium">Tech Stacks</FormLabel>
-                      <FormMessage className="text-sm text-red-500" />
-                    </div>
-                    <FormControl>
-                      <Textarea
-                        className="min-h-[80px] bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-blue-500/20 focus:border-blue-500 resize-none"
-                        disabled={loading}
-                        placeholder="eg:- React, TypeScript, Node.js..."
-                        {...field}
-                        value={field.value ?? ""}
-                      />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <div className="w-full flex items-center justify-end gap-4 mt-8">
-                <Button
-                  type="reset"
-                  size={"sm"}
-                  variant={"outline"}
-                  disabled={isSubmitting || loading}
-                  className="px-6 border-gray-200 text-gray-700 hover:bg-gray-50"
-                >
-                  Reset
-                </Button>
-                <Button
-                  type="submit"
-                  size={"sm"}
-                  disabled={isSubmitting || !isValid || loading}
-                  className="bg-blue-600 text-white hover:bg-blue-700 px-6 shadow-sm"
-                >
-                  {loading ? (
-                    <Loader className="text-white animate-spin" />
-                  ) : (
-                    actions
+          {loading ? (
+            <CubeLoader />
+          ) : (
+            <FormProvider {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="w-full flex-col flex items-start justify-start gap-6"
+              >
+                <FormField
+                  control={form.control}
+                  name="position"
+                  render={({ field }) => (
+                    <FormItem className="w-full space-y-4">
+                      <div className="w-full flex items-center justify-between">
+                        <FormLabel className="text-gray-700 font-medium">Job Role / Job Position</FormLabel>
+                        <FormMessage className="text-sm text-red-500" />
+                      </div>
+                      <FormControl>
+                        <Input
+                          className="h-12 bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-blue-500/20 focus:border-blue-500"
+                          disabled={loading}
+                          placeholder="eg:- Full Stack Developer"
+                          {...field}
+                          value={field.value ?? ""}
+                        />
+                      </FormControl>
+                    </FormItem>
                   )}
-                </Button>
-              </div>
-            </form>
-          </FormProvider>
+                />
+
+                <FormField
+                  control={form.control}
+                  name="description"
+                  render={({ field }) => (
+                    <FormItem className="w-full space-y-4">
+                      <div className="w-full flex items-center justify-between">
+                        <FormLabel className="text-gray-700 font-medium">Job Description</FormLabel>
+                        <FormMessage className="text-sm text-red-500" />
+                      </div>
+                      <FormControl>
+                        <Textarea
+                          className="min-h-[120px] bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-blue-500/20 focus:border-blue-500 resize-none"
+                          disabled={loading}
+                          placeholder="eg:- describe your job role"
+                          {...field}
+                          value={field.value ?? ""}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="experience"
+                  render={({ field }) => (
+                    <FormItem className="w-full space-y-4">
+                      <div className="w-full flex items-center justify-between">
+                        <FormLabel className="text-gray-700 font-medium">Years of Experience</FormLabel>
+                        <FormMessage className="text-sm text-red-500" />
+                      </div>
+                      <FormControl>
+                        <Input
+                          type="number"
+                          className="h-12 bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-blue-500/20 focus:border-blue-500"
+                          disabled={loading}
+                          placeholder="eg:- 5 Years"
+                          value={field.value ?? ""}
+                          onChange={(event) =>
+                            field.onChange(
+                              event.target.value === ""
+                                ? undefined
+                                : Number(event.target.value)
+                            )
+                          }
+                          onBlur={field.onBlur}
+                          name={field.name}
+                          ref={field.ref}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="techStack"
+                  render={({ field }) => (
+                    <FormItem className="w-full space-y-4">
+                      <div className="w-full flex items-center justify-between">
+                        <FormLabel className="text-gray-700 font-medium">Tech Stacks</FormLabel>
+                        <FormMessage className="text-sm text-red-500" />
+                      </div>
+                      <FormControl>
+                        <Textarea
+                          className="min-h-[80px] bg-white border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-blue-500/20 focus:border-blue-500 resize-none"
+                          disabled={loading}
+                          placeholder="eg:- React, TypeScript, Node.js..."
+                          {...field}
+                          value={field.value ?? ""}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+
+                <div className="w-full flex items-center justify-end gap-4 mt-8">
+                  <Button
+                    type="reset"
+                    size={"sm"}
+                    variant={"outline"}
+                    disabled={isSubmitting || loading}
+                    className="px-6 border-gray-200 text-gray-700 hover:bg-gray-50"
+                  >
+                    Reset
+                  </Button>
+                  <Button
+                    type="submit"
+                    size={"sm"}
+                    disabled={isSubmitting || !isValid || loading}
+                    className="bg-blue-600 text-white hover:bg-blue-700 px-6 shadow-sm"
+                  >
+                    {loading ? (
+                      <Loader className="text-white animate-spin" />
+                    ) : (
+                      actions
+                    )}
+                  </Button>
+                </div>
+              </form>
+            </FormProvider>
+          )}
         </div>
       </div>
     </div>
