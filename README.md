@@ -1,109 +1,121 @@
-# 🎓 Campus Buddy
+# Campus Buddy
 
+Campus Buddy is a full-stack internship and placement platform for students, mentors, recruiters, and placement cells.
 
-A comprehensive campus internship and placement portal designed to streamline the recruitment process for universities, students, mentors, and recruiters.
-
----
-
-## 🔗 Links
-- **Live Demo:** https://campusbuddy-0qnu.onrender.com/  
-- **Video Demo:** https://www.youtube.com/watch?v=A15PEUzelfs  
+It replaces fragmented communication (WhatsApp, email chains, spreadsheets) with a single workflow for profile management, resume quality analysis, interview practice, application tracking, and automation.
 
 ---
 
-## 📖 Overview
-
-Campus Buddy is a unified digital platform that bridges the gap between students, academic mentors, placement cells, and corporate recruiters.
-
-It replaces scattered WhatsApp groups, emails, and spreadsheets with a structured, transparent, and automated placement workflow — from resume creation and internship discovery to evaluations, offers, and final placement records.
-
-The system is designed for **real-world institutional use**, with role-based access control, analytics, and automation built into every step.
+## Links
+- Live Demo: https://campusbuddy-0qnu.onrender.com/
+- Video Demo: https://www.youtube.com/watch?v=A15PEUzelfs
 
 ---
 
-##  Key Features
+## What Is Improved
 
-### 👨‍🎓 For Students
-- Smart dashboard with live application status and recommendations  
-- AI-powered resume builder with ATS-friendly formatting  
-- Skill gap analysis with personalized learning suggestions  
-- AI mock interviews with performance feedback  
-- Interview & placement calendar  
-- Internship and application tracking  
-- Secure academic and document profile  
+### 1) AI Resume Checker (ATS) - Improved
+- ATS score out of 100 with transparent score breakdown:
+- Experience (0-30)
+- AI Candidate Evaluation (0-30)
+- Achievements/Hackathons (0-20)
+- Resume Quality (0-10)
+- Keyword Match (0-10)
+- Deep resume analysis includes:
+- Section detection (experience, education, skills, contact)
+- Contact validation (email/phone presence)
+- Action verbs and quantifiable metrics count
+- Word count and formatting checks
+- AI-generated insights include:
+- Executive summary
+- Priority fixes
+- Rewritten resume bullets
+- Faculty/Admin views for score tracking and comparative analysis
 
-### 👩‍🏫 For Mentors & Faculty
-- Application review and approval workflow  
-- Mentee progress and placement tracking  
-- Academic and interview calendar  
-- Bulk approvals and evaluations  
-
-### 🏢 For Recruiters
-- Internship and job posting  
-- Candidate discovery & filtering  
-- Secure resume and profile review  
-- Application status management  
-
-### ⚙️ For Administrators
-- Centralized user and role management  
-- Placement and internship analytics  
-- Institutional event calendar  
-- System activity monitoring  
+### 2) AI Mock Interview - Improved
+- Real-time focus/proctoring monitor during interview sessions
+- FaceMesh-based face and gaze signals
+- Tab-switch detection using browser visibility events
+- Multiple-face detection alerts
+- No-face and head-away signals with suspicion scoring
+- Event log for interview integrity signals
+- Post-interview feedback flow for candidate improvement
 
 ---
 
-## 🛠️ Technology Stack
+## Key Features
+
+### For Students
+- Profile and document management
+- Resume Builder with templates, color themes, save/public toggle, and PDF export
+- ATS Resume Checker with AI insights
+- AI Mock Interview with monitoring and feedback
+- Skill gap analysis with recommended focus areas
+- Internship discovery and application tracking
+- Calendar and deadline notifications
+
+### For Mentors and Faculty
+- Student application review and approval workflow
+- Progress visibility and tracking dashboards
+- ATS score monitoring for mentees
+
+### For Recruiters
+- Internship/job posting and application management
+- Candidate profile and resume review
+- Status updates across hiring stages
+
+### For Admins
+- Role-based control and platform governance
+- Institution-level analytics and monitoring
+- Placement process visibility
+
+---
+
+## Technology Stack
 
 ### Frontend
-- **React 18** – Component-based UI  
-- **Tailwind CSS** – Responsive styling  
-- **Framer Motion** – UI animations  
-- **Lucide React** – Icon system  
+- React 18
+- Tailwind CSS
+- Framer Motion
+- Lucide React
 
-### Backend & Data
-- **Node.js & Express.js** – API & business logic  
-- **MongoDB** – Primary database for users, internships, applications, and records  
-- **Firebase** – Real-time data & session storage for AI mock interviews  
+### Backend and Data
+- Node.js and Express
+- MongoDB
+- Firebase (AI interview session data/workflows)
 
-### Authentication
-- **Clerk** – Secure authentication for users, roles, and session management  
+### Authentication and Files
+- Clerk (role-based authentication)
+- Cloudinary (file storage and delivery)
 
-### Media & Files
-- **Cloudinary** – Secure storage and delivery for resumes, certificates, and user uploads  
+### AI and Intelligence
+- LLM-based resume analysis and insight generation
+- Computer Vision with MediaPipe FaceMesh for mock interview monitoring
+- Skill-gap AI analysis services
 
-### AI & Smart Services
-- **AI (Gemini / LLMs)** – Resume building, interviews, recommendations  
-- **Speech & Vision** – Interactive mock interviews and behavioral analysis  
-
-### Automation & Workflow
-- **n8n** – Event-driven automation for approvals, notifications, and workflow orchestration  
-
----
-
-## 🤖 Smart Automation (Mentors & Recruiters)
-
-Campus Buddy uses **event-driven automation** powered by **n8n** to keep all stakeholders in sync.
-
-Mentors and recruiters receive real-time notifications when:
-- A student applies  
-- An application is approved or rejected  
-- An internship is completed  
-- A student becomes eligible for certification  
-
-These automations ensure that:
-- No student misses deadlines  
-- No application is lost  
-- Every action is recorded and auditable  
-
-> For security and intellectual property protection, internal workflow logic, automation rules, and third-party credentials are not included in this repository.
+### Automation
+- n8n for event-driven notifications and workflow orchestration
+- Telegram-integrated mentor/HR automation flows
 
 ---
 
+## Automation Summary
 
-### Local Setup (Developers)
+Campus Buddy uses n8n-powered automations to keep mentors, recruiters, and placement teams in sync through notifications and action workflows.
+
+Typical automated events:
+- Student applies
+- Mentor/recruiter status update
+- Approval/rejection flow updates
+- Deadline-oriented reminders
+
+---
+
+## Local Setup (Developers)
 
 ```bash
 git clone https://github.com/AmateurMind/STROTAS-IEEE-RANCHI.git
 cd STROTAS-IEEE-RANCHI
 npm run install:all
 npm run dev
+```
