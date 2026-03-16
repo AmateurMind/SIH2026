@@ -1,109 +1,150 @@
-# CampusBuddy - AI-Powered Campus Placement and Internship Platform
+<div align="center">
 
-CampusBuddy is a full-stack platform that unifies internship and placement workflows for students, mentors, recruiters, and admins.
+# CampusBuddy — AI-Powered Campus Placement and Internship Platform
 
-It replaces fragmented WhatsApp, email, and spreadsheet operations with one secure system for resume intelligence, mock interviews, skill-gap insights, application tracking, and automation.
+### One Unified System for Resume Intelligence, Interview Readiness, and Placement Automation
 
----
+[![Frontend](https://img.shields.io/badge/Frontend-React%2018-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Backend](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Database](https://img.shields.io/badge/Database-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Automation](https://img.shields.io/badge/Automation-n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)](https://n8n.io/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-## Live Links
-- Live Demo: https://strotas-frontend.onrender.com/
-- Video Demo: https://www.youtube.com/watch?v=A15PEUzelfs
+> "From placement chaos to verified, AI-assisted execution."
 
----
+🎬 **[Watch Demo Video](https://www.youtube.com/watch?v=A15PEUzelfs)**  
+🌐 **[Live Demo](https://strotas-frontend.onrender.com/)**
 
-## Hackathon Context (IGNISIA 2026)
-- Host: MIT World Peace University, Pune
-- Event: IGNISIA AI Hackathon 2026
-- Format: Online qualifier (PPT) + on-campus grand finale
-- Prize Pool: INR 1,00,000
-- PPT Format: [Ignisia_PPT_Format.pptx](Ignisia_PPT_Format.pptx)
+</div>
 
 ---
 
-## Problem We Solve
-Internship and placement processes are often scattered across WhatsApp groups, emails, and spreadsheets. This causes missed deadlines, delayed approvals, poor visibility, and heavy manual workload for placement cells.
+## Problem Statement
 
-CampusBuddy solves this with a single AI-enabled platform that is role-based, auditable, and automation-ready.
+Campus internship and placement workflows are fragmented across WhatsApp groups, emails, and spreadsheets. This causes missed deadlines, delayed approvals, low transparency, and heavy manual coordination for placement cells.
 
----
-
-## Key Product Modules
-- Unified dashboard for Students, Mentors, Recruiters, and Admins
-- Resume Builder with templates, profile sync, and PDF export
-- ATS Resume Checker with score breakdown and AI insights
-- AI Mock Interview with integrity/focus monitoring
-- Skill Gap AI with targeted recommendations
-- Internship discovery, application tracking, and status workflows
-- n8n automation for alerts, approvals, and integrations
+CampusBuddy solves this through a role-based, AI-enabled, automation-first platform.
 
 ---
 
-## What Is Improved (Current Build)
+## Challenge vs Solution
 
-### AI Resume Checker (ATS)
-- Overall ATS score out of 100
-- Score breakdown: Experience, AI Candidate Evaluation, Achievements, Resume Quality, Keyword Match
-- AI Executive Summary and rewritten bullet recommendations
-- Section/contact/content checks for actionable improvement
+| Challenge | Traditional Workflow | CampusBuddy |
+|---|---|---|
+| Notices scattered | WhatsApp + email chaos | Unified platform dashboard |
+| Resume quality unclear | Manual subjective review | ATS score + AI summary + score breakdown |
+| Interview integrity issues | No monitoring | CV-based focus monitor + event logs |
+| Slow approvals | Follow-ups across people | n8n-driven automated workflow actions |
+| Weak visibility | No shared status view | Role-scoped dashboards for all stakeholders |
 
-### AI Mock Interview
-- Focus Monitor with live status and suspicion score
-- Tab switching event logs
-- Multiple face detection logs
-- Head pose, gaze, and face visibility signals
+---
+
+## Core Modules
+
+### 1) AI Resume Checker (ATS)
+- ATS score out of 100 with transparent breakdown:
+- Experience (0-30)
+- AI Candidate Evaluation (0-30)
+- Achievements/Hackathons (0-20)
+- Resume Quality (0-10)
+- Keyword Match (0-10)
+- AI Executive Summary and rewritten bullet suggestions
+- Actionable quality checks (sections, contact, content, formatting)
+
+### 2) AI Mock Interview
+- Live interview interface with voice/text answer support
+- Focus Monitor powered by computer vision signals
+- Tab-switch event logging
+- Multiple-face detection logging
+- Suspicion/focus scoring and session event timeline
+
+### 3) Resume Builder and Student Profile
+- Multi-section resume builder with templates
+- Public/private visibility controls and PDF export
+- Profile-integrated resume generation workflow
+
+### 4) Skill Gap AI
+- Skill-gap analysis and targeted recommendations
+- Learning-focused guidance for interview and role readiness
+
+### 5) Automation Layer (n8n)
+- Event-driven alerts, reminders, and status updates
+- Mentor/recruiter workflow automation and integrations
 
 ---
 
 ## Screenshots
 
-### 1) AI Mock Interview (Focus Monitor + Event Logs)
-Tab switch logs and multiple-face detection logs are captured to support interview integrity and fair evaluation.
+### AI Mock Interview (Tab Switch + Multiple Face Logs)
+Interview integrity signals are tracked in real time through event logs and focus monitoring.
 
-![AI Mock Interview - Focus Monitor](docs/images/ai-mock-interview.png)
+![AI Mock Interview](docs/images/ai-mock-interview.png)
 
-### 2) AI Resume Analysis (ATS Breakdown + Executive Summary)
-Detailed ATS scoring plus AI-generated summary helps students improve resume quality for internships and placements.
+### AI Resume Analysis (ATS Score + Executive Summary)
+ATS insights include score components, quality diagnostics, and AI-generated profile summary.
 
-![AI Resume Analysis - ATS](docs/images/ai-resume-analysis.png)
+![AI Resume Analysis](docs/images/ai-resume-analysis.png)
 
-Note: Place your screenshot files at:
-- `docs/images/ai-mock-interview.png`
-- `docs/images/ai-resume-analysis.png`
+> Place screenshots at:
+> - `docs/images/ai-mock-interview.png`
+> - `docs/images/ai-resume-analysis.png`
+
+---
+
+## Architecture Overview
+
+```text
+Frontend (React + Tailwind)
+    -> Role-based UI (Student / Mentor / Recruiter / Admin)
+    -> Resume Builder, ATS, AI Interview, Dashboards
+
+Backend (Node.js + Express)
+    -> Auth + APIs + business workflows
+    -> Internship, profile, resume, ATS, analytics modules
+
+Data and Services
+    -> MongoDB (core application data)
+    -> Firebase (AI interview/session modules)
+    -> Cloudinary (files/media)
+    -> LLM services (AI resume/skill insights)
+    -> MediaPipe FaceMesh (interview monitoring)
+    -> n8n (automation + external notifications)
+```
 
 ---
 
 ## Technology Stack
 
-### Frontend
-- React 18
-- Tailwind CSS
-- Framer Motion
-- Lucide React
+| Layer | Technology | Purpose |
+|---|---|---|
+| Frontend | React 18, Tailwind CSS, Framer Motion | UI, responsive screens, interaction |
+| Backend | Node.js, Express.js | APIs and workflow logic |
+| Database | MongoDB | Users, profiles, internships, applications, resume data |
+| Interview Module | Firebase | Session/real-time interview data components |
+| Auth | Clerk | Secure role-based access |
+| Storage | Cloudinary | Resume/file handling and delivery |
+| AI | LLM APIs + CV (FaceMesh) | Resume intelligence, skill guidance, interview monitoring |
+| Automation | n8n | Event-driven notifications and operations |
 
-### Backend and Data
-- Node.js
-- Express.js
-- MongoDB
-- Firebase (interview workflow/session modules)
+---
 
-### Authentication and Storage
-- Clerk (role-based auth)
-- Cloudinary (file/media delivery)
+## Hackathon Context
 
-### AI and Automation
-- LLM-based resume intelligence and skill suggestions
-- Computer Vision (MediaPipe FaceMesh) for mock interview monitoring
-- n8n for workflow automation and external notifications
+- Event: IGNISIA AI Hackathon 2026
+- Host: MIT World Peace University, Pune
+- Format: Online PPT qualifier + on-campus grand finale
+- Prize Pool: INR 1,00,000
+- PPT Format: [Ignisia_PPT_Format.pptx](Ignisia_PPT_Format.pptx)
 
 ---
 
 ## Viability and Scalability
-- Open-source-first stack with low licensing overhead
-- Supports 4-role architecture in one deployment
-- Modular AI layer (LLM provider can be swapped)
-- Automation scales without equivalent headcount growth
-- API-first design for ERP/email/calendar/integration expansion
+
+- Open-source-first architecture with low licensing overhead
+- Single deployment supports 4 stakeholder roles
+- Modular AI layer (provider/model can be swapped)
+- Automation scales operations without equivalent headcount increase
+- Integration-ready APIs for institutional systems
 
 ---
 
@@ -115,3 +156,9 @@ cd STROTAS
 npm run install:all
 npm run dev
 ```
+
+---
+
+## Team
+
+Team CampusBuddy
