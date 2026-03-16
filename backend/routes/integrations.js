@@ -86,7 +86,12 @@ router.get('/update-status', (req, res) => {
 // Middleware to check API Key
 const requireApiKey = (req, res, next) => {
     const apiKey = req.headers['x-api-key'];
-    const validApiKey = process.env.EXTERNAL_API_KEY || 'n8n-secret-key-123'; // Fallback for demo
+    const validApiKey = process.env.EXTERNAL_API_KEY;
+
+    if (!validApiKey) {
+        console.error('[integrations] EXTERNAL_API_KEY environment variable is not set. All integration requests will be rejected.');
+        return res.status(503).json({ error: 'Integration not configured', message: 'EXTERNAL_API_KEY is not set on the server.' });
+    }
 
     if (!apiKey || apiKey !== validApiKey) {
         return res.status(401).json({ error: 'Invalid API Key' });

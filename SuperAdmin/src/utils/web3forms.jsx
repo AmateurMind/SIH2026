@@ -3,7 +3,7 @@
  * Sends emails via Web3Forms API from the frontend
  */
 
-const WEB3FORMS_API_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '8eed56d7-dd53-4db4-9f0c-125c23936490';
+const WEB3FORMS_API_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 const WEB3FORMS_URL = 'https://api.web3forms.com/submit';
 
 /**
