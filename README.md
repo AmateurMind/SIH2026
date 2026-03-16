@@ -1,73 +1,75 @@
-# Campus Buddy
+# CampusBuddy - AI-Powered Campus Placement and Internship Platform
 
-Campus Buddy is a full-stack internship and placement platform for students, mentors, recruiters, and placement cells.
+CampusBuddy is a full-stack platform that unifies internship and placement workflows for students, mentors, recruiters, and admins.
 
-It replaces fragmented communication (WhatsApp, email chains, spreadsheets) with a single workflow for profile management, resume quality analysis, interview practice, application tracking, and automation.
+It replaces fragmented WhatsApp, email, and spreadsheet operations with one secure system for resume intelligence, mock interviews, skill-gap insights, application tracking, and automation.
 
 ---
 
-## Links
-- Live Demo: https://campusbuddy-0qnu.onrender.com/
+## Live Links
+- Live Demo: https://strotas-frontend.onrender.com/
 - Video Demo: https://www.youtube.com/watch?v=A15PEUzelfs
 
 ---
 
-## What Is Improved
-
-### 1) AI Resume Checker (ATS) - Improved
-- ATS score out of 100 with transparent score breakdown:
-- Experience (0-30)
-- AI Candidate Evaluation (0-30)
-- Achievements/Hackathons (0-20)
-- Resume Quality (0-10)
-- Keyword Match (0-10)
-- Deep resume analysis includes:
-- Section detection (experience, education, skills, contact)
-- Contact validation (email/phone presence)
-- Action verbs and quantifiable metrics count
-- Word count and formatting checks
-- AI-generated insights include:
-- Executive summary
-- Priority fixes
-- Rewritten resume bullets
-- Faculty/Admin views for score tracking and comparative analysis
-
-### 2) AI Mock Interview - Improved
-- Real-time focus/proctoring monitor during interview sessions
-- FaceMesh-based face and gaze signals
-- Tab-switch detection using browser visibility events
-- Multiple-face detection alerts
-- No-face and head-away signals with suspicion scoring
-- Event log for interview integrity signals
-- Post-interview feedback flow for candidate improvement
+## Hackathon Context (IGNISIA 2026)
+- Host: MIT World Peace University, Pune
+- Event: IGNISIA AI Hackathon 2026
+- Format: Online qualifier (PPT) + on-campus grand finale
+- Prize Pool: INR 1,00,000
+- PPT Format: [Ignisia_PPT_Format.pptx](Ignisia_PPT_Format.pptx)
 
 ---
 
-## Key Features
+## Problem We Solve
+Internship and placement processes are often scattered across WhatsApp groups, emails, and spreadsheets. This causes missed deadlines, delayed approvals, poor visibility, and heavy manual workload for placement cells.
 
-### For Students
-- Profile and document management
-- Resume Builder with templates, color themes, save/public toggle, and PDF export
-- ATS Resume Checker with AI insights
-- AI Mock Interview with monitoring and feedback
-- Skill gap analysis with recommended focus areas
-- Internship discovery and application tracking
-- Calendar and deadline notifications
+CampusBuddy solves this with a single AI-enabled platform that is role-based, auditable, and automation-ready.
 
-### For Mentors and Faculty
-- Student application review and approval workflow
-- Progress visibility and tracking dashboards
-- ATS score monitoring for mentees
+---
 
-### For Recruiters
-- Internship/job posting and application management
-- Candidate profile and resume review
-- Status updates across hiring stages
+## Key Product Modules
+- Unified dashboard for Students, Mentors, Recruiters, and Admins
+- Resume Builder with templates, profile sync, and PDF export
+- ATS Resume Checker with score breakdown and AI insights
+- AI Mock Interview with integrity/focus monitoring
+- Skill Gap AI with targeted recommendations
+- Internship discovery, application tracking, and status workflows
+- n8n automation for alerts, approvals, and integrations
 
-### For Admins
-- Role-based control and platform governance
-- Institution-level analytics and monitoring
-- Placement process visibility
+---
+
+## What Is Improved (Current Build)
+
+### AI Resume Checker (ATS)
+- Overall ATS score out of 100
+- Score breakdown: Experience, AI Candidate Evaluation, Achievements, Resume Quality, Keyword Match
+- AI Executive Summary and rewritten bullet recommendations
+- Section/contact/content checks for actionable improvement
+
+### AI Mock Interview
+- Focus Monitor with live status and suspicion score
+- Tab switching event logs
+- Multiple face detection logs
+- Head pose, gaze, and face visibility signals
+
+---
+
+## Screenshots
+
+### 1) AI Mock Interview (Focus Monitor + Event Logs)
+Tab switch logs and multiple-face detection logs are captured to support interview integrity and fair evaluation.
+
+![AI Mock Interview - Focus Monitor](docs/images/ai-mock-interview.png)
+
+### 2) AI Resume Analysis (ATS Breakdown + Executive Summary)
+Detailed ATS scoring plus AI-generated summary helps students improve resume quality for internships and placements.
+
+![AI Resume Analysis - ATS](docs/images/ai-resume-analysis.png)
+
+Note: Place your screenshot files at:
+- `docs/images/ai-mock-interview.png`
+- `docs/images/ai-resume-analysis.png`
 
 ---
 
@@ -80,42 +82,36 @@ It replaces fragmented communication (WhatsApp, email chains, spreadsheets) with
 - Lucide React
 
 ### Backend and Data
-- Node.js and Express
+- Node.js
+- Express.js
 - MongoDB
-- Firebase (AI interview session data/workflows)
+- Firebase (interview workflow/session modules)
 
-### Authentication and Files
-- Clerk (role-based authentication)
-- Cloudinary (file storage and delivery)
+### Authentication and Storage
+- Clerk (role-based auth)
+- Cloudinary (file/media delivery)
 
-### AI and Intelligence
-- LLM-based resume analysis and insight generation
-- Computer Vision with MediaPipe FaceMesh for mock interview monitoring
-- Skill-gap AI analysis services
-
-### Automation
-- n8n for event-driven notifications and workflow orchestration
-- Telegram-integrated mentor/HR automation flows
+### AI and Automation
+- LLM-based resume intelligence and skill suggestions
+- Computer Vision (MediaPipe FaceMesh) for mock interview monitoring
+- n8n for workflow automation and external notifications
 
 ---
 
-## Automation Summary
-
-Campus Buddy uses n8n-powered automations to keep mentors, recruiters, and placement teams in sync through notifications and action workflows.
-
-Typical automated events:
-- Student applies
-- Mentor/recruiter status update
-- Approval/rejection flow updates
-- Deadline-oriented reminders
+## Viability and Scalability
+- Open-source-first stack with low licensing overhead
+- Supports 4-role architecture in one deployment
+- Modular AI layer (LLM provider can be swapped)
+- Automation scales without equivalent headcount growth
+- API-first design for ERP/email/calendar/integration expansion
 
 ---
 
-## Local Setup (Developers)
+## Local Setup
 
 ```bash
-git clone https://github.com/AmateurMind/STROTAS-IEEE-RANCHI.git
-cd STROTAS-IEEE-RANCHI
+git clone https://github.com/AmateurMind/STROTAS.git
+cd STROTAS
 npm run install:all
 npm run dev
 ```
