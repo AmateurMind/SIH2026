@@ -75,6 +75,11 @@ CampusBuddy solves this through a role-based, AI-enabled, automation-first platf
 
 ## Screenshots
 
+### Platform Overview (Student Experience)
+Unified student experience across internships, profile, resume, and interview workflows.
+
+![CampusBuddy Dashboard](docs/images/campusbuddy-dashboard.png)
+
 ### AI Mock Interview (Tab Switch + Multiple Face Logs)
 Interview integrity signals are tracked in real time through event logs and focus monitoring.
 
@@ -86,6 +91,7 @@ ATS insights include score components, quality diagnostics, and AI-generated pro
 ![AI Resume Analysis](docs/images/ai-resume-analysis.png)
 
 > Place screenshots at:
+> - `docs/images/campusbuddy-dashboard.png`
 > - `docs/images/ai-mock-interview.png`
 > - `docs/images/ai-resume-analysis.png`
 
@@ -128,14 +134,6 @@ Data and Services
 
 ---
 
-## Hackathon Context
-
-- Event: IGNISIA AI Hackathon 2026
-- Host: MIT World Peace University, Pune
-- Format: Online PPT qualifier + on-campus grand finale
-- Prize Pool: INR 1,00,000
-- PPT Format: [Ignisia_PPT_Format.pptx](Ignisia_PPT_Format.pptx)
-
 ---
 
 ## Viability and Scalability
@@ -161,4 +159,4 @@ npm run dev
 
 ## Team
 
-Team CampusBuddy
+Team Vamos
