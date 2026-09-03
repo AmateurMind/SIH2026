@@ -283,6 +283,22 @@ const internshipPerformancePassportSchema = new mongoose.Schema({
         downloadCount: { type: Number, default: 0 }
     },
 
+    // Blockchain Certificate Verification (Algorand)
+    blockchainCertificate: {
+        transactionId: { type: String, unique: true, sparse: true },
+        certificateHash: { type: String },
+        storedAt: { type: Date },
+        blockRound: { type: Number },
+        network: { type: String, default: 'testnet' },
+        algorandExplorerUrl: { type: String },
+        issuerAddress: { type: String },
+        verificationStatus: {
+            type: String,
+            enum: ['pending', 'confirmed', 'failed'],
+            default: 'pending'
+        }
+    },
+
     // Shareable Links
     sharing: {
         publicProfileUrl: { type: String, unique: true, sparse: true },

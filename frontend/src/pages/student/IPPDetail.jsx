@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { ArrowLeft, Building, Calendar, Award, CheckCircle, Clock } from 'lucide-react';
+import { ArrowLeft, Building, Calendar, Award, CheckCircle, Clock, Shield, ShieldCheck, ExternalLink, Hash, QrCode } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import ippService from '../../services/ippService';
 import { Button } from '../../components/ui/button';
@@ -382,6 +382,149 @@ const IPPDetail = () => {
                         <div className="mt-4 sm:mt-6">
                             <IPPBadge ipp={ipp} />
                         </div>
+
+                        {/* Blockchain Verification Card */}
+                        {ipp.blockchainCertificate && ipp.blockchainCertificate.transactionId && (
+                            <Card className="bg-white border-indigo-100 shadow-soft rounded-xl sm:rounded-2xl overflow-hidden mt-4 sm:mt-6">
+                                <CardHeader className="border-b border-indigo-50 pb-3 sm:pb-4 px-4 sm:px-6 pt-4 sm:pt-6 bg-gradient-to-r from-indigo-50 to-purple-50">
+                                    <CardTitle className="flex items-center gap-2 text-base sm:text-lg font-bold text-gray-900">
+                                        <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" />
+                                        Blockchain Verified
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="pt-4 sm:pt-6 px-4 sm:px-6 pb-4 sm:pb-6 space-y-4">
+                                    {/* Verification Status */}
+                                    <div className="flex items-center gap-2 p-3 bg-green-50 rounded-lg border border-green-100">
+                                        <ShieldCheck className="w-5 h-5 text-green-600 flex-shrink-0" />
+                                        <span className="text-sm font-medium text-green-700">
+                                            Certificate Hash Verified on {ipp.blockchainCertificate.network?.toUpperCase() || 'ALGORAND'}
+                                        </span>
+                                    </div>
+
+                                    {/* Transaction ID */}
+                                    <div>
+                                        <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5 block">
+                                            Transaction ID
+                                        </label>
+                                        <div className="flex items-center gap-2 p-2.5 bg-gray-50 rounded-lg">
+                                            <code className="text-xs font-mono text-gray-700 truncate flex-1">
+                                                {ipp.blockchainCertificate.transactionId}
+                                            </code>
+                                            <a
+                                                href={ipp.blockchainCertificate.algorandExplorerUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-indigo-600 hover:text-indigo-800 flex-shrink-0"
+                                                title="View on Algorand Explorer"
+                                            >
+                                                <ExternalLink className="w-4 h-4" />
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    {/* Block Round */}
+                                    <div className="grid grid-cols-2 gap-3">
+                                        <div className="p-2.5 bg-gray-50 rounded-lg">
+                                            <span className="text-xs text-gray-500 block mb-1">Block Round</span>
+                                            <span className="text-sm font-mono text-gray-900">
+                                                {ipp.blockchainCertificate.blockRound?.toLocaleString()}
+                                            </span>
+                                        </div>
+                                        <div className="p-2.5 bg-gray-50 rounded-lg">
+                                            <span className="text-xs text-gray-500 block mb-1">Stored At</span>
+                                            <span className="text-sm text-gray-900">
+                                                {new Date(ipp.blockchainCertificate.storedAt).toLocaleDateString()}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    {/* Certificate Hash */}
+                                    <div>
+                                        <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5 block">
+                                            <Hash className="w-3 h-3 inline mr-1" />
+                                            Certificate Hash (SHA-256)
+                                        </label>
+                                        <code className="block text-xs font-mono text-gray-700 bg-gray-50 p-3 rounded-lg break-all">
+                                            {ipp.blockchainCertificate.certificateHash}
+                                        </code>
+                                    </div>
+
+                                    {/* Issuer Address */}
+                                    {ipp.blockchainCertificate.issuerAddress && (
+                                        <div>
+                                            <label className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5 block">
+                                                Issuer Wallet
+                                            </label>
+                                            <code className="block text-xs font-mono text-gray-600 bg-gray-50 p-2.5 rounded-lg break-all">
+                                                {ipp.blockchainCertificate.issuerAddress}
+                                            </code>
+                                        </div>
+                                    )}
+
+                                    {/* Action Buttons */}
+                                    <div className="pt-2 space-y-2">
+                                        <a
+                                            href={`/verify/${ipp.certificate?.certificateId}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium transition-colors"
+                                        >
+                                            <QrCode className="w-4 h-4" />
+                                            Verify Certificate
+                                        </a>
+                                        <a
+                                            href={ipp.blockchainCertificate.algorandExplorerUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-white border border-indigo-200 hover:bg-indigo-50 text-indigo-700 rounded-lg text-sm font-medium transition-colors"
+                                        >
+                                            <ExternalLink className="w-4 h-4" />
+                                            View on Algorand Explorer
+                                        </a>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        )}
+
+                        {/* Blockchain Attestation Failed State */}
+                        {ipp.blockchainCertificate && !ipp.blockchainCertificate.transactionId && ipp.blockchainCertificate.verificationStatus === 'failed' && (
+                            <Card className="bg-white border-amber-100 shadow-soft rounded-xl sm:rounded-2xl overflow-hidden mt-4 sm:mt-6">
+                                <CardHeader className="border-b border-amber-50 pb-3 sm:pb-4 px-4 sm:px-6 pt-4 sm:pt-6 bg-gradient-to-r from-amber-50 to-orange-50">
+                                    <CardTitle className="flex items-center gap-2 text-base sm:text-lg font-bold text-gray-900">
+                                        <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600" />
+                                        Blockchain Attestation Pending
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="pt-4 sm:pt-6 px-4 sm:px-6 pb-4 sm:pb-6">
+                                    <div className="flex items-center gap-2 p-3 bg-amber-50 rounded-lg border border-amber-100">
+                                        <Clock className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                                        <span className="text-sm text-amber-700">
+                                            Certificate was generated but blockchain attestation could not be completed. The certificate is still valid and can be re-attested by an administrator.
+                                        </span>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        )}
+
+                        {/* Certificate exists but no blockchain data at all */}
+                        {ipp.certificate?.generatedAt && !ipp.blockchainCertificate && (
+                            <Card className="bg-white border-gray-100 shadow-soft rounded-xl sm:rounded-2xl overflow-hidden mt-4 sm:mt-6">
+                                <CardHeader className="border-b border-gray-50 pb-3 sm:pb-4 px-4 sm:px-6 pt-4 sm:pt-6">
+                                    <CardTitle className="flex items-center gap-2 text-base sm:text-lg font-bold text-gray-900">
+                                        <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
+                                        Blockchain Verification
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="pt-4 sm:pt-6 px-4 sm:px-6 pb-4 sm:pb-6">
+                                    <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                                        <Clock className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                                        <span className="text-sm text-gray-600">
+                                            Blockchain attestation not yet available for this certificate.
+                                        </span>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        )}
                     </div>
                 </div>
             </div>

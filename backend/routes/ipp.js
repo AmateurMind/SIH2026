@@ -8,7 +8,7 @@ const multer = require('multer');
 const mult = require('multer');
 const requireHybridAuth = require('../middleware/clerkHybridAuth');
 const { sendEvaluationRequestEmail, sendStudentNotificationEmail } = require('../utils/emailService');
-const { generateCertificate, generateQRCode } = require('../utils/certificateGenerator');
+const { generateCertificate, generateQRCode, generateBlockchainCertificate, algorandService } = require('../utils/certificateGenerator');
 const { uploadToCloudinary } = require('../utils/cloudinary');
 
 // Import Mongoose Models
@@ -817,21 +817,60 @@ router.put('/:ippId/student-submission', requireHybridAuth, async (req, res) => 
                 }
             };
 
-            // 3. Generate Certificate
+            // 3. Generate Blockchain Certificate
             try {
-                const certResult = await generateCertificate(ippForCert);
-                const qrCodeData = await generateQRCode(certResult.certificateId, ipp.ippId);
+                const metadata = {
+                    studentName: student.name || `${student.firstName} ${student.lastName}`,
+                    company: ipp.internshipDetails?.company,
+                    role: ipp.internshipDetails?.role,
+                    issuedAt: new Date().toISOString()
+                };
+
+                const certResult = await generateBlockchainCertificate(ippForCert, metadata);
 
                 ipp.certificate = {
                     certificateId: certResult.certificateId,
                     certificateUrl: certResult.downloadUrl,
                     generatedAt: new Date(),
-                    qrCode: qrCodeData
+                    qrCode: certResult.qrCode
                 };
-                console.log('✅ Certificate generated automatically:', certResult.fileName);
+
+                // Store blockchain data if successful
+                if (certResult.blockchain && certResult.blockchain.success) {
+                    ipp.blockchainCertificate = {
+                        transactionId: certResult.blockchain.transactionId,
+                        certificateHash: certResult.blockchain.certificateHash,
+                        storedAt: new Date(),
+                        blockRound: certResult.blockchain.blockRound,
+                        network: certResult.blockchain.network,
+                        algorandExplorerUrl: certResult.blockchain.algorandExplorerUrl,
+                        issuerAddress: algorandService.issuerAccount?.addr,
+                        verificationStatus: 'confirmed'
+                    };
+                    console.log('✅ Blockchain certificate stored:', certResult.blockchain.transactionId);
+                    console.log('   Explorer:', certResult.blockchain.algorandExplorerUrl);
+                } else {
+                    console.warn('⚠️ Certificate PDF generated but blockchain attestation failed:', certResult.blockchain?.error || 'Unknown error');
+                    // Mark blockchain as failed so frontend can show appropriate state
+                    ipp.blockchainCertificate = {
+                        verificationStatus: 'failed',
+                        error: certResult.blockchain?.error || 'Blockchain attestation failed'
+                    };
+                }
+
+                console.log('✅ Certificate generated:', certResult.fileName);
             } catch (certError) {
-                console.error('❌ Certificate generation failed:', certError);
-                // We don't fail the request, just log it. Admin can regen later if needed.
+                console.error('❌ Certificate generation failed:', certError.message);
+                console.error('   Stack:', certError.stack);
+                // Still save a basic certificate record so it's visible in the UI
+                ipp.certificate = ipp.certificate || {
+                    certificateId: `CERT-${ipp.ippId}`,
+                    generatedAt: new Date()
+                };
+                ipp.blockchainCertificate = {
+                    verificationStatus: 'failed',
+                    error: certError.message
+                };
             }
         }
 
@@ -921,17 +960,41 @@ router.put('/:ippId/faculty-assessment', requireHybridAuth, async (req, res) => 
                     }
                 };
 
-                // 3. Generate Certificate
+                // 3. Generate Blockchain Certificate
                 try {
-                    const certResult = await generateCertificate(ippForCert);
-                    const qrCodeData = await generateQRCode(certResult.certificateId, ipp.ippId);
+                    const metadata = {
+                        studentName: student.name || `${student.firstName} ${student.lastName}`,
+                        company: ipp.internshipDetails?.company,
+                        role: ipp.internshipDetails?.role,
+                        issuedAt: new Date().toISOString()
+                    };
+
+                    const certResult = await generateBlockchainCertificate(ippForCert, metadata);
 
                     ipp.certificate = {
                         certificateId: certResult.certificateId,
                         certificateUrl: certResult.downloadUrl,
                         generatedAt: new Date(),
-                        qrCode: qrCodeData
+                        qrCode: certResult.qrCode
                     };
+
+                    // Store blockchain data if successful
+                    if (certResult.blockchain && certResult.blockchain.success) {
+                        ipp.blockchainCertificate = {
+                            transactionId: certResult.blockchain.transactionId,
+                            certificateHash: certResult.blockchain.certificateHash,
+                            storedAt: new Date(),
+                            blockRound: certResult.blockchain.blockRound,
+                            network: certResult.blockchain.network,
+                            algorandExplorerUrl: certResult.blockchain.algorandExplorerUrl,
+                            issuerAddress: algorandService.issuerAccount?.addr,
+                            verificationStatus: 'confirmed'
+                        };
+                        console.log('✅ Blockchain certificate stored (Faculty):', certResult.blockchain.transactionId);
+                    } else {
+                        console.log('⚠️ Certificate generated (Faculty) but blockchain storage failed');
+                    }
+
                     console.log('✅ Certificate generated automatically (Faculty):', certResult.fileName);
                 } catch (certError) {
                     console.error('❌ Certificate generation failed:', certError);

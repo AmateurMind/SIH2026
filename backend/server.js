@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const path = require('path');
 require('dotenv').config();
 
 // Import database connection
@@ -24,6 +25,7 @@ const notificationRoutes = require('./routes/notifications');
 const integrationsRoutes = require('./routes/integrations'); // External integrations (n8n, etc.)
 const ippRoutes = require('./routes/ipp');
 const calendarRoutes = require('./routes/calendar');
+const verifyRoutes = require('./routes/verify');
 console.log('🔍 IPP Routes loaded:', typeof ippRoutes);
 if (typeof ippRoutes !== 'function') {
   console.error('❌ IPP Routes is NOT a function/router!');
@@ -103,10 +105,10 @@ app.use((req, res, next) => {
 });
 
 // Serve uploaded files
-app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Serve generated certificates
-app.use('/certificates', express.static('certificates'));
+app.use('/certificates', express.static(path.join(__dirname, 'certificates')));
 
 // Serve favicon to prevent 404 errors
 app.get('/favicon.ico', (req, res) => res.status(204).end());
@@ -129,6 +131,7 @@ app.use('/api/notifications', notificationRoutes);
 app.use('/api/integrations', integrationsRoutes);
 app.use('/api/ipp', ippRoutes);
 app.use('/api/calendar', calendarRoutes);
+app.use('/api/verify', verifyRoutes);
 
 // Health check endpoint
 app.get('/health', async (req, res) => {

@@ -2,9 +2,10 @@ const PDFDocument = require('pdfkit');
 const QRCode = require('qrcode');
 const fs = require('fs');
 const path = require('path');
+const { algorandService } = require('./algorandService');
 
 // Generate certificate PDF
-const generateCertificate = async (ippData) => {
+const generateCertificate = async (ippData, blockchainData = null) => {
     return new Promise((resolve, reject) => {
         try {
             const doc = new PDFDocument({
@@ -166,15 +167,27 @@ const generateCertificate = async (ippData) => {
     });
 };
 
-// Generate QR code data URL
-const generateQRCode = async (certificateId, ippId) => {
+// Generate QR code data URL with blockchain verification
+const generateQRCode = async (certificateId, ippId, blockchainData = null) => {
     try {
-        const qrData = JSON.stringify({
+        const qrPayload = {
             certificateId,
             ippId,
             verificationUrl: `${process.env.FRONTEND_URL}/verify/${certificateId}`,
             issuedAt: new Date().toISOString()
-        });
+        };
+
+        // Include blockchain data if available
+        if (blockchainData && blockchainData.transactionId) {
+            qrPayload.blockchain = {
+                transactionId: blockchainData.transactionId,
+                network: blockchainData.network || 'testnet',
+                verified: true
+            };
+            qrPayload.blockchainVerificationUrl = `${process.env.FRONTEND_URL}/verify/blockchain/${blockchainData.transactionId}`;
+        }
+
+        const qrData = JSON.stringify(qrPayload);
 
         // Generate QR code as data URL
         const qrCodeDataURL = await QRCode.toDataURL(qrData, {
@@ -194,7 +207,79 @@ const generateQRCode = async (certificateId, ippId) => {
     }
 };
 
+// Generate and store certificate with blockchain verification
+const generateBlockchainCertificate = async (ippData, metadata = {}) => {
+    try {
+        // Step 1: Generate the PDF certificate
+        const certResult = await generateCertificate(ippData);
+
+        // Step 2: Prepare certificate data for hashing
+        const certificateData = {
+            certificateId: certResult.certificateId,
+            ippId: ippData.ippId,
+            studentId: ippData.studentId,
+            studentName: ippData.studentDetails?.name,
+            company: ippData.internshipDetails?.company,
+            role: ippData.internshipDetails?.role,
+            overallRating: ippData.summary?.overallRating,
+            performanceGrade: ippData.summary?.performanceGrade,
+            issuedAt: new Date().toISOString()
+        };
+
+        // Step 3: Store hash on Algorand blockchain
+        console.log('🔗 Storing certificate hash on Algorand blockchain...');
+        const blockchainResult = await algorandService.storeCertificateHash(certificateData, metadata);
+
+        if (!blockchainResult.success) {
+            console.error('❌ Failed to store on blockchain:', blockchainResult.error);
+            // Still return certificate but mark blockchain as failed
+            const qrCodeData = await generateQRCode(certResult.certificateId, ippData.ippId);
+            return {
+                ...certResult,
+                qrCode: qrCodeData,
+                blockchain: {
+                    success: false,
+                    error: blockchainResult.error,
+                    status: 'failed'
+                }
+            };
+        }
+
+        // Step 4: Generate QR code with blockchain data
+        const qrCodeData = await generateQRCode(
+            certResult.certificateId,
+            ippData.ippId,
+            blockchainResult
+        );
+
+        console.log('✅ Blockchain certificate generated successfully');
+        console.log('   Transaction ID:', blockchainResult.transactionId);
+        console.log('   Explorer URL:', blockchainResult.algorandExplorerUrl);
+
+        return {
+            ...certResult,
+            qrCode: qrCodeData,
+            blockchain: {
+                success: true,
+                transactionId: blockchainResult.transactionId,
+                certificateHash: blockchainResult.certificateHash,
+                blockRound: blockchainResult.blockRound,
+                network: blockchainResult.network,
+                algorandExplorerUrl: blockchainResult.algorandExplorerUrl,
+                timestamp: blockchainResult.timestamp,
+                status: 'confirmed'
+            }
+        };
+
+    } catch (error) {
+        console.error('Error generating blockchain certificate:', error);
+        throw error;
+    }
+};
+
 module.exports = {
     generateCertificate,
-    generateQRCode
+    generateQRCode,
+    generateBlockchainCertificate,
+    algorandService
 };

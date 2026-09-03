@@ -21,6 +21,7 @@ import StudentApplications from './pages/student/StudentApplications';
 import ResumeBuilder from './pages/student/ResumeBuilder';
 import ResumeDashboard from './pages/student/Dashboard';
 import PublicResume from './pages/PublicResume';
+import VerifyCertificate from './pages/VerifyCertificate';
 import StudentCalendar from './pages/student/StudentCalendar';
 import StudentIPPDashboard from './pages/student/StudentIPPDashboard';
 import IPPDetail from './pages/student/IPPDetail';
@@ -230,6 +231,8 @@ function AppContent() {
               <Route path="/student/resume/create" element={<ProtectedRoute role="student"><ResumeBuilder /></ProtectedRoute>} />
               <Route path="/student/resume/edit/:resumeId" element={<ProtectedRoute role="student"><ResumeBuilder /></ProtectedRoute>} />
               <Route path="/resume/view/:resumeId" element={<PublicResume />} />
+              <Route path="/verify/:certificateId" element={<VerifyCertificate />} />
+              <Route path="/verify" element={<VerifyCertificate />} />
               <Route path="/student/calendar" element={<ProtectedRoute role="student"><StudentCalendar /></ProtectedRoute>} />
               <Route path="/student/internship-passports" element={<ProtectedRoute role="student"><StudentIPPDashboard /></ProtectedRoute>} />
               <Route path="/student/ipp/:ippId" element={<ProtectedRoute role="student"><IPPDetail /></ProtectedRoute>} />
