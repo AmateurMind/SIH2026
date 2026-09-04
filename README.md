@@ -2,6 +2,8 @@
 
 # CampusBuddy — AI-Powered Campus Placement and Internship Platform
 
+NOW SIH 2026 WITH DEPLOYED ON RENDER 
+EMAIL IS abc.xyz.171105@gmail.com both frontend and backend
 ### One Unified System for Resume Intelligence, Interview Readiness, and Placement Automation
 
 [![Frontend](https://img.shields.io/badge/Frontend-React%2018-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
